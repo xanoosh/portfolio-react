@@ -7,7 +7,7 @@ const Nav = ({ projects }) => {
     setMenuVisible(!menuVisible);
   };
   const navContent = projects.map((project) => (
-    <NavEl path={project.path} title={project.title} id={project.id} />
+    <NavEl path={project.path} title={project.title} key={project.id} />
   ));
   const navClass = menuVisible ? 'show' : '';
   return (

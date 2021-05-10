@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const SingleProjectCard = ({ title, tags, description, path }) => {
-  const tagElements = tags.map((tag) => <div className="tag">{tag}</div>);
+  const tagElements = tags.map((tag, index) => (
+    <div key={index} className="tag">
+      {tag}
+    </div>
+  ));
   return (
     <div className="col">
       <div className="project">
@@ -10,10 +14,10 @@ const SingleProjectCard = ({ title, tags, description, path }) => {
         <p>{description}</p>
         <div className="links">
           <Link to={path} target="_blank" rel="noopener noreferrer">
-            Link1
+            Project
           </Link>
           <Link to="route" target="_blank" rel="noopener noreferrer">
-            Link2
+            Code
           </Link>
         </div>
       </div>

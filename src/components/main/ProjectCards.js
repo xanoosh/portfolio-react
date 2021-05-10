@@ -3,7 +3,7 @@ import SingleProjectCard from './SingleProjectCard';
 const ProjectCards = ({ projectList }) => {
   const projects = projectList.map((project) => (
     <SingleProjectCard
-      id={project.id}
+      key={project.id}
       title={project.title}
       path={project.path}
       tags={project.tags}
