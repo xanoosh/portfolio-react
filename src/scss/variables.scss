@@ -1,12 +1,13 @@
 //general
-$link-color: rgba(255, 255, 255, 0.55);
 $white: #fff;
+$white-opacity: rgba($white, 0.55);
 
 //main
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 $main-font: 'Roboto', sans-serif;
-$main-bg-color: #404f6f;
-$main-tag-color: #a9b0be;
+$main-blue: #404f6f;
+$main-gray: #a9b0be;
+$main-gray-opacity: rgba($main-gray, 0.55);
 $main-font-color: #000;
 
 //quiz

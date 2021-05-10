@@ -7,7 +7,7 @@
 nav {
   width: 100%;
   padding: 15px 10px;
-  background: $main-bg-color;
+  background: $main-blue;
   .toggler {
     //hamburger ripped from bootstrap svg
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -39,7 +39,7 @@ nav {
       text-align: left;
       a {
         display: block;
-        color: $link-color;
+        color: $white-opacity;
         text-decoration: none;
         &:hover {
           color: $white;
@@ -82,7 +82,7 @@ nav {
 .row {
   display: flex;
   flex-wrap: wrap;
-  .column {
+  .col {
     display: flex;
     flex: 0 0 auto;
     margin-bottom: 30px;
@@ -95,6 +95,18 @@ nav {
       width: 33.3333333333%;
     }
     .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $main-gray-opacity;
+      h5 {
+        font-size: 20px;
+        color: $main-blue;
+      }
     }
   }
 }
