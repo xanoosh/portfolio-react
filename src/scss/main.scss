@@ -31,12 +31,9 @@ nav {
     pointer-events: none;
     transition: all 0.6s ease-in-out;
     li {
-      &:first-of-type {
-        padding-top: 40px;
-      }
-      padding: 5px;
-      text-align: left;
       a {
+        padding: 7px;
+        text-align: left;
         display: block;
         color: $white-opacity;
         text-decoration: none;
@@ -44,6 +41,9 @@ nav {
         &:hover {
           color: $white;
         }
+      }
+      &:first-of-type a {
+        padding-top: 40px;
       }
     }
   }
@@ -66,11 +66,9 @@ nav {
       opacity: 1;
       pointer-events: all;
       li {
-        padding: 5px;
         text-align: center;
-
-        &:first-of-type {
-          padding-top: 5px;
+        &:first-of-type a {
+          padding-top: 7px;
         }
       }
     }
