@@ -2,3 +2,25 @@
   font-family: $main-font;
   background: $main-bg-color;
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  .column {
+    display: flex;
+    flex: 0 0 auto;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    width: 100%;
+    @media (min-width: 576) {
+      width: 50%;
+    }
+    @media (min-width: 576) {
+      width: 33.3333333333%;
+    }
+    .project {
+    }
+  }
+}
+
+//navbar
