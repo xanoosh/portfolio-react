@@ -1,12 +1,9 @@
 import NavEl from './NavEl';
-const Nav = ({projectList}) => {
-    const navContent = projectList.map(project=>(
-    ))
-  return (
-    <div>
-      <h1>Navbar</h1>
-    </div>
-  );
+const Nav = ({ projectList }) => {
+  const navContent = projectList.map((project) => (
+    <NavEl path={project.path} title={project.title} id={project.id} />
+  ));
+  return <ul>{navContent}</ul>;
 };
 
 export default Nav;
