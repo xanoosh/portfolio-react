@@ -1,5 +1,8 @@
 // import '../../scss/main.scss';
 // import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { useEffect } from 'react';
 //components:
 import Nav from './Nav';
 import ProjectCards from './ProjectCards';
@@ -20,7 +23,7 @@ const projectsData = [
     id: 1,
     tags: ['REST API', 'React', 'ES6', 'html', 'css'],
     description:
-      'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API. ',
+      'Calculates the odds of winning for a player. Basically plays 10 000 poker games then dispays result. ',
   },
   {
     path: '/recipe-app',
@@ -28,7 +31,7 @@ const projectsData = [
     id: 2,
     tags: ['REST API', 'React', 'ES6', 'html', 'css'],
     description:
-      'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API. ',
+      'This app allowes you to search for recipes by ingredients you have. Created with zero-waste approach in mind.',
   },
   {
     path: '/dice-app',
@@ -43,8 +46,7 @@ const projectsData = [
     title: 'Memory',
     id: 4,
     tags: ['REST API', 'React', 'ES6', 'html', 'css'],
-    description:
-      'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API. ',
+    description: 'Just a memory game with different colors.',
   },
   {
     path: '/snake',
@@ -52,7 +54,7 @@ const projectsData = [
     id: 5,
     tags: ['REST API', 'React', 'ES6', 'html', 'css'],
     description:
-      'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API. ',
+      'DESKTOP ONLY Oldschool snake game, use arrow keys to move. Snake gets faster progressively. ',
   },
   {
     path: '/timezone-app',
@@ -60,7 +62,7 @@ const projectsData = [
     id: 6,
     tags: ['REST API', 'React', 'ES6', 'html', 'css'],
     description:
-      'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API. ',
+      'Simple app that calculates time in different time zones on input change. Consumes data from API on load.',
   },
   {
     path: '/map-generator',
@@ -68,14 +70,20 @@ const projectsData = [
     id: 7,
     tags: ['REST API', 'React', 'ES6', 'html', 'css'],
     description:
-      'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API. ',
+      'Randomly creates map for a board game. Resources on the map have to be in specific range.',
   },
 ];
 const Main = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <Nav projects={projectsData} />
       <ProjectCards projectList={projectsData} />
+      <div>a</div>
+      <div>b</div>
+      <div>c</div>
     </>
   );
 };

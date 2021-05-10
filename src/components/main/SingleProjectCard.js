@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 
-const SingleProjectCard = ({ title, tags, description, path }) => {
+const SingleProjectCard = ({ title, tags, description, path, delayValue }) => {
   const tagElements = tags.map((tag, index) => (
     <div key={index} className="tag">
       {tag}
     </div>
   ));
   return (
-    <div className="col">
+    <div className="col" data-aos="fade-up" data-aos-delay={delayValue}>
       <div className="project">
         <h5>{title}</h5>
         <div className="tag-list">{tagElements}</div>

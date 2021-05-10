@@ -1,5 +1,6 @@
 * {
   font-family: $main-font;
+  color: $main-font-color;
 }
 
 //navbar
@@ -130,26 +131,26 @@ nav {
       .project {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         width: 100%;
-        padding: 15px 30px;
+        padding: 20px 30px;
         border: 1px solid $main-gray-opacity;
         h5 {
           font-size: 20px;
           color: $main-blue;
-          margin-bottom: 10px;
+          margin-bottom: 1rem;
         }
         .tag-list {
           display: flex;
           margin-bottom: 1rem;
           .tag {
+            text-transform: uppercase;
             font-size: 10px;
             padding: 4px 6px;
             border-radius: 3px;
             background: #d6d7d8;
             background: #a9b0be;
             color: #fff;
-            margin-right: 3px;
+            margin-right: 5px;
           }
         }
         p {
@@ -158,6 +159,7 @@ nav {
         .links {
           display: flex;
           justify-content: space-between;
+          margin-top: auto;
           a {
             @extend %button;
           }
