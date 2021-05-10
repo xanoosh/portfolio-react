@@ -1,11 +1,11 @@
-import '../../scss/main.scss';
+// import '../../scss/main.scss';
 import { Link } from 'react-router-dom';
 //components:
 import Nav from './Nav';
-const Main = () => {
+const Main = ({ projects }) => {
   return (
     <>
-      <Nav />
+      <Nav projects={projects} />
       <div className="row">
         <div className="col">
           <div className="project">

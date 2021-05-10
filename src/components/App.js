@@ -1,9 +1,12 @@
-import { ReactRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import '../App.scss';
 
 //project components:
-import Main from './components/main/Main';
-import Quiz from './components/main/Quiz';
+import Main from './main/Main';
+import Quiz from './quiz/Quiz';
+
+//list of projects:
+const projectList = [{ path: '/quiz', title: 'quiz', id: 1 }];
 
 function App() {
   return (
@@ -11,7 +14,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact>
-            <Main />
+            <Main projects={projectList} />
           </Route>
           <Route path="/quiz" exact>
             <Quiz />
