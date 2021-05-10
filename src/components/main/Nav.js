@@ -3,7 +3,12 @@ const Nav = ({ projects }) => {
   const navContent = projects.map((project) => (
     <NavEl path={project.path} title={project.title} id={project.id} />
   ));
-  return <ul>{navContent}</ul>;
+  return (
+    <nav>
+      <ul>{navContent}</ul>
+      <span className="toggler"></span>
+    </nav>
+  );
 };
 
 export default Nav;

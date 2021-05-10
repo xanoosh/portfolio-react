@@ -1,7 +1,58 @@
 * {
   font-family: $main-font;
-  background: $main-bg-color;
 }
+
+//navbar
+
+nav {
+  width: 100%;
+  padding: 15px 10px;
+  background: $main-bg-color;
+  .toggler {
+    //hamburger ripped from bootstrap svg
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    color: $white;
+  }
+  display: flex;
+  justify-content: flex-end;
+  ul {
+    display: none;
+    justify-content: space-around;
+    flex: 1;
+    list-style: none;
+    li {
+      padding: 5px;
+      text-align: left;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    .toggler {
+      display: none;
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      flex: 1;
+      li {
+        padding: 5px;
+        text-align: center;
+        a {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+//project cards
 
 .row {
   display: flex;
@@ -22,5 +73,3 @@
     }
   }
 }
-
-//navbar
