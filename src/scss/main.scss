@@ -15,37 +15,62 @@ nav {
     width: 1.5em;
     height: 1.5em;
     color: $white;
+    cursor: pointer;
   }
   display: flex;
   justify-content: flex-end;
   ul {
-    display: none;
+    max-height: 0;
+    position: relative;
+    top: 100%;
+    // height: auto;
+    flex-direction: column;
     justify-content: space-around;
     flex: 1;
     list-style: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s ease-in-out;
     li {
+      &:first-of-type {
+        padding-top: 40px;
+      }
       padding: 5px;
       text-align: left;
       a {
-        color: $white;
+        display: block;
+        color: $link-color;
         text-decoration: none;
+        &:hover {
+          color: $white;
+        }
       }
     }
+  }
+  ul.show {
+    max-height: 1000px;
+    pointer-events: all;
+    opacity: 1;
   }
   @media (min-width: 992px) {
     .toggler {
       display: none;
     }
-    ul {
+    ul,
+    ul.show {
       display: flex;
+      flex-direction: row;
       justify-content: space-around;
       flex: 1;
+      max-height: 1000px;
+      opacity: 1;
+      pointer-events: all;
       li {
         padding: 5px;
         text-align: center;
-        a {
-          color: $white;
-          text-decoration: none;
+
+        &:first-of-type {
+          padding-top: 5px;
         }
       }
     }

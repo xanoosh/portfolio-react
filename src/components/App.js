@@ -8,13 +8,13 @@ import Quiz from './quiz/Quiz';
 //list of projects:
 const projectList = [
   { path: '/quiz', title: 'Quiz', id: 0 },
-  { path: '/poker-calculator', title: 'Texas Holdem Calculator', id: 0 },
-  { path: '/recipe-app', title: 'Recipe app', id: 0 },
-  { path: '/dice-app', title: 'Dice', id: 0 },
-  { path: '/memory-app', title: 'Memory', id: 0 },
-  { path: '/snake', title: 'Snake', id: 0 },
-  { path: '/timezone-app', title: 'Timezone app', id: 0 },
-  { path: '/map-generator', title: 'Map Generator', id: 0 },
+  { path: '/poker-calculator', title: 'Texas Holdem Calculator', id: 1 },
+  { path: '/recipe-app', title: 'Recipe app', id: 2 },
+  { path: '/dice-app', title: 'Dice', id: 3 },
+  { path: '/memory-app', title: 'Memory', id: 4 },
+  { path: '/snake', title: 'Snake', id: 5 },
+  { path: '/timezone-app', title: 'Timezone app', id: 6 },
+  { path: '/map-generator', title: 'Map Generator', id: 7 },
 ];
 
 function App() {
