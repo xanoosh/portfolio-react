@@ -38,6 +38,82 @@ const Data = {
     { title: 30, value: 'amount=30' },
     { title: 40, value: 'amount=40' },
   ],
+  TESTRESPONSEDATA: [
+    {
+      category: 'History',
+      type: 'multiple',
+      difficulty: 'medium',
+      question:
+        'The crown of the Empire State Building was originally built for what purpose?',
+      correct_answer: 'Airship Dock',
+      incorrect_answers: ['Lightning Rod', 'Antennae', 'Flag Pole'],
+    },
+    {
+      category: 'Entertainment: Television',
+      type: 'multiple',
+      difficulty: 'easy',
+      question:
+        'Which of these characters in &quot;Stranger Things&quot; has the power of Telekinesis?',
+      correct_answer: 'Eleven',
+      incorrect_answers: ['Mike', 'Lucas', 'Karen'],
+    },
+    {
+      category: 'Geography',
+      type: 'multiple',
+      difficulty: 'hard',
+      question: 'What is the Finnish word for &quot;Finland&quot;?',
+      correct_answer: 'Suomi',
+      incorrect_answers: ['Eesti', 'Magyarorsz&aacute;g', 'Sverige'],
+    },
+    {
+      category: 'General Knowledge',
+      type: 'multiple',
+      difficulty: 'easy',
+      question: 'Which restaurant&#039;s mascot is a clown?',
+      correct_answer: 'McDonald&#039;s',
+      incorrect_answers: ['Whataburger', 'Burger King', 'Sonic'],
+    },
+    {
+      category: 'Entertainment: Japanese Anime & Manga',
+      type: 'multiple',
+      difficulty: 'medium',
+      question:
+        'In &quot;Toriko&quot;, which of the following foods is knowingly compatible with Toriko?',
+      correct_answer: 'Poison Potato',
+      incorrect_answers: ['Mors Oil', 'Alpacookie', 'Parmesansho Fruit'],
+    },
+    {
+      category: 'Entertainment: Video Games',
+      type: 'multiple',
+      difficulty: 'medium',
+      question:
+        'Which of these is not a DLC vehicle in &quot;Mario Kart 8&quot;?',
+      correct_answer: 'Wild Wiggler',
+      incorrect_answers: ['Bone Rattler', 'B Dasher', '300 SL Roadster'],
+    },
+    {
+      category: 'Entertainment: Board Games',
+      type: 'multiple',
+      difficulty: 'hard',
+      question:
+        'The board game &quot;Ra&quot; was designed by which designer? ',
+      correct_answer: 'Reiner Knizia',
+      incorrect_answers: ['Bruno Cathala', 'Uwe Rosenburg', 'Allison Kline'],
+    },
+    {
+      category: 'Entertainment: Comics',
+      type: 'multiple',
+      difficulty: 'medium',
+      question:
+        'What is the real name of the &quot;Master Of Magnetism&quot; Magneto?',
+      correct_answer: 'Max Eisenhardt',
+      incorrect_answers: [
+        'Charles Xavier',
+        'Pietro Maximoff',
+        'Johann Schmidt',
+      ],
+    },
+  ],
 };
 
 export default Data;
