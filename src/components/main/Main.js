@@ -5,7 +5,9 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 //components:
 import Nav from './Nav';
-import ProjectCards from './ProjectCards';
+import SectionProjectCards from './SectionProjectCards';
+import SectionImages from './SectionImages';
+import Footer from './Footer';
 //data:
 import projectsData from './Data';
 
@@ -16,7 +18,9 @@ const Main = () => {
   return (
     <>
       <Nav projects={projectsData} />
-      <ProjectCards projectList={projectsData} />
+      <SectionProjectCards projectList={projectsData} />
+      <SectionImages />
+      <Footer text="Example footer, all rights reserved &copy;" />
     </>
   );
 };

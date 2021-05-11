@@ -1,6 +1,6 @@
 import SingleProjectCard from './SingleProjectCard';
 
-const ProjectCards = ({ projectList }) => {
+const SectionProjectCards = ({ projectList }) => {
   // let AOSanimationDelay = 0;
   const projects = projectList.map((project, index) => (
     <SingleProjectCard
@@ -19,4 +19,4 @@ const ProjectCards = ({ projectList }) => {
   );
 };
 
-export default ProjectCards;
+export default SectionProjectCards;
