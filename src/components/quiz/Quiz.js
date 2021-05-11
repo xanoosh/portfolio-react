@@ -51,6 +51,12 @@ const Quiz = () => {
       setLoopStarted(!loopStarted);
     };
     request();
+    // (() => {
+    //   const result = TESTRESPONSEDATA;
+    //   setQuestionList(result);
+    //   console.log(result);
+    //   setLoopStarted(!loopStarted);
+    // })();
   };
 
   return (
