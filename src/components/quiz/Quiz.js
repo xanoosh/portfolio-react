@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 //quiz data for select values:
 import Data from './Data.js';
 
@@ -14,6 +15,19 @@ const Quiz = () => {
   const [numberOfQuestionsValue, setNumberOfQuestionsValue] = useState(
     NUMBEROFQUESTIONS[0].value
   );
+  const [questionList, setQuestionList] = useState([]);
+  const [loopStarted, setLoopStarted] = useState(false);
+
+  useEffect(() => {
+    //logic for gameloop start/end
+    if (loopStarted) {
+      // initializeLoop
+    }
+    if (!loopStarted) {
+      //endgame i guess
+    }
+  }, [loopStarted]);
+
   const handleChange = (e) => {
     if (e.target.name === 'categories') {
       setCategoriesValue(e.target.value);
@@ -24,6 +38,19 @@ const Quiz = () => {
     if (e.target.name === 'number of questions') {
       setNumberOfQuestionsValue(e.target.value);
     }
+  };
+
+  const fetchData = () => {
+    const url = `https://opentdb.com/api.php?${numberOfQuestionsValue}${categoriesValue}${difficultyValue}&type=multiple`;
+    console.log(url);
+    const request = async () => {
+      const response = await fetch(url);
+      const questionsData = await response.json();
+      setQuestionList(questionsData.results);
+      console.log(questionsData.results);
+      setLoopStarted(!loopStarted);
+    };
+    request();
   };
 
   return (
@@ -46,6 +73,7 @@ const Quiz = () => {
         onChange={handleChange}
         value={numberOfQuestionsValue}
       />
+      <button onClick={fetchData}>Start</button>
     </div>
   );
 };
