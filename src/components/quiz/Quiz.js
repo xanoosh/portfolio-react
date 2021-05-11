@@ -5,7 +5,7 @@ import Data from './Data.js';
 
 //components:
 import Select from './Select';
-
+import Questions from './Questions';
 //destructure data:
 const { CATEGORIES, DIFFICULTY, NUMBEROFQUESTIONS, TESTRESPONSEDATA } = Data;
 
@@ -16,17 +16,22 @@ const Quiz = () => {
     NUMBEROFQUESTIONS[0].value
   );
   const [questionList, setQuestionList] = useState([]);
-  const [loopStarted, setLoopStarted] = useState(false);
+  const [loop, setLoop] = useState(false);
+  const [questionIndex, setQuestionIndex] = useState(0);
 
   useEffect(() => {
     //logic for gameloop start/end
-    if (loopStarted) {
-      // initializeLoop
+    if (loop) {
+      setTimeout(() => {
+        setQuestionIndex((prev) => prev + 1);
+      }, 3000);
     }
-    if (!loopStarted) {
+
+    if (!loop) {
       //endgame i guess
+      console.log('loopEnded');
     }
-  }, [loopStarted]);
+  }, [loop]);
 
   const handleChange = (e) => {
     if (e.target.name === 'categories') {
@@ -40,6 +45,10 @@ const Quiz = () => {
     }
   };
 
+  const handleAnswer = (e) => {
+    console.log(e.target.value);
+  };
+
   const fetchData = () => {
     const url = `https://opentdb.com/api.php?${numberOfQuestionsValue}${categoriesValue}${difficultyValue}&type=multiple`;
     console.log(url);
@@ -48,7 +57,7 @@ const Quiz = () => {
       const questionsData = await response.json();
       setQuestionList(questionsData.results);
       console.log(questionsData.results);
-      setLoopStarted(!loopStarted);
+      setLoop(true);
     };
     request();
     // (() => {
@@ -58,28 +67,38 @@ const Quiz = () => {
     //   setLoopStarted(!loopStarted);
     // })();
   };
-
   return (
     <div>
-      <Select
-        title="categories"
-        valuesArr={CATEGORIES}
-        onChange={handleChange}
-        value={categoriesValue}
-      />
-      <Select
-        title="difficulty"
-        valuesArr={DIFFICULTY}
-        onChange={handleChange}
-        value={difficultyValue}
-      />
-      <Select
-        title="number of questions"
-        valuesArr={NUMBEROFQUESTIONS}
-        onChange={handleChange}
-        value={numberOfQuestionsValue}
-      />
-      <button onClick={fetchData}>Start</button>
+      {!loop && (
+        <>
+          <Select
+            title="categories"
+            valuesArr={CATEGORIES}
+            onChange={handleChange}
+            value={categoriesValue}
+          />
+          <Select
+            title="difficulty"
+            valuesArr={DIFFICULTY}
+            onChange={handleChange}
+            value={difficultyValue}
+          />
+          <Select
+            title="number of questions"
+            valuesArr={NUMBEROFQUESTIONS}
+            onChange={handleChange}
+            value={numberOfQuestionsValue}
+          />
+          <button onClick={fetchData}>Start</button>
+        </>
+      )}
+      {loop && (
+        <Questions
+          list={questionList}
+          click={handleAnswer}
+          index={questionIndex}
+        />
+      )}
     </div>
   );
 };
