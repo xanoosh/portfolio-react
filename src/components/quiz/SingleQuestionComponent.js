@@ -11,7 +11,7 @@ const SingleQuestionComponent = ({ element, click }) => {
       key={i}
       className="answer"
       value={el.isCorrect}
-      onClick={() => click}
+      onClick={(e) => click(e)}
     >
       {el.answer} x
     </button>
