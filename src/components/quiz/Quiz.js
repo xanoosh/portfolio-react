@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 //quiz data for select values:
-import Data from './Data.js';
+import DataQuiz from './DataQuiz.js';
 
 //components:
 import Select from './Select';
 import Questions from './Questions';
 //destructure data:
-const { CATEGORIES, DIFFICULTY, NUMBEROFQUESTIONS, TESTRESPONSEDATA } = Data;
+const { CATEGORIES, DIFFICULTY, NUMBEROFQUESTIONS, TESTRESPONSEDATA } =
+  DataQuiz;
 
 const Quiz = () => {
   const [categoriesValue, setCategoriesValue] = useState(CATEGORIES[0].value);
