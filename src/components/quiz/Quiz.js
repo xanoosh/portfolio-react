@@ -20,19 +20,33 @@ const Quiz = () => {
   const [loop, setLoop] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
 
+  // useEffect(() => {
+  //   //logic for gameloop start/end
+  //   if (loop) {
+  //     setTimeout(() => {
+  //       setQuestionIndex((prev) => prev + 1);
+  //     }, 3000);
+  //   }
+
+  //   if (!loop) {
+  //     //endgame i guess
+  //     console.log('loopEnded');
+  //   }
+  // }, [loop]);
+
   useEffect(() => {
-    //logic for gameloop start/end
     if (loop) {
+      console.log('mount');
       setTimeout(() => {
-        setQuestionIndex((prev) => prev + 1);
+        if (questionIndex < TESTRESPONSEDATA.length) {
+          console.log(questionIndex);
+          console.log(TESTRESPONSEDATA.length);
+          setQuestionIndex((prev) => prev + 1);
+          console.log(`questionIndex change number ${questionIndex}`);
+        }
       }, 3000);
     }
-
-    if (!loop) {
-      //endgame i guess
-      console.log('loopEnded');
-    }
-  }, [loop]);
+  }, [questionIndex, loop]);
 
   const handleChange = (e) => {
     if (e.target.name === 'categories') {
