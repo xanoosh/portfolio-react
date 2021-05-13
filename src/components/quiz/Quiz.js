@@ -89,7 +89,7 @@ const Quiz = () => {
     })();
   };
   return (
-    <div>
+    <div className="quiz">
       {!loop && !quizEnd && (
         <>
           <Select
@@ -110,7 +110,9 @@ const Quiz = () => {
             onChange={handleChange}
             value={numberOfQuestionsValue}
           />
-          <button onClick={fetchData}>Start</button>
+          <button className="btn-fixed-bottom" onClick={fetchData}>
+            Start
+          </button>
         </>
       )}
       {loop && (
@@ -124,6 +126,9 @@ const Quiz = () => {
       {!loop && quizEnd && (
         <div>
           <h1>END</h1>
+          <button className="btn-fixed-bottom" onClick={fetchData}>
+            Restart
+          </button>
         </div>
       )}
     </div>

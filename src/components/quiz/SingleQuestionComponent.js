@@ -43,7 +43,7 @@ const SingleQuestionComponent = ({
       <p>{element.question}</p>
 
       {buttons}
-      <button className="next" onClick={nextHandler}>
+      <button className="btn-fixed-bottom" onClick={nextHandler}>
         NEXT
       </button>
     </div>
