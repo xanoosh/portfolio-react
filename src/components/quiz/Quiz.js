@@ -53,20 +53,20 @@ const Quiz = () => {
   const fetchData = () => {
     const url = `https://opentdb.com/api.php?${numberOfQuestionsValue}${categoriesValue}${difficultyValue}&type=multiple`;
     console.log(url);
-    const request = async () => {
-      const response = await fetch(url);
-      const questionsData = await response.json();
-      setQuestionList(questionsData.results);
-      console.log(questionsData.results);
-      setLoop(true);
-    };
-    request();
-    // (() => {
-    //   const result = TESTRESPONSEDATA;
-    //   setQuestionList(result);
-    //   console.log(result);
-    //   setLoopStarted(!loopStarted);
-    // })();
+    // const request = async () => {
+    //   const response = await fetch(url);
+    //   const questionsData = await response.json();
+    //   setQuestionList(questionsData.results);
+    //   console.log(questionsData.results);
+    //   setLoop(true);
+    // };
+    // request();
+    (() => {
+      const result = TESTRESPONSEDATA;
+      setQuestionList(result);
+      console.log(result);
+      setLoop(!loop);
+    })();
   };
   return (
     <div>

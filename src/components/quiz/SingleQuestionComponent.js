@@ -1,19 +1,26 @@
 const SingleQuestionComponent = ({ element, click }) => {
-  const answers = [element.correct_answer, ...element.incorrect_answers].map(
-    (answer, i) => {
-      <button
-        className="answer"
-        value={i === 0 ? true : false}
-        onClick={() => click}
-      >
-        {answer}
-      </button>;
-    }
-  );
+  let answers = [element.correct_answer, ...element.incorrect_answers];
+  console.log(answers);
+  //add boolean to answer
+  answers = answers.map((answer, index) => {
+    const isCorrect = index === 0 ? true : false;
+    return { answer, isCorrect };
+  });
+  const buttons = answers.map((el, i) => (
+    <button
+      key={i}
+      className="answer"
+      value={el.isCorrect}
+      onClick={() => click}
+    >
+      {el.answer} x
+    </button>
+  ));
   return (
     <div className="question">
       <p>{element.question}</p>
-      {answers}
+
+      {buttons}
     </div>
   );
 };
