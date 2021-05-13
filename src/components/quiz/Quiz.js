@@ -18,35 +18,33 @@ const Quiz = () => {
   );
   const [questionList, setQuestionList] = useState([]);
   const [loop, setLoop] = useState(false);
+  const [quizEnd, setQuizEnd] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
+  // const [questionTimeout, setQuestionTimeout] = useState(null);
 
-  // useEffect(() => {
-  //   //logic for gameloop start/end
-  //   if (loop) {
-  //     setTimeout(() => {
-  //       setQuestionIndex((prev) => prev + 1);
-  //     }, 3000);
-  //   }
-
-  //   if (!loop) {
-  //     //endgame i guess
-  //     console.log('loopEnded');
-  //   }
-  // }, [loop]);
-
+  //value for tiemout:
+  let questionTimeout = null;
   useEffect(() => {
-    if (loop) {
-      console.log('mount');
-      setTimeout(() => {
-        if (questionIndex < TESTRESPONSEDATA.length) {
-          console.log(questionIndex);
-          console.log(TESTRESPONSEDATA.length);
-          setQuestionIndex((prev) => prev + 1);
-          console.log(`questionIndex change number ${questionIndex}`);
-        }
+    timeoutReset();
+  }, [questionIndex, loop, quizEnd]);
+
+  const timeoutReset = () => {
+    // setQuestionTimeout((prev) => {
+    questionTimeout = null;
+    // });
+    if (loop && questionIndex < TESTRESPONSEDATA.length - 1) {
+      // find method to clear timeout on each funcion call
+      // removeTimeout(prev);
+      questionTimeout = setTimeout(() => {
+        console.log(TESTRESPONSEDATA.length);
+        setQuestionIndex((prev) => prev + 1);
       }, 3000);
     }
-  }, [questionIndex, loop]);
+    if (loop && questionIndex === TESTRESPONSEDATA.length - 1) {
+      setLoop(!loop);
+      setQuizEnd(!quizEnd);
+    }
+  };
 
   const handleChange = (e) => {
     if (e.target.name === 'categories') {
@@ -64,6 +62,12 @@ const Quiz = () => {
     console.log(e.target);
     if (e.target.value === 'true') console.log('correct!');
     if (e.target.value === 'false') console.log('incorrect!');
+  };
+  const handleNext = () => {
+    timeoutReset();
+    setQuestionIndex((prev) => {
+      return prev + 1;
+    });
   };
 
   const fetchData = () => {
@@ -86,7 +90,7 @@ const Quiz = () => {
   };
   return (
     <div>
-      {!loop && (
+      {!loop && !quizEnd && (
         <>
           <Select
             title="categories"
@@ -112,9 +116,15 @@ const Quiz = () => {
       {loop && (
         <Questions
           list={questionList}
-          click={handleAnswer}
+          answerHandler={handleAnswer}
+          nextHandler={handleNext}
           index={questionIndex}
         />
+      )}
+      {!loop && quizEnd && (
+        <div>
+          <h1>END</h1>
+        </div>
       )}
     </div>
   );

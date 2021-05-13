@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 
-const SingleQuestionComponent = ({ element, click }) => {
+const SingleQuestionComponent = ({
+  element,
+  answerHandler,
+  nextHandler,
+  index,
+}) => {
   useEffect(() => {}, [element]);
   let answers = [element.correct_answer, ...element.incorrect_answers];
   console.log(answers);
@@ -27,16 +32,20 @@ const SingleQuestionComponent = ({ element, click }) => {
       key={i}
       className="answer"
       value={el.isCorrect}
-      onClick={(e) => click(e)}
+      onClick={(e) => answerHandler(e)}
     >
       {el.answer} x
     </button>
   ));
   return (
     <div className="question">
+      <p>{index + 1}.</p>
       <p>{element.question}</p>
 
       {buttons}
+      <button className="next" onClick={nextHandler}>
+        NEXT
+      </button>
     </div>
   );
 };

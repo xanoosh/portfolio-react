@@ -1,9 +1,14 @@
 import SingleQuestionComponent from './SingleQuestionComponent';
 
-const Questions = ({ list, click, index }) => {
+const Questions = ({ list, answerHandler, nextHandler, index }) => {
   return (
     <div className="section-questions">
-      <SingleQuestionComponent element={list[index]} click={click} />
+      <SingleQuestionComponent
+        element={list[index]}
+        answerHandler={answerHandler}
+        nextHandler={nextHandler}
+        index={index}
+      />
     </div>
   );
 };
