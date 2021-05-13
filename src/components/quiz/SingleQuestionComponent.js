@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
+
 const SingleQuestionComponent = ({ element, click }) => {
+  useEffect(() => {}, [element]);
   let answers = [element.correct_answer, ...element.incorrect_answers];
   console.log(answers);
   //add boolean to answer
@@ -6,7 +9,20 @@ const SingleQuestionComponent = ({ element, click }) => {
     const isCorrect = index === 0 ? true : false;
     return { answer, isCorrect };
   });
-  const buttons = answers.map((el, i) => (
+  const shuffleArray = (array) => {
+    let m = array.length,
+      t,
+      i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+    console.log(array);
+    return array;
+  };
+  const buttons = shuffleArray(answers).map((el, i) => (
     <button
       key={i}
       className="answer"

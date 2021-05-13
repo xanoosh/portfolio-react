@@ -47,7 +47,9 @@ const Quiz = () => {
   };
 
   const handleAnswer = (e) => {
-    console.log(e.target.value);
+    console.log(e.target);
+    if (e.target.value === 'true') console.log('correct!');
+    if (e.target.value === 'false') console.log('incorrect!');
   };
 
   const fetchData = () => {
