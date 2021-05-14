@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 //quiz data for select values:
 import DataQuiz from './DataQuiz.js';
 
@@ -32,17 +32,19 @@ const Quiz = () => {
   remove interval on unmount !!!
   */
 
-  const intervalReset = () => {
-    clearInterval(questionInterval);
-
+  const intervalReset = (index, interval) => {
+    clearInterval(interval);
+    // questionInterval = null;
+    console.log('interval cleared');
     if (!quizEnd) {
-      if (loop && questionIndex < TESTRESPONSEDATA.length) {
-        questionInterval = setInterval(() => {
-          console.log(`${questionIndex} - question index`);
-          setQuestionIndex(questionIndex + 1);
+      if (loop && index < TESTRESPONSEDATA.length) {
+        interval = setInterval(() => {
+          console.log(`${index} - question index`);
+          setQuestionIndex(index + 1);
         }, 3000);
       }
-      if (questionIndex === TESTRESPONSEDATA.length) {
+      if (index === TESTRESPONSEDATA.length) {
+        setQuizEnd(true);
         console.log('Quizend');
       }
       // if (loop && questionIndex < TESTRESPONSEDATA.length) {
@@ -83,8 +85,8 @@ const Quiz = () => {
     setQuestionIndex((prev) => {
       return prev + 1;
     });
-    console.log('next');
-    intervalReset();
+    console.log('next index set');
+    intervalReset(questionIndex, questionInterval);
   };
 
   const fetchData = () => {
@@ -139,6 +141,7 @@ const Quiz = () => {
           answerHandler={handleAnswer}
           nextHandler={handleNext}
           index={questionIndex}
+          interval={questionInterval}
         />
       )}
       {!loop && quizEnd && (
