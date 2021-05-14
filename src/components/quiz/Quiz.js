@@ -23,26 +23,41 @@ const Quiz = () => {
   // const [questionTimeout, setQuestionTimeout] = useState(null);
 
   //value for tiemout:
-  let questionTimeout = null;
-  useEffect(() => {
-    timeoutReset();
-  }, [questionIndex, loop, quizEnd]);
+  let questionInterval = null;
 
-  const timeoutReset = () => {
-    // setQuestionTimeout((prev) => {
-    questionTimeout = null;
-    // });
-    if (loop && questionIndex < TESTRESPONSEDATA.length - 1) {
-      // find method to clear timeout on each funcion call
-      // removeTimeout(prev);
-      questionTimeout = setTimeout(() => {
-        console.log(TESTRESPONSEDATA.length);
-        setQuestionIndex((prev) => prev + 1);
-      }, 10000);
-    }
-    if (loop && questionIndex === TESTRESPONSEDATA.length - 1) {
-      setLoop(!loop);
-      setQuizEnd(!quizEnd);
+  /* 
+  change useeffect on update only
+  to setinterval
+  (make function resetting interval)
+  remove interval on unmount !!!
+  */
+
+  const intervalReset = () => {
+    clearInterval(questionInterval);
+
+    if (!quizEnd) {
+      if (loop && questionIndex < TESTRESPONSEDATA.length) {
+        questionInterval = setInterval(() => {
+          console.log(`${questionIndex} - question index`);
+          setQuestionIndex(questionIndex + 1);
+        }, 3000);
+      }
+      if (questionIndex === TESTRESPONSEDATA.length) {
+        console.log('Quizend');
+      }
+      // if (loop && questionIndex < TESTRESPONSEDATA.length) {
+      //   questionInterval = setInterval(() => {
+      //     console.log(`${questionIndex} - still on`);
+      //     setQuestionIndex(questionIndex + 1);
+      //   }, 3000);
+      // }
+      // if (questionIndex === TESTRESPONSEDATA.length) {
+      //   clearInterval(questionInterval);
+      //   // console.log(`${questionIndex} - `);
+      //   console.log('clear finally');
+      //   setLoop(false);
+      //   setQuizEnd(true);
+      // }
     }
   };
 
@@ -60,14 +75,16 @@ const Quiz = () => {
 
   const handleAnswer = (e) => {
     console.log(e.target);
+    console.log(e.props.value);
     if (e.target.value === 'true') console.log('correct!');
     if (e.target.value === 'false') console.log('incorrect!');
   };
   const handleNext = () => {
-    timeoutReset();
     setQuestionIndex((prev) => {
       return prev + 1;
     });
+    console.log('next');
+    intervalReset();
   };
 
   const fetchData = () => {
@@ -115,8 +132,9 @@ const Quiz = () => {
           </button>
         </>
       )}
-      {loop && (
+      {loop && !quizEnd && (
         <Questions
+          loopHandler={intervalReset}
           list={questionList}
           answerHandler={handleAnswer}
           nextHandler={handleNext}

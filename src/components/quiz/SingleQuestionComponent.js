@@ -6,6 +6,7 @@ const SingleQuestionComponent = ({
   nextHandler,
   index,
 }) => {
+  // console.log(element);
   useEffect(() => {}, [element]);
   let answers = [element.correct_answer, ...element.incorrect_answers];
   console.log(answers);
@@ -24,7 +25,7 @@ const SingleQuestionComponent = ({
       array[m] = array[i];
       array[i] = t;
     }
-    console.log(array);
+    // console.log(array);
     return array;
   };
   const buttons = shuffleArray(answers).map((el, i) => (
