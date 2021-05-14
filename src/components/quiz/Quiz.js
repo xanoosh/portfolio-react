@@ -38,7 +38,7 @@ const Quiz = () => {
       questionTimeout = setTimeout(() => {
         console.log(TESTRESPONSEDATA.length);
         setQuestionIndex((prev) => prev + 1);
-      }, 3000);
+      }, 10000);
     }
     if (loop && questionIndex === TESTRESPONSEDATA.length - 1) {
       setLoop(!loop);

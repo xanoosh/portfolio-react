@@ -1,6 +1,6 @@
-// main div
+/* quiz container start */
 .quiz {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: $quiz-font;
   text-transform: uppercase;
   color: $white;
   width: 100%;
@@ -12,68 +12,94 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-}
-
-/* select styling */
-.select {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 90%;
-  //   margin: 5px 20px;
-  label {
-    display: flex;
-    align-items: center;
-  }
-  select {
-    background: #333533;
+  /* select styling start*/
+  .select {
     position: relative;
-    padding: 5px 3px;
-    border: 1px solid #fff;
-    &::after {
-      position: absolute;
-      content: '';
-      z-index: 10;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    //   margin: 5px 20px;
+    label {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+      @media (min-width: 440px) {
+        width: 220px;
+        padding-right: 20px;
+      }
+    }
+    select {
+      font-family: $quiz-font;
+      background: #333533;
+      color: $white;
+      position: relative;
+      padding: 5px 3px;
+      border: 1px solid #fff;
+      margin-bottom: 10px;
+      &::after {
+        position: absolute;
+        content: '';
+        z-index: 10;
+      }
+      width: 100%;
+      @media (min-width: 440px) {
+        width: 170px;
+      }
     }
   }
-}
-.select-selected {
-  background-color: DodgerBlue;
-}
-
-@media (min-width: 440px) {
-  .select select {
-    width: 170px;
+  .select-selected {
+    background-color: DodgerBlue;
   }
-  .select label {
-    width: 220px;
-    padding-right: 20px;
+  /* select styling end*/
+  /* buttons styling start*/
+  button {
+    font-family: $quiz-font;
+    border: none;
+    border-radius: 0.1rem;
+    color: #fff;
+    background: $quiz-btn;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid $quiz-btn;
+    cursor: pointer;
+    &.btn-fixed-bottom {
+      position: absolute;
+      bottom: 50px;
+      width: 100px;
+      margin-top: 7px;
+      padding: 12px 20px;
+      transition: all 3s ease-in-out;
+      left: calc(50% - 50px);
+    }
+    &.answer {
+      transition: all 0.3s ease-in-out;
+      font-size: 16px;
+      width: 80vw !important;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      display: block;
+      &.true {
+        background-color: $quiz-true;
+      }
+      &.false {
+        background-color: $quiz-false;
+      }
+    }
   }
-}
-@media (max-width: 439px) {
-  .select select,
-  .select label {
+  /* buttons styling end*/
+  /* question styling start */
+  .question {
+    p {
+      margin-bottom: 30px;
+    }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    margin-bottom: 10px;
   }
+  /* question styling end */
 }
-
-// buttons:
-.quiz button {
-  border: none;
-  border-radius: 0.1rem;
-  color: #fff;
-  background: $quiz-btn;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid $quiz-btn;
-  cursor: pointer;
-  &.btn-fixed-bottom {
-    position: absolute;
-    bottom: 50px;
-    width: 100px;
-    margin-top: 7px;
-    padding: 12px 20px;
-    transition: all 3s ease-in-out;
-  }
-}
+/* quiz container end */
