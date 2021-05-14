@@ -31,8 +31,9 @@ const Quiz = () => {
 
   const intervalReset = (index) => {
     window.clearInterval(questionInterval);
+    const lastIndex = TESTRESPONSEDATA.length - 1;
     if (!quizEnd) {
-      if (loop && index < TESTRESPONSEDATA.length - 1) {
+      if (loop && index < lastIndex) {
         setQuestionInterval(
           setInterval(() => {
             // console.log(`${index} - question index`);
@@ -40,12 +41,17 @@ const Quiz = () => {
           }, 3000)
         );
       }
-      if (index === TESTRESPONSEDATA.length - 1) {
+      if (index === lastIndex) {
         window.clearInterval(questionInterval);
-        setQuizEnd(true);
-        setLoop(false);
-        console.log('Quizend');
-        setQuestionIndex((prev) => prev + 1);
+        setQuestionInterval(
+          setTimeout(() => {
+            setQuizEnd(true);
+            setLoop(false);
+            console.log('Quizend');
+          }, 3000)
+        );
+
+        // setQuestionIndex((prev) => prev + 1);
       }
       // if (loop && questionIndex < TESTRESPONSEDATA.length) {
       //   questionInterval = setInterval(() => {
@@ -87,6 +93,12 @@ const Quiz = () => {
 
     // console.log('next index set');
     // intervalReset(questionIndex, questionInterval);
+  };
+
+  const handleQuizReset = () => {
+    setQuestionIndex(0);
+    setLoop(false);
+    setQuizEnd(false);
   };
 
   const fetchData = () => {
