@@ -6,14 +6,13 @@ const Questions = ({
   nextHandler,
   index,
   loopHandler,
-  interval,
 }) => {
   useEffect(() => {
     console.log('mount...');
     console.log(`curent index on update - ${index}`);
     if (list[index]) {
       console.log('...and validated');
-      loopHandler(index, interval);
+      loopHandler(index);
     }
     // return () => {
     //   clearInterval(questionInterval);

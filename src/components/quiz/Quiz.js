@@ -20,10 +20,7 @@ const Quiz = () => {
   const [loop, setLoop] = useState(false);
   const [quizEnd, setQuizEnd] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
-  // const [questionTimeout, setQuestionTimeout] = useState(null);
-
-  //value for tiemout:
-  let questionInterval = null;
+  const [questionInterval, setQuestionInterval] = useState(null);
 
   /* 
   change useeffect on update only
@@ -32,16 +29,18 @@ const Quiz = () => {
   remove interval on unmount !!!
   */
 
-  const intervalReset = (index, interval) => {
-    clearInterval(interval);
+  const intervalReset = (index) => {
+    window.clearInterval(questionInterval);
     // questionInterval = null;
     console.log('interval cleared');
     if (!quizEnd) {
       if (loop && index < TESTRESPONSEDATA.length) {
-        interval = setInterval(() => {
-          console.log(`${index} - question index`);
-          setQuestionIndex(index + 1);
-        }, 3000);
+        setQuestionInterval(
+          setInterval(() => {
+            console.log(`${index} - question index`);
+            setQuestionIndex(index + 1);
+          }, 3000)
+        );
       }
       if (index === TESTRESPONSEDATA.length) {
         setQuizEnd(true);
@@ -82,11 +81,13 @@ const Quiz = () => {
     if (e.target.value === 'false') console.log('incorrect!');
   };
   const handleNext = () => {
+    // window.clearInterval(questionInterval);
     setQuestionIndex((prev) => {
       return prev + 1;
     });
-    console.log('next index set');
-    intervalReset(questionIndex, questionInterval);
+
+    // console.log('next index set');
+    // intervalReset(questionIndex, questionInterval);
   };
 
   const fetchData = () => {
@@ -141,7 +142,6 @@ const Quiz = () => {
           answerHandler={handleAnswer}
           nextHandler={handleNext}
           index={questionIndex}
-          interval={questionInterval}
         />
       )}
       {!loop && quizEnd && (
