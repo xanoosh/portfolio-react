@@ -1,8 +1,8 @@
-import DataRecipeApp from './DataRecipeApp';
+import DataRecipeApp from './DataRecipeApp.js';
 
 const RecipeApp = () => {
   //data for offline handling
-  const [recipeList, singleRecipe] = DataRecipeApp;
+  const { recipeList, singleRecipe } = DataRecipeApp;
   return (
     <div className="recipe-app">
       <p>Recipe app</p>
