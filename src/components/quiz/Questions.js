@@ -8,10 +8,8 @@ const Questions = ({
   loopHandler,
 }) => {
   useEffect(() => {
-    console.log('mount...');
-    console.log(`curent index on update - ${index}`);
+    // console.log(`curent index on update - ${index}`);
     if (list[index]) {
-      console.log('...and validated');
       loopHandler(index);
     }
     // return () => {

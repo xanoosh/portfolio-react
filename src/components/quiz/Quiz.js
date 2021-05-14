@@ -31,20 +31,21 @@ const Quiz = () => {
 
   const intervalReset = (index) => {
     window.clearInterval(questionInterval);
-    // questionInterval = null;
-    console.log('interval cleared');
     if (!quizEnd) {
-      if (loop && index < TESTRESPONSEDATA.length) {
+      if (loop && index < TESTRESPONSEDATA.length - 1) {
         setQuestionInterval(
           setInterval(() => {
-            console.log(`${index} - question index`);
+            // console.log(`${index} - question index`);
             setQuestionIndex(index + 1);
           }, 3000)
         );
       }
-      if (index === TESTRESPONSEDATA.length) {
+      if (index === TESTRESPONSEDATA.length - 1) {
+        window.clearInterval(questionInterval);
         setQuizEnd(true);
+        setLoop(false);
         console.log('Quizend');
+        setQuestionIndex((prev) => prev + 1);
       }
       // if (loop && questionIndex < TESTRESPONSEDATA.length) {
       //   questionInterval = setInterval(() => {
@@ -82,9 +83,7 @@ const Quiz = () => {
   };
   const handleNext = () => {
     // window.clearInterval(questionInterval);
-    setQuestionIndex((prev) => {
-      return prev + 1;
-    });
+    setQuestionIndex((prev) => prev + 1);
 
     // console.log('next index set');
     // intervalReset(questionIndex, questionInterval);
@@ -135,7 +134,7 @@ const Quiz = () => {
           </button>
         </>
       )}
-      {loop && !quizEnd && (
+      {loop && !quizEnd && questionList[questionIndex] && (
         <Questions
           loopHandler={intervalReset}
           list={questionList}
@@ -144,7 +143,7 @@ const Quiz = () => {
           index={questionIndex}
         />
       )}
-      {!loop && quizEnd && (
+      {quizEnd && (
         <div>
           <h1>END</h1>
           <button className="btn-fixed-bottom" onClick={fetchData}>
