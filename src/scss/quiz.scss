@@ -1,11 +1,8 @@
-* {
+// main div
+.quiz {
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
   color: $white;
-}
-
-// main div
-.quiz {
   width: 100%;
   height: 100vh;
   padding: 0px;

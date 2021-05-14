@@ -1,4 +1,4 @@
-* {
+.main-container {
   font-family: $main-font;
   color: $main-font-color;
 }
@@ -151,6 +151,7 @@ nav {
         }
         .tag-list {
           display: flex;
+          flex-wrap: wrap;
           margin-bottom: 1rem;
           .tag {
             text-transform: uppercase;
@@ -161,6 +162,7 @@ nav {
             background: #a9b0be;
             color: #fff;
             margin-right: 5px;
+            margin-bottom: 5px;
           }
         }
         p {

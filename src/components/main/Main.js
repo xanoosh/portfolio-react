@@ -16,12 +16,12 @@ const Main = () => {
     AOS.init();
   }, []);
   return (
-    <>
+    <div className="main-container">
       <Nav projects={projectsData} />
       <SectionProjectCards projectList={projectsData} />
       <SectionImages />
       <Footer text="Example footer, all rights reserved &copy;" />
-    </>
+    </div>
   );
 };
 
