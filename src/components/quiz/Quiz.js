@@ -6,6 +6,7 @@ import DataQuiz from './DataQuiz.js';
 //components:
 import Select from './Select';
 import Questions from './Questions';
+import Score from './Score';
 //destructure data:
 const { CATEGORIES, DIFFICULTY, NUMBEROFQUESTIONS, TESTRESPONSEDATA } =
   DataQuiz;
@@ -20,8 +21,10 @@ const Quiz = () => {
   const [loop, setLoop] = useState(false);
   const [quizEnd, setQuizEnd] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [scoreCount, setScoreCount] = useState(0);
+  //state for interval of questions
   const [questionInterval, setQuestionInterval] = useState(null);
-
+  const timePerQuestion = 3;
   /* 
   change useeffect on update only
   to setinterval
@@ -37,6 +40,7 @@ const Quiz = () => {
         setQuestionInterval(
           setInterval(() => {
             // console.log(`${index} - question index`);
+            resetBtnColors();
             setQuestionIndex(index + 1);
           }, 3000)
         );
@@ -45,6 +49,7 @@ const Quiz = () => {
         window.clearInterval(questionInterval);
         setQuestionInterval(
           setTimeout(() => {
+            resetBtnColors();
             setQuizEnd(true);
             setLoop(false);
             console.log('Quizend');
@@ -82,23 +87,40 @@ const Quiz = () => {
   };
 
   const handleAnswer = (e) => {
-    console.log(e.target);
-    console.log(e.props.value);
-    if (e.target.value === 'true') console.log('correct!');
-    if (e.target.value === 'false') console.log('incorrect!');
+    // console.log(e.props.value);
+    if (e.target.value === 'true') {
+      e.target.classList.add('true');
+      setScoreCount((prev) => prev + 1);
+    }
+    if (e.target.value === 'false') {
+      e.target.classList.add('false');
+      // console.log(e.target.parentNode.querySelector('.answer'));
+      e.target.parentNode.querySelectorAll('.answer').forEach((node) => {
+        if (node.value === 'true') node.classList.add('true-border');
+      });
+    }
   };
   const handleNext = () => {
     // window.clearInterval(questionInterval);
     setQuestionIndex((prev) => prev + 1);
-
     // console.log('next index set');
     // intervalReset(questionIndex, questionInterval);
+  };
+
+  const resetBtnColors = () => {
+    console.log('resetBtnColors');
+    document.querySelectorAll('.answer').forEach((node) => {
+      node.classList.remove('true');
+      node.classList.remove('false');
+      node.classList.remove('true-border');
+    });
   };
 
   const handleQuizReset = () => {
     setQuestionIndex(0);
     setLoop(false);
     setQuizEnd(false);
+    console.log('restart');
   };
 
   const fetchData = () => {
@@ -147,18 +169,26 @@ const Quiz = () => {
         </>
       )}
       {loop && !quizEnd && questionList[questionIndex] && (
-        <Questions
-          loopHandler={intervalReset}
-          list={questionList}
-          answerHandler={handleAnswer}
-          nextHandler={handleNext}
-          index={questionIndex}
-        />
+        <>
+          <Questions
+            loopHandler={intervalReset}
+            list={questionList}
+            answerHandler={handleAnswer}
+            nextHandler={handleNext}
+            index={questionIndex}
+            time={timePerQuestion}
+          />
+          <Score
+            questionsNum={questionList.length}
+            questionNum={questionIndex + 1}
+            scoreCount={scoreCount}
+          />
+        </>
       )}
       {quizEnd && (
         <div>
           <h1>END</h1>
-          <button className="btn-fixed-bottom" onClick={fetchData}>
+          <button className="btn-fixed-bottom" onClick={handleQuizReset}>
             Restart
           </button>
         </div>

@@ -6,6 +6,7 @@ const Questions = ({
   nextHandler,
   index,
   loopHandler,
+  time,
 }) => {
   useEffect(() => {
     // console.log(`curent index on update - ${index}`);
@@ -23,6 +24,7 @@ const Questions = ({
         answerHandler={answerHandler}
         nextHandler={nextHandler}
         index={index}
+        time={time}
       />
     </div>
   );

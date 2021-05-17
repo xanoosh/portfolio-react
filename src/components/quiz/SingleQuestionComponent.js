@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
+import TimeBar from './TimeBar';
 
 const SingleQuestionComponent = ({
   element,
   answerHandler,
   nextHandler,
   index,
+  time,
 }) => {
   // console.log(element);
   useEffect(() => {}, [element]);
@@ -40,6 +42,7 @@ const SingleQuestionComponent = ({
   ));
   return (
     <div className="question">
+      <TimeBar time={time} />
       <p>{index + 1}.</p>
       <p>{element.question}</p>
 

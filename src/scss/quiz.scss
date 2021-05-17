@@ -82,6 +82,9 @@
       &.true {
         background-color: $quiz-true;
       }
+      &.true-border {
+        border: 1px solid $quiz-true;
+      }
       &.false {
         background-color: $quiz-false;
       }
@@ -101,5 +104,43 @@
     width: 100%;
   }
   /* question styling end */
+
+  /* score styling start */
+  .score {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    .score-count {
+    }
+    .question-count {
+    }
+  }
+  /* score styling end */
+
+  /* timebar styling start */
+  @keyframes width-animation {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .timebar {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0%;
+    background: #07c837;
+    animation: width-animation linear infinite;
+    // animation-duration: 3s;
+  }
+  /* timebar styling end */
 }
 /* quiz container end */
