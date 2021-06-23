@@ -5,6 +5,7 @@ import '../App.scss';
 import Main from './main/Main';
 import Quiz from './quiz/Quiz';
 import RecipeApp from './recipe-app/RecipeApp';
+import Snake from './snake/Snake';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/recipe-app" exact>
             <RecipeApp />
+          </Route>
+          <Route path="/snake" exact>
+            <Snake />
           </Route>
         </Switch>
       </div>
