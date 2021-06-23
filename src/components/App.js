@@ -6,6 +6,7 @@ import Main from './main/Main';
 import Quiz from './quiz/Quiz';
 import RecipeApp from './recipe-app/RecipeApp';
 import Snake from './snake/Snake';
+import Memory from './memory/Memory';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/snake" exact>
             <Snake />
+          </Route>
+          <Route path="/memory" exact>
+            <Memory />
           </Route>
         </Switch>
       </div>

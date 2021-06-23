@@ -33,7 +33,7 @@ const projectsData = [
       'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API. ',
   },
   {
-    path: '/memory-app',
+    path: '/memory',
     title: 'Memory',
     id: 4,
     tags: ['REST API', 'React', 'ES6', 'html', 'css'],
@@ -43,7 +43,7 @@ const projectsData = [
     path: '/snake',
     title: 'Snake',
     id: 5,
-    tags: ['REST API', 'React', 'ES6', 'html', 'css'],
+    tags: ['React', 'ES6', 'html', 'css'],
     description:
       'DESKTOP ONLY Oldschool snake game, use arrow keys to move. Snake gets faster progressively. ',
   },

@@ -1,7 +1,7 @@
 import '../../scss/snake.scss';
 const Snake = () => {
   return (
-    <div>
+    <div className="snake-container">
       <h1>Snake main</h1>
     </div>
   );

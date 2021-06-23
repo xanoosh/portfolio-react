@@ -20,7 +20,7 @@ const Main = () => {
       <Nav projects={projectsData} />
       <SectionProjectCards projectList={projectsData} />
       <SectionImages />
-      <Footer text="Example footer, all rights reserved &copy;" />
+      <Footer text="Example footer, none rights reserved &copy;" />
     </div>
   );
 };
