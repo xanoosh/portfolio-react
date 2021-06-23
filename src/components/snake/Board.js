@@ -1,6 +1,11 @@
 const Board = ({ position }) => {
-  const txt = position.map((i) => i);
-  return <div>{txt}</div>;
+  const positionTxt = position.map((i) => (
+    <p>
+      x: {i.x},<br />
+      y:{i.y}
+    </p>
+  ));
+  return <div>{positionTxt}</div>;
 };
 
 export default Board;
