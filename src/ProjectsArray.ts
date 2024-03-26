@@ -16,8 +16,8 @@ export const projectsArray = [
       'BEM',
     ],
     buttons: [
-      { name: 'App', url: 'github-user-search-five-opal.vercel.app' },
-      { name: 'Code', url: 'https://github.com/xanoosh/github-user-search' },
+      { text: 'App', url: 'github-user-search-five-opal.vercel.app' },
+      { text: 'Code', url: 'https://github.com/xanoosh/github-user-search' },
     ],
   },
   {
@@ -36,8 +36,8 @@ export const projectsArray = [
       'CSS',
     ],
     buttons: [
-      { name: 'App', url: 'https://vite-stat-checker.vercel.app/' },
-      { name: 'Code', url: 'https://github.com/xanoosh/vite-stat-checker' },
+      { text: 'App', url: 'https://vite-stat-checker.vercel.app/' },
+      { text: 'Code', url: 'https://github.com/xanoosh/vite-stat-checker' },
     ],
   },
   {
@@ -48,7 +48,7 @@ export const projectsArray = [
 
     buttons: [
       {
-        name: 'Code',
+        text: 'Code',
         url: 'https://github.com/xanoosh/terraforming-calculator-react-native',
       },
     ],
@@ -61,7 +61,7 @@ export const projectsArray = [
 
     buttons: [
       {
-        name: 'App',
+        text: 'App',
         url: 'https://xanoosh.github.io/portfolio/snake/',
       },
     ],
@@ -72,7 +72,7 @@ export const projectsArray = [
       'This app allowes you to search for recipes by ingredients you have. Created with zero-waste approach in mind. ',
     badges: ['REST API', 'Vanilla JS', 'ES6', 'HTML', 'CSS'],
     buttons: [
-      { name: 'App', url: 'https://xanoosh.github.io/portfolio/recipe-api' },
+      { text: 'App', url: 'https://xanoosh.github.io/portfolio/recipe-api' },
     ],
   },
   {
@@ -83,7 +83,7 @@ export const projectsArray = [
 
     buttons: [
       {
-        name: 'App',
+        text: 'App',
         url: 'https://xanoosh.github.io/portfolio/snake/',
       },
     ],
@@ -96,7 +96,7 @@ export const projectsArray = [
 
     buttons: [
       {
-        name: 'App',
+        text: 'App',
         url: 'https://xanoosh.github.io/portfolio/quiz-api/',
       },
     ],
@@ -109,7 +109,7 @@ export const projectsArray = [
 
     buttons: [
       {
-        name: 'App',
+        text: 'App',
         url: 'https://xanoosh.github.io/portfolio/poker-probability/',
       },
     ],
@@ -121,7 +121,7 @@ export const projectsArray = [
 
     buttons: [
       {
-        name: 'App',
+        text: 'App',
         url: 'https://xanoosh.github.io/portfolio/poker-probability/',
       },
     ],
@@ -133,7 +133,7 @@ export const projectsArray = [
 
     buttons: [
       {
-        name: 'App',
+        text: 'App',
         url: 'https://xanoosh.github.io/portfolio/dice/',
       },
     ],

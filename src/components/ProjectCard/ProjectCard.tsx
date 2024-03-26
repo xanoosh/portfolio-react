@@ -1,4 +1,5 @@
 import Badge from '../Badge/Badge';
+import Button from '../Button/Button';
 import { ProjectCardProps } from '../../interfaces';
 
 export default function ProjectCard({
@@ -21,15 +22,8 @@ export default function ProjectCard({
         ))}
       </div>
       <div className="flex flex-row mt-auto gap-4">
-        {buttons.map((button, i: number) => (
-          <a
-            key={i}
-            target="_blank"
-            href={button.url}
-            className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            {button.name}
-          </a>
+        {buttons.map(({ text, url }, i: number) => (
+          <Button key={i} text={text} url={url} />
         ))}
       </div>
     </div>

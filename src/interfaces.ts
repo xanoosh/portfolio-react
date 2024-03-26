@@ -1,5 +1,5 @@
 interface ProjectButton {
-  name: string;
+  text: string;
   url: string;
 }
 
@@ -8,4 +8,15 @@ export interface ProjectCardProps {
   description: string;
   badges: string[];
   buttons: ProjectButton[];
+}
+
+export interface ButtonProps {
+  text: string;
+  url: string;
+  variant?: 'primary' | 'secondary';
+  disabled?: boolean;
+}
+
+export interface BadgeProps {
+  text: string;
 }

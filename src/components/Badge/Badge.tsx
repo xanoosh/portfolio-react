@@ -1,6 +1,4 @@
-export interface BadgeProps {
-  text: string;
-}
+import { BadgeProps } from '../../interfaces';
 
 export default function Badge({ text }: BadgeProps) {
   return text.length === 0 ? null : (
