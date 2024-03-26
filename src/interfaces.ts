@@ -3,7 +3,7 @@ interface ProjectButton {
   url: string;
 }
 
-export interface Project {
+export interface ProjectCardProps {
   title: string;
   description: string;
   badges: string[];
