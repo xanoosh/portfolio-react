@@ -8,7 +8,7 @@ function App() {
       <Navbar />
       <section className="py-8 px-4 bg-pattern bg-no-repeat bg-center bg-cover">
         {projectsArray.length ? (
-          <div className="flex flex-row flex-wrap gap-6">
+          <div className="flex flex-row flex-wrap gap-6 justify-center">
             {projectsArray.map(({ title, description, badges, buttons }, i) => (
               <ProjectCard
                 key={i}

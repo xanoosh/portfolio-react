@@ -8,7 +8,7 @@ export default function ProjectCard({
   buttons,
 }: ProjectCardProps) {
   return (
-    <div className="w-[20rem] flex flex-col gap-2 backdrop-blur-sm max-w-sm p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700">
+    <div className="w-[20rem] flex flex-col gap-4 backdrop-blur-sm max-w-sm p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700">
       <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
         {title}
       </h3>
