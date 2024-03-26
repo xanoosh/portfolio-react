@@ -1,5 +1,26 @@
 export const projectsArray = [
   {
+    title: 'Github user search',
+    description:
+      'App uses external Github API to fetch user projects data based on login provided. It uses front-end validation for empty field & displays messages based on response, deployed on Vercel',
+    badges: [
+      'Vite',
+      'React',
+      'TanStack Query',
+      'React Hook Form',
+      'React Router',
+      'Lazy',
+      'REST API',
+      'ES6',
+      'SASS',
+      'BEM',
+    ],
+    buttons: [
+      { name: 'App', url: 'github-user-search-five-opal.vercel.app' },
+      { name: 'Code', url: 'https://github.com/xanoosh/github-user-search' },
+    ],
+  },
+  {
     title: 'Pokemon stat calculator',
     description:
       'React app for fuzzy searching pokemon (Fuse.js integration) and calculating their stats based on formula and received data. Deployed on Vercel. ',
