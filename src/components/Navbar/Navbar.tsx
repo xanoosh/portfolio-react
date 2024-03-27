@@ -1,6 +1,8 @@
 import { Disclosure } from '@headlessui/react';
 import storybookSvgPath from '../../img/storybook.svg';
 import { NavLink } from 'react-router-dom';
+import storybookURL from '../../../storybook-static/index.html?url';
+import storybookURLTwo from '../../../storybook-static/index.html?url';
 
 export default function Navbar({
   navigation = [
@@ -43,7 +45,7 @@ export default function Navbar({
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <a
-              href="storybook-static/index.html"
+              href={storybookURL}
               target="_blank"
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
             >
@@ -56,7 +58,7 @@ export default function Navbar({
               />
             </a>
             <a
-              href="/storybook-static/index.html"
+              href={storybookURLTwo}
               target="_blank"
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
             >
