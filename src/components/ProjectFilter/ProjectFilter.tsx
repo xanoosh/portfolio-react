@@ -4,7 +4,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import Badge from '../Badge/Badge';
 
 export default function ProjectFilter() {
-  const tagList = ['tag1', 'tag2', 'tag3', 'tag4', 'tag5', 'tag6'];
+  const tagList = ['tag1', 'tag2', 'tag3'];
   const [selectedTags, setSelectedTags] = useState([]);
   return (
     <div className="w-full flex flex-col gap-6 p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700">
@@ -20,7 +20,7 @@ export default function ProjectFilter() {
               />
             </span>
           </Listbox.Button>
-          <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+          <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
             {tagList.map((tag, i) => (
               <Listbox.Option
                 key={i}
@@ -52,8 +52,8 @@ export default function ProjectFilter() {
       </Listbox>
       {/* tagList: */}
       <div className="flex gap-4">
-        {selectedTags.map((selectedTag) => (
-          <Badge text={selectedTag} />
+        {selectedTags.map((selectedTag, i) => (
+          <Badge key={i} text={selectedTag} />
         ))}
       </div>
     </div>
