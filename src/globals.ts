@@ -27,9 +27,9 @@ export const projectsArray = [
     badges: [
       'Vite',
       'React',
-      'Fuse',
-      'Headless',
-      'Local storage',
+      'Fuse.js',
+      'Headless Components',
+      'Local Storage',
       'REST API',
       'ES6',
       'HTML',
@@ -44,7 +44,7 @@ export const projectsArray = [
     title: 'Terraforming calculator',
     description:
       'This app allowes you to search for recipes by ingredients you have. Created with zero-waste approach in mind. ',
-    badges: ['React Native', 'Expo', 'Async storage', 'ES6'],
+    badges: ['React Native', 'Expo', 'Async Storage', 'ES6'],
 
     buttons: [
       {
@@ -57,7 +57,7 @@ export const projectsArray = [
     title: 'Snake',
     description:
       'Desktop only oldschool snake game, use arrow keys to move. Snake gets progressively faster.',
-    badges: ['Vanilla JS', 'ES6', 'Html', 'Css'],
+    badges: ['ES6', 'HTML', 'CSS'],
 
     buttons: [
       {
@@ -70,7 +70,7 @@ export const projectsArray = [
     title: "What's in my fridge app",
     description:
       'This app allowes you to search for recipes by ingredients you have. Created with zero-waste approach in mind. ',
-    badges: ['REST API', 'Vanilla JS', 'ES6', 'HTML', 'CSS'],
+    badges: ['REST API', 'ES6', 'HTML', 'CSS'],
     buttons: [
       { text: 'App', url: 'https://xanoosh.github.io/portfolio/recipe-api' },
     ],
@@ -79,7 +79,7 @@ export const projectsArray = [
     title: 'TimeZone app',
     description:
       'Simple app that calculates time in different time zones on input change. Consumes data from API on load.',
-    badges: ['REST API', 'Vanilla JS', 'ES6', 'Html', 'Css'],
+    badges: ['REST API', 'ES6', 'HTML', 'CSS'],
 
     buttons: [
       {
@@ -92,7 +92,7 @@ export const projectsArray = [
     title: 'Quiz',
     description:
       'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API.',
-    badges: ['Vanilla JS', 'REST API', 'ES6', 'Html', 'Css'],
+    badges: ['HTML', 'CSS', 'REST API', 'ES6', 'Html', 'Css'],
 
     buttons: [
       {
@@ -105,7 +105,7 @@ export const projectsArray = [
     title: 'Texas Holdem Calculator',
     description:
       'Calculates the odds of winning for a player. Basically plays 10 000 poker games then displays result.',
-    badges: ['Vanilla JS', 'ES6', 'Html', 'Css'],
+    badges: ['ES6', 'HTML', 'CSS'],
 
     buttons: [
       {
@@ -117,7 +117,7 @@ export const projectsArray = [
   {
     title: 'Memo',
     description: 'Memory game with colored tiles. ',
-    badges: ['Vanilla JS', 'ES6', 'Html', 'Css'],
+    badges: ['ES6', 'HTML', 'CSS'],
 
     buttons: [
       {
@@ -129,7 +129,7 @@ export const projectsArray = [
   {
     title: 'Dice Game',
     description: 'A simple dice game designed for 2 players.',
-    badges: ['Vanilla JS', 'ES6', 'Html', 'Css'],
+    badges: ['ES6', 'HTML', 'CSS'],
 
     buttons: [
       {
@@ -138,4 +138,25 @@ export const projectsArray = [
       },
     ],
   },
+];
+
+export const badgesArray = [
+  'Vite',
+  'React',
+  'TanStack Query',
+  'React Hook Form',
+  'React Router',
+  'React Native',
+  'Expo',
+  'Lazy',
+  'REST API',
+  'Fuse',
+  'Headless Components',
+  'Local Storage',
+  'Async Storage',
+  'ES6',
+  'SASS',
+  'BEM',
+  'HTML',
+  'CSS',
 ];

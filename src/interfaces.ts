@@ -27,3 +27,9 @@ export interface BadgeProps {
   size?: 'sm' | 'lg';
   handleRemove?: undefined | (() => void);
 }
+
+export interface ProjectFilterProps {
+  activeBadges: string[];
+  setActiveBadges: any;
+  handleBadgeClick: (badgeName: string) => void;
+}
