@@ -5,7 +5,7 @@ import Badge from '../Badge/Badge';
 
 export default function ProjectFilter() {
   const tagList = ['tag1', 'tag2', 'tag3'];
-  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   return (
     <div className="w-full flex flex-col gap-6 p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700">
       {/* Select */}
