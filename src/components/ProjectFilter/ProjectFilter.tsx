@@ -53,7 +53,13 @@ export default function ProjectFilter() {
       {/* tagList: */}
       <div className="flex gap-4">
         {selectedTags.map((selectedTag, i) => (
-          <Badge key={i} text={selectedTag} />
+          <Badge
+            key={i}
+            text={selectedTag}
+            variant="success"
+            size="lg"
+            handleRemove={() => console.log(`Badge ${selectedTag} clicked`)}
+          />
         ))}
       </div>
     </div>

@@ -17,6 +17,13 @@ export interface ButtonProps {
   disabled?: boolean;
 }
 
+export interface RemoveButtonProps {
+  onClick: undefined | (() => void);
+}
+
 export interface BadgeProps {
   text: string;
+  variant?: 'main' | 'success';
+  size?: 'sm' | 'lg';
+  handleRemove?: undefined | (() => void);
 }
