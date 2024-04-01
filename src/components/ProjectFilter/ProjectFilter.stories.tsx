@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import ProjectFilter from './ProjectFilter';
 import { useState } from 'react';
 
@@ -15,7 +15,7 @@ const meta = {
 } satisfies Meta<typeof ProjectFilter>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type StoryRender = { render: () => JSX.Element };
 
 const ExampleProjectFilterRender = () => {
   const [activeBadges, setActiveBadges] = useState<string[]>([]);
@@ -35,6 +35,6 @@ const ExampleProjectFilterRender = () => {
   );
 };
 
-export const ExampleProjectFilter: Story = {
+export const ExampleProjectFilter: StoryRender = {
   render: () => <ExampleProjectFilterRender />,
 };
