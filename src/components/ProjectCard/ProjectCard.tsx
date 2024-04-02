@@ -22,8 +22,8 @@ export default function ProjectCard({
         ))}
       </div>
       <div className="flex flex-row mt-auto gap-4">
-        {buttons.map(({ text, url }, i: number) => (
-          <Button key={i} text={text} url={url} />
+        {buttons.map(({ text, url, icon }, i: number) => (
+          <Button key={i} text={text} url={url} icon={icon} />
         ))}
       </div>
     </div>

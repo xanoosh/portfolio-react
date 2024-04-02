@@ -16,8 +16,16 @@ export const projectsArray = [
       'BEM',
     ],
     buttons: [
-      { text: 'App', url: 'github-user-search-five-opal.vercel.app' },
-      { text: 'Code', url: 'https://github.com/xanoosh/github-user-search' },
+      {
+        text: 'App',
+        url: 'github-user-search-five-opal.vercel.app',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/github-user-search',
+        icon: 'codeIcon',
+      },
     ],
   },
   {
@@ -36,8 +44,16 @@ export const projectsArray = [
       'CSS',
     ],
     buttons: [
-      { text: 'App', url: 'https://vite-stat-checker.vercel.app/' },
-      { text: 'Code', url: 'https://github.com/xanoosh/vite-stat-checker' },
+      {
+        text: 'App',
+        url: 'https://vite-stat-checker.vercel.app/',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/vite-stat-checker',
+        icon: 'codeIcon',
+      },
     ],
   },
   {
@@ -50,6 +66,7 @@ export const projectsArray = [
       {
         text: 'Code',
         url: 'https://github.com/xanoosh/terraforming-calculator-react-native',
+        icon: 'codeIcon',
       },
     ],
   },
@@ -63,6 +80,7 @@ export const projectsArray = [
       {
         text: 'App',
         url: 'https://xanoosh.github.io/portfolio/snake/',
+        icon: 'webIcon',
       },
     ],
   },
@@ -72,7 +90,11 @@ export const projectsArray = [
       'This app allowes you to search for recipes by ingredients you have. Created with zero-waste approach in mind. ',
     badges: ['REST API', 'ES6', 'HTML', 'CSS'],
     buttons: [
-      { text: 'App', url: 'https://xanoosh.github.io/portfolio/recipe-api' },
+      {
+        text: 'App',
+        url: 'https://xanoosh.github.io/portfolio/recipe-api',
+        icon: 'webIcon',
+      },
     ],
   },
   {
@@ -85,6 +107,7 @@ export const projectsArray = [
       {
         text: 'App',
         url: 'https://xanoosh.github.io/portfolio/snake/',
+        icon: 'webIcon',
       },
     ],
   },
@@ -92,12 +115,13 @@ export const projectsArray = [
     title: 'Quiz',
     description:
       'Quiz app with customizable categories, difficulty and number of questions. Fetches data from external API.',
-    badges: ['HTML', 'CSS', 'REST API', 'ES6', 'Html', 'Css'],
+    badges: ['HTML', 'CSS', 'REST API', 'ES6'],
 
     buttons: [
       {
         text: 'App',
         url: 'https://xanoosh.github.io/portfolio/quiz-api/',
+        icon: 'webIcon',
       },
     ],
   },
@@ -111,6 +135,7 @@ export const projectsArray = [
       {
         text: 'App',
         url: 'https://xanoosh.github.io/portfolio/poker-probability/',
+        icon: 'webIcon',
       },
     ],
   },
@@ -122,7 +147,8 @@ export const projectsArray = [
     buttons: [
       {
         text: 'App',
-        url: 'https://xanoosh.github.io/portfolio/poker-probability/',
+        url: 'https://xanoosh.github.io/portfolio/memo/',
+        icon: 'webIcon',
       },
     ],
   },
@@ -135,6 +161,7 @@ export const projectsArray = [
       {
         text: 'App',
         url: 'https://xanoosh.github.io/portfolio/dice/',
+        icon: 'webIcon',
       },
     ],
   },

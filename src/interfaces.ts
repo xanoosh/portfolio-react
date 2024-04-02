@@ -1,6 +1,9 @@
+import { Dispatch, SetStateAction } from 'react';
+
 interface ProjectButton {
   text: string;
   url: string;
+  icon?: 'codeIcon' | 'webIcon';
 }
 
 export interface ProjectCardProps {
@@ -15,6 +18,7 @@ export interface ButtonProps {
   url: string;
   variant?: 'primary' | 'secondary';
   disabled?: boolean;
+  icon?: 'codeIcon' | 'webIcon';
 }
 
 export interface RemoveButtonProps {
@@ -30,6 +34,6 @@ export interface BadgeProps {
 
 export interface ProjectFilterProps {
   activeBadges: string[];
-  setActiveBadges: any;
+  setActiveBadges: Dispatch<SetStateAction<string[]>>;
   handleBadgeClick: (badgeName: string) => void;
 }
