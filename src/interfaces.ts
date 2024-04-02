@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 interface ProjectButton {
   text: string;
   url: string;
-  icon?: 'codeIcon' | 'webIcon';
+  icon?: string;
 }
 
 export interface ProjectCardProps {
@@ -18,7 +18,7 @@ export interface ButtonProps {
   url: string;
   variant?: 'primary' | 'secondary';
   disabled?: boolean;
-  icon?: 'codeIcon' | 'webIcon';
+  icon?: string;
 }
 
 export interface RemoveButtonProps {
