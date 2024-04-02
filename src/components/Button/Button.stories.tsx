@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { within, expect } from '@storybook/test';
 import Button from './Button';
 
 const meta = {
@@ -13,12 +14,21 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+//unit tests:
+const buttonUnitTests = async (canvasElement: HTMLElement, text: string) => {
+  const canvas = within(canvasElement);
+  const button = canvas.getByText(text);
+  await expect(button).toBeInTheDocument();
+};
+
 export const ButtonPrimary: Story = {
   args: {
     text: 'example primary button text',
     url: '#',
     variant: 'primary',
   },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example primary button text'),
 };
 
 export const ButtonSecondary: Story = {
