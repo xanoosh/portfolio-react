@@ -1,5 +1,36 @@
 export const projectsArray = [
   {
+    title: 'React portfolio',
+    description:
+      'This project -> my projects list and additional info. Upgraded from previous version (html+bootstrap on github pages), deployed on Vercel. No App link needed - You are already browsing it  :)',
+    badges: ['Vite', 'React', 'React Router', 'Lazy', 'ES6', 'Tailwind'],
+    buttons: [
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/portfolio-react',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
+    title: 'Storybook - React portfolio',
+    description:
+      'Documentation of React components, which were used to create this portfolio app, deployed on Vercel',
+    badges: ['Vite', 'React', 'React Router', 'Lazy', 'ES6', 'Tailwind'],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://portfolio-react-vite-storybook.vercel.app/storybook/index.html',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/portfolio-react-storybook',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
     title: 'Github user search',
     description:
       'App uses external Github API to fetch user projects data based on login provided. It uses front-end validation for empty field & displays messages based on response, deployed on Vercel',
