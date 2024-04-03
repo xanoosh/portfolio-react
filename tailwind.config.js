@@ -7,7 +7,7 @@ export default {
         pattern: "url('/src/img/pattern.svg')",
       },
       backgroundSize: {
-        ' pattern-size': '100vh',
+        'pattern-size': '100% 100vh',
       },
     },
   },
