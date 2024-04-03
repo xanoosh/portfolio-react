@@ -6,6 +6,9 @@ export default {
       backgroundImage: {
         pattern: "url('/src/img/pattern.svg')",
       },
+      backgroundSize: {
+        ' pattern-size': '100vh',
+      },
     },
   },
   plugins: [],
