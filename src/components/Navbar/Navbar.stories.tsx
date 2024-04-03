@@ -30,6 +30,7 @@ export const ExampleNavbar: Story = {
       { name: 'secondEl', link: '' },
       { name: 'thirdEl', link: '' },
     ],
+    storybookLink: '#',
   },
   play: ({ canvasElement }) => navbarUnitTests(canvasElement),
 };
