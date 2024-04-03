@@ -12,7 +12,7 @@ function App() {
         ]}
         storybookLink={storybookLink}
       />
-      <section className="py-8 px-4 bg-pattern bg-repeat-y bg-pattern-size min-h-screen">
+      <section className="py-8 px-4 bg-pattern bg-repeat-y bg-pattern-size bg-fixed min-h-screen">
         <Outlet />
       </section>
     </main>

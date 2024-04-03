@@ -27,7 +27,7 @@ export default function Button({
       target="_blank"
       rel="noopener noreferrer"
       href={url}
-      className={`text-white py-1.5 px-4 rounded-xl text-md flex flex-row gap-2 items-center ${buttonVariantClasses} ${buttonDisabledClasses}`}
+      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center ${buttonVariantClasses} ${buttonDisabledClasses}`}
     >
       {icon === 'codeIcon' ? <CodeBracketIcon className={iconClasses} /> : null}
       {icon === 'webIcon' ? <GlobeAltIcon className={iconClasses} /> : null}

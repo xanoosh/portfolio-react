@@ -49,7 +49,7 @@ export const projectsArray = [
     buttons: [
       {
         text: 'App',
-        url: 'github-user-search-five-opal.vercel.app',
+        url: 'https://github-user-search-five-opal.vercel.app',
         icon: 'webIcon',
       },
       {
@@ -205,10 +205,11 @@ export const badgesArray = [
   'React Hook Form',
   'React Router',
   'React Native',
+  'Tailwind',
   'Expo',
   'Lazy',
   'REST API',
-  'Fuse',
+  'Fuse.js',
   'Headless Components',
   'Local Storage',
   'Async Storage',
