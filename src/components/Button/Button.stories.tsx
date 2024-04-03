@@ -14,7 +14,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-//unit tests:
 const buttonUnitTests = async (canvasElement: HTMLElement, text: string) => {
   const canvas = within(canvasElement);
   const button = canvas.getByText(text);
@@ -37,6 +36,8 @@ export const ButtonSecondary: Story = {
     url: '#',
     variant: 'secondary',
   },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example secondary button text'),
 };
 
 export const DisabledButtonPrimary: Story = {
@@ -46,6 +47,8 @@ export const DisabledButtonPrimary: Story = {
     variant: 'primary',
     disabled: true,
   },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example disabled primary button text'),
 };
 
 export const DisabledButtonSecondary: Story = {
@@ -55,6 +58,8 @@ export const DisabledButtonSecondary: Story = {
     variant: 'secondary',
     disabled: true,
   },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example disabled secondary button text'),
 };
 
 export const ButtonPrimaryWebIcon: Story = {
@@ -64,15 +69,19 @@ export const ButtonPrimaryWebIcon: Story = {
     variant: 'primary',
     icon: 'webIcon',
   },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example primary button with web icon'),
 };
 
 export const ButtonPrimaryCodeIcon: Story = {
   args: {
-    text: 'example primary button with web icon',
+    text: 'example primary button with code icon',
     url: '#',
     variant: 'primary',
     icon: 'codeIcon',
   },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example primary button with code icon'),
 };
 
 export const ButtonSecondaryWebIcon: Story = {
@@ -82,13 +91,17 @@ export const ButtonSecondaryWebIcon: Story = {
     variant: 'secondary',
     icon: 'webIcon',
   },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example secondary button with web icon'),
 };
 
 export const ButtonSecondaryCodeIcon: Story = {
   args: {
-    text: 'example secondary button with web icon',
+    text: 'example secondary button with code icon',
     url: '#',
     variant: 'secondary',
     icon: 'codeIcon',
   },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example secondary button with code icon'),
 };

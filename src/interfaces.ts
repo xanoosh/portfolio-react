@@ -37,3 +37,7 @@ export interface ProjectFilterProps {
   setActiveBadges: Dispatch<SetStateAction<string[]>>;
   handleBadgeClick: (badgeName: string) => void;
 }
+
+export interface NavbarProps {
+  navigation: { name: string; link: string }[] | undefined;
+}

@@ -1,15 +1,11 @@
-import { Disclosure } from '@headlessui/react';
 import storybookSvgPath from '../../img/storybook.svg';
 import { NavLink } from 'react-router-dom';
+import { NavbarProps } from '../../interfaces';
 
-export default function Navbar({
-  navigation = [
-    { name: 'Projects', link: '' },
-    { name: 'About', link: 'about' },
-  ],
-}) {
+export default function Navbar({ navigation }: NavbarProps) {
+  if (!navigation) return null;
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <nav className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex flex-1 items-stretch justify-start">
@@ -58,6 +54,6 @@ export default function Navbar({
           </div>
         </div>
       </div>
-    </Disclosure>
+    </nav>
   );
 }
