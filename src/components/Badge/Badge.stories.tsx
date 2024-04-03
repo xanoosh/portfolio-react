@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { within, expect, fn } from '@storybook/test';
 import Badge from './Badge';
 
 const meta = {
@@ -13,11 +14,25 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const badgeUnitTests = async (
+  canvasElement: HTMLElement,
+  text: string,
+  handleRemove?: () => void
+) => {
+  const canvas = within(canvasElement);
+  await expect(canvas.getByText(text)).toBeInTheDocument();
+  if (handleRemove) {
+    await expect(canvas.getByLabelText('Close')).toBeInTheDocument();
+  }
+};
+
 export const SmallMainBadge: Story = {
   args: {
     text: 'small main badge text',
     size: 'sm',
   },
+  play: ({ canvasElement }) =>
+    badgeUnitTests(canvasElement, 'small main badge text'),
 };
 
 export const LargeMainBadge: Story = {
@@ -25,6 +40,8 @@ export const LargeMainBadge: Story = {
     text: 'large main badge text',
     size: 'lg',
   },
+  play: ({ canvasElement }) =>
+    badgeUnitTests(canvasElement, 'large main badge text'),
 };
 
 export const SmallSuccessBadge: Story = {
@@ -33,6 +50,8 @@ export const SmallSuccessBadge: Story = {
     variant: 'success',
     size: 'sm',
   },
+  play: ({ canvasElement }) =>
+    badgeUnitTests(canvasElement, 'small success badge text'),
 };
 
 export const LargeSuccessBadge: Story = {
@@ -41,21 +60,33 @@ export const LargeSuccessBadge: Story = {
     variant: 'success',
     size: 'lg',
   },
+  play: ({ canvasElement }) =>
+    badgeUnitTests(canvasElement, 'large success badge text'),
 };
 
 export const SmallMainBadgeWithRemoveButton: Story = {
   args: {
-    text: 'small success badge with remove button text',
+    text: 'small main badge with remove button text',
     size: 'sm',
-    handleRemove: () => console.log('remove'),
+    handleRemove: () => {
+      fn();
+    },
   },
+  play: ({ args, canvasElement }) =>
+    badgeUnitTests(
+      canvasElement,
+      'small main badge with remove button text',
+      args.handleRemove
+    ),
 };
 export const LargeMainBadgeWithRemoveButton: Story = {
   args: {
-    text: 'large success badge with remove button text',
+    text: 'large main badge with remove button text',
     size: 'lg',
     handleRemove: () => console.log('remove'),
   },
+  play: ({ canvasElement }) =>
+    badgeUnitTests(canvasElement, 'large main badge with remove button text'),
 };
 
 export const SmallSuccessBadgeWithRemoveButton: Story = {
@@ -65,6 +96,11 @@ export const SmallSuccessBadgeWithRemoveButton: Story = {
     size: 'sm',
     handleRemove: () => console.log('remove'),
   },
+  play: ({ canvasElement }) =>
+    badgeUnitTests(
+      canvasElement,
+      'small success badge with remove button text'
+    ),
 };
 export const LargeSuccessBadgeWithRemoveButton: Story = {
   args: {
@@ -73,4 +109,9 @@ export const LargeSuccessBadgeWithRemoveButton: Story = {
     size: 'lg',
     handleRemove: () => console.log('remove'),
   },
+  play: ({ canvasElement }) =>
+    badgeUnitTests(
+      canvasElement,
+      'large success badge with remove button text'
+    ),
 };
