@@ -1,5 +1,16 @@
 import { Dispatch, SetStateAction } from 'react';
 
+export interface SingleProjectInterface {
+  title: string;
+  description: string;
+  badges: string[];
+  buttons: {
+    text: string;
+    url: string;
+    icon: string;
+  }[];
+}
+
 interface ProjectButton {
   text: string;
   url: string;
@@ -40,4 +51,5 @@ export interface ProjectFilterProps {
 
 export interface NavbarProps {
   navigation: { name: string; link: string }[] | undefined;
+  storybookLink: string;
 }

@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
+import { storybookLink } from './globals';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
           { name: 'Projects', link: '' },
           { name: 'About', link: 'about' },
         ]}
+        storybookLink={storybookLink}
       />
       <section className="py-8 px-4 bg-pattern bg-no-repeat bg-center bg-cover min-h-screen">
         <Outlet />

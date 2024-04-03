@@ -218,3 +218,6 @@ export const badgesArray = [
   'HTML',
   'CSS',
 ];
+
+export const storybookLink =
+  'https://portfolio-react-vite-storybook.vercel.app/storybook/index.html';

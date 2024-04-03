@@ -2,7 +2,7 @@ import storybookSvgPath from '../../img/storybook.svg';
 import { NavLink } from 'react-router-dom';
 import { NavbarProps } from '../../interfaces';
 
-export default function Navbar({ navigation }: NavbarProps) {
+export default function Navbar({ navigation, storybookLink }: NavbarProps) {
   if (!navigation) return null;
   return (
     <nav className="bg-gray-800">
@@ -37,21 +37,23 @@ export default function Navbar({ navigation }: NavbarProps) {
               </div>
             </div>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <a
-              href="https://portfolio-react-vite-storybook.vercel.app/storybook/index.html"
-              target="_blank"
-              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">Storybook</span>
-              <img
-                className="h-6 w-6"
-                src={storybookSvgPath}
-                alt="storybook svg"
-              />
-            </a>
-          </div>
+          {storybookLink ? (
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <a
+                href={storybookLink}
+                target="_blank"
+                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              >
+                <span className="absolute -inset-1.5" />
+                <span className="sr-only">Storybook</span>
+                <img
+                  className="h-6 w-6"
+                  src={storybookSvgPath}
+                  alt="storybook svg"
+                />
+              </a>
+            </div>
+          ) : null}
         </div>
       </div>
     </nav>
