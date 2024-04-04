@@ -3,6 +3,7 @@ import ProjectFilter from '../components/ProjectFilter/ProjectFilter';
 import { projectsArray } from '../globals';
 import { SingleProjectInterface } from '../interfaces';
 import { useMemo, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 export default function ProjectsPage() {
   const [activeBadges, setActiveBadges] = useState<string[]>([]);
@@ -39,15 +40,17 @@ export default function ProjectsPage() {
         />
       </div>
       <div className="grid grid-cols-1 gap-6 mx-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-        {activeProjects.map(({ title, description, badges, buttons }, i) => (
-          <ProjectCard
-            key={i}
-            title={title}
-            description={description}
-            badges={badges}
-            buttons={buttons}
-          />
-        ))}
+        <AnimatePresence>
+          {activeProjects.map(({ title, description, badges, buttons }, i) => (
+            <ProjectCard
+              key={i}
+              title={title}
+              description={description}
+              badges={badges}
+              buttons={buttons}
+            />
+          ))}
+        </AnimatePresence>
       </div>
     </>
   ) : (

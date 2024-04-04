@@ -1,6 +1,7 @@
 import Badge from '../Badge/Badge';
 import Button from '../Button/Button';
 import { ProjectCardProps } from '../../interfaces';
+import { motion } from 'framer-motion';
 
 export default function ProjectCard({
   title,
@@ -9,7 +10,13 @@ export default function ProjectCard({
   buttons,
 }: ProjectCardProps) {
   return (
-    <div className="flex flex-col gap-4 backdrop-blur-sm max-w-sm p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="flex flex-col gap-4 backdrop-blur-sm max-w-sm p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700"
+    >
       <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
         {title}
       </h3>
@@ -26,6 +33,6 @@ export default function ProjectCard({
           <Button key={i} text={text} url={url} icon={icon} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
