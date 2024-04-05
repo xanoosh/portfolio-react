@@ -44,24 +44,24 @@ export const LargeMainBadge: Story = {
     badgeUnitTests(canvasElement, 'large main badge text'),
 };
 
-export const SmallSuccessBadge: Story = {
+export const SmallPinkBadge: Story = {
   args: {
-    text: 'small success badge text',
-    variant: 'success',
+    text: 'small pink badge text',
+    variant: 'pink',
     size: 'sm',
   },
   play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'small success badge text'),
+    badgeUnitTests(canvasElement, 'small pink badge text'),
 };
 
-export const LargeSuccessBadge: Story = {
+export const LargePinkBadge: Story = {
   args: {
-    text: 'large success badge text',
-    variant: 'success',
+    text: 'large pink badge text',
+    variant: 'pink',
     size: 'lg',
   },
   play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'large success badge text'),
+    badgeUnitTests(canvasElement, 'large pink badge text'),
 };
 
 export const SmallMainBadgeWithRemoveButton: Story = {
@@ -89,29 +89,23 @@ export const LargeMainBadgeWithRemoveButton: Story = {
     badgeUnitTests(canvasElement, 'large main badge with remove button text'),
 };
 
-export const SmallSuccessBadgeWithRemoveButton: Story = {
+export const SmallPinkBadgeWithRemoveButton: Story = {
   args: {
-    text: 'small success badge with remove button text',
-    variant: 'success',
+    text: 'small pink badge with remove button text',
+    variant: 'pink',
     size: 'sm',
     handleRemove: () => console.log('remove'),
   },
   play: ({ canvasElement }) =>
-    badgeUnitTests(
-      canvasElement,
-      'small success badge with remove button text'
-    ),
+    badgeUnitTests(canvasElement, 'small pink badge with remove button text'),
 };
-export const LargeSuccessBadgeWithRemoveButton: Story = {
+export const LargePinkBadgeWithRemoveButton: Story = {
   args: {
-    text: 'large success badge with remove button text',
-    variant: 'success',
+    text: 'large pink badge with remove button text',
+    variant: 'pink',
     size: 'lg',
     handleRemove: () => console.log('remove'),
   },
   play: ({ canvasElement }) =>
-    badgeUnitTests(
-      canvasElement,
-      'large success badge with remove button text'
-    ),
+    badgeUnitTests(canvasElement, 'large pink badge with remove button text'),
 };

@@ -3,6 +3,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import Badge from '../Badge/Badge';
 import { ProjectFilterProps } from '../../interfaces';
 import { badgesArray } from '../../globals';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function ProjectFilter({
   activeBadges,
@@ -10,7 +11,12 @@ export default function ProjectFilter({
   handleBadgeClick,
 }: ProjectFilterProps) {
   return (
-    <div className="w-full flex flex-col gap-6 p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+      className="w-full grid grid-cols-2 gap-8 p-6 border rounded-lg shadow bg-slate-800/50 border-slate-700"
+    >
       {/* Select */}
       <Listbox value={activeBadges} onChange={setActiveBadges} multiple>
         <div className="relative z-10">
@@ -54,17 +60,24 @@ export default function ProjectFilter({
         </div>
       </Listbox>
       {/* tagList: */}
-      <div className="flex gap-4">
-        {activeBadges.map((activeBadge, i) => (
-          <Badge
-            key={i}
-            text={activeBadge}
-            variant="success"
-            size="lg"
-            handleRemove={() => handleBadgeClick(activeBadge)}
-          />
-        ))}
+      <div className="flex gap-4 items-center flex-wrap">
+        {activeBadges.length === 0 ? (
+          <p className="text-white">no active tag</p>
+        ) : null}
+        {activeBadges.length > 0 ? (
+          <AnimatePresence>
+            {activeBadges.map((activeBadge, i) => (
+              <Badge
+                key={i}
+                text={activeBadge}
+                variant="pink"
+                size="sm"
+                handleRemove={() => handleBadgeClick(activeBadge)}
+              />
+            ))}
+          </AnimatePresence>
+        ) : null}
       </div>
-    </div>
+    </motion.div>
   );
 }

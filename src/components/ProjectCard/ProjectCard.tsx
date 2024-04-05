@@ -15,14 +15,10 @@ export default function ProjectCard({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="flex flex-col gap-4 backdrop-blur-sm max-w-sm p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700"
+      className="flex flex-col gap-4 backdrop-blur-sm max-w-sm p-6 border rounded-lg shadow bg-slate-800/50 border-slate-700"
     >
-      <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-        {title}
-      </h3>
-      <p className="font-normal text-slate-700 dark:text-slate-400">
-        {description}
-      </p>
+      <h3 className="text-2xl font-bold tracking-tight text-white">{title}</h3>
+      <p className="font-normal text-slate-300">{description}</p>
       <div className="flex flex-row gap-2 flex-wrap">
         {badges.map((badge, i: number) => (
           <Badge key={i} text={badge} />

@@ -30,6 +30,16 @@ export const ButtonPrimary: Story = {
     buttonUnitTests(canvasElement, 'example primary button text'),
 };
 
+export const ButtonPink: Story = {
+  args: {
+    text: 'example pink button text',
+    url: '#',
+    variant: 'pink',
+  },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example pink button text'),
+};
+
 export const ButtonSecondary: Story = {
   args: {
     text: 'example secondary button text',
@@ -49,6 +59,17 @@ export const DisabledButtonPrimary: Story = {
   },
   play: ({ canvasElement }) =>
     buttonUnitTests(canvasElement, 'example disabled primary button text'),
+};
+
+export const DisabledButtonPink: Story = {
+  args: {
+    text: 'example disabled pink button text',
+    url: '#',
+    variant: 'pink',
+    disabled: true,
+  },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example disabled pink button text'),
 };
 
 export const DisabledButtonSecondary: Story = {
@@ -82,6 +103,28 @@ export const ButtonPrimaryCodeIcon: Story = {
   },
   play: ({ canvasElement }) =>
     buttonUnitTests(canvasElement, 'example primary button with code icon'),
+};
+
+export const ButtonPinkWebIcon: Story = {
+  args: {
+    text: 'example pink button with web icon',
+    url: '#',
+    variant: 'pink',
+    icon: 'webIcon',
+  },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example pink button with web icon'),
+};
+
+export const ButtonPinkCodeIcon: Story = {
+  args: {
+    text: 'example pink button with code icon',
+    url: '#',
+    variant: 'pink',
+    icon: 'codeIcon',
+  },
+  play: ({ canvasElement }) =>
+    buttonUnitTests(canvasElement, 'example pink button with code icon'),
 };
 
 export const ButtonSecondaryWebIcon: Story = {

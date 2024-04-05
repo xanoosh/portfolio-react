@@ -11,23 +11,17 @@ export interface SingleProjectInterface {
   }[];
 }
 
-interface ProjectButton {
-  text: string;
-  url: string;
-  icon?: string;
-}
-
 export interface ProjectCardProps {
   title: string;
   description: string;
   badges: string[];
-  buttons: ProjectButton[];
+  buttons: ButtonProps[];
 }
 
 export interface ButtonProps {
   text: string;
   url: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'pink' | 'secondary';
   disabled?: boolean;
   icon?: string;
 }
@@ -35,7 +29,7 @@ export interface DownloadFileButtonProps {
   text: string;
   fileName: string;
   filePath: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'pink' | 'secondary';
   disabled?: boolean;
 }
 
@@ -45,7 +39,7 @@ export interface RemoveButtonProps {
 
 export interface BadgeProps {
   text: string;
-  variant?: 'main' | 'success';
+  variant?: 'main' | 'pink';
   size?: 'sm' | 'lg';
   handleRemove?: undefined | (() => void);
 }

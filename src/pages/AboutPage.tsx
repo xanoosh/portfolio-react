@@ -49,7 +49,7 @@ export default function AboutPage() {
             text="Download CV (en)"
             fileName="cv_pl.pdf"
             filePath={cv_pl_path}
-            variant="primary"
+            variant="pink"
             disabled={true}
           />
         </div>

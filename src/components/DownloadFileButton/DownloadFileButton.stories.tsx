@@ -37,6 +37,20 @@ export const DownloadFileButtonPrimary: Story = {
     ),
 };
 
+export const DownloadFileButtonPink: Story = {
+  args: {
+    text: 'example pink download button text',
+    fileName: 'file.pdf',
+    filePath: '/',
+    variant: 'pink',
+  },
+  play: ({ canvasElement }) =>
+    downloadFileButtonUnitTests(
+      canvasElement,
+      'example primary download button text'
+    ),
+};
+
 export const DownloadFileButtonSecondary: Story = {
   args: {
     text: 'example secondary download button text',
@@ -63,6 +77,21 @@ export const DownloadFileButtonPrimaryDisabled: Story = {
     downloadFileButtonUnitTests(
       canvasElement,
       'example disabled primary download button text'
+    ),
+};
+
+export const DownloadFileButtonPinkDisabled: Story = {
+  args: {
+    text: 'example disabled pink download button text',
+    fileName: 'file.pdf',
+    filePath: '/',
+    variant: 'pink',
+    disabled: true,
+  },
+  play: ({ canvasElement }) =>
+    downloadFileButtonUnitTests(
+      canvasElement,
+      'example disabled pink download button text'
     ),
 };
 

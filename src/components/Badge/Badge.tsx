@@ -1,5 +1,6 @@
 import { BadgeProps, RemoveButtonProps } from '../../interfaces';
 import { XMarkIcon } from '@heroicons/react/20/solid';
+import { motion } from 'framer-motion';
 
 export default function Badge({
   text,
@@ -10,18 +11,22 @@ export default function Badge({
   const colorClasses =
     variant === 'main'
       ? 'bg-slate-400 text-slate-700'
-      : 'bg-green-300 text-green-700';
+      : 'bg-custom-pink text-white';
   const sizeClasses =
     size === 'sm'
       ? 'text-xs font-medium px-2.5 py-1'
       : 'text-sm font-lg px-4 py-1.5';
   return text.length === 0 ? null : (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
       className={`${colorClasses} ${sizeClasses} rounded-full flex flex-row gap-2 items-center`}
     >
       <span className="">{text}</span>
       {handleRemove ? <RemoveButton onClick={handleRemove} /> : null}
-    </div>
+    </motion.div>
   );
 }
 
