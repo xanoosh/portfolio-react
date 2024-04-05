@@ -9,6 +9,9 @@ export default {
       backgroundSize: {
         'pattern-size': '100%',
       },
+      listStyleType: {
+        square: 'square',
+      },
     },
   },
   plugins: [],

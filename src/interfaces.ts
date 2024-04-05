@@ -31,6 +31,13 @@ export interface ButtonProps {
   disabled?: boolean;
   icon?: string;
 }
+export interface DownloadFileButtonProps {
+  text: string;
+  fileName: string;
+  filePath: string;
+  variant?: 'primary' | 'secondary';
+  disabled?: boolean;
+}
 
 export interface RemoveButtonProps {
   onClick: undefined | (() => void);
