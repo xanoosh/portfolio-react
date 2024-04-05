@@ -8,7 +8,7 @@ export default function AboutPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2 }}
-      className="flex flex-col gap-6"
+      className="flex flex-col gap-6 py-8 px-4"
     >
       <div className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 bg-white/50 border border-slate-200 rounded-lg shadow dark:bg-slate-800/50 dark:border-slate-700">
         <h2 className="text-white">About me</h2>

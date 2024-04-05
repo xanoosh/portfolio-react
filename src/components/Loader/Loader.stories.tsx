@@ -14,12 +14,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const loaderUnitTests = async (canvasElement: HTMLElement, text: string) => {
+const loaderUnitTests = async (canvasElement: HTMLElement) => {
   const canvas = within(canvasElement);
-  const button = canvas.getByText(text);
+  const button = canvas.getByTestId('oval-loading');
   await expect(button).toBeInTheDocument();
 };
 
 export const ExampleLoader: Story = {
-  play: ({ canvasElement }) => loaderUnitTests(canvasElement, 'LOADING'),
+  play: ({ canvasElement }) => loaderUnitTests(canvasElement),
 };

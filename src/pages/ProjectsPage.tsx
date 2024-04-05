@@ -31,8 +31,8 @@ export default function ProjectsPage() {
   };
 
   return projectsArray.length ? (
-    <>
-      <div className="m-6">
+    <div className="flex flex-col gap-6 py-8 px-4">
+      <div className="mx-6">
         <ProjectFilter
           activeBadges={activeBadges}
           setActiveBadges={setActiveBadges}
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
           ))}
         </AnimatePresence>
       </div>
-    </>
+    </div>
   ) : (
     <small>no projects available</small>
   );
