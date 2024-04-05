@@ -15,7 +15,7 @@ export default function ProjectCard({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="flex flex-col gap-4 backdrop-blur-sm max-w-sm p-6 border rounded-lg shadow bg-slate-800/50 border-slate-700"
+      className="flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50"
     >
       {title ? (
         <h3 className="text-2xl font-bold tracking-tight text-white">

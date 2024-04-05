@@ -8,9 +8,9 @@ export default function AboutPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2 }}
-      className="flex flex-col gap-6 py-8 px-4"
+      className="flex flex-col gap-6 py-6 px-6 sm:px-12"
     >
-      <div className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50 border-slate-700">
+      <div className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
         <h2 className="text-white">About me</h2>
         <p className="text-white">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
@@ -19,7 +19,7 @@ export default function AboutPage() {
           ipsam quod repudiandae deserunt!
         </p>
       </div>
-      <div className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 border rounded-lg shadow bg-slate-800/50 border-slate-700">
+      <div className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
         <h2>About me</h2>
         <>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga</>
         <ul className="list-square pl-4">
@@ -32,7 +32,7 @@ export default function AboutPage() {
         </ul>
       </div>
 
-      <div className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 border rounded-lg shadow bg-slate-800/50 border-slate-700">
+      <div className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
         <h2 className="text-white">Download Curriculum Vitae</h2>
         <p className="text-white">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga

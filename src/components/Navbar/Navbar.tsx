@@ -1,19 +1,20 @@
 import storybookSvgPath from '../../img/storybook.svg';
 import { NavLink } from 'react-router-dom';
 import { NavbarProps } from '../../interfaces';
+import reactLogoPath from '../../img/react-logo.svg';
 
 export default function Navbar({ navigation, storybookLink }: NavbarProps) {
   if (!navigation) return null;
   return (
     <nav className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className="mx-auto px-6 sm:px-12">
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex flex-1 items-stretch justify-start">
             <div className="flex flex-shrink-0 items-center">
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company"
+                src={reactLogoPath}
+                alt="React Logo"
               />
             </div>
             <div className="ml-6">
@@ -42,7 +43,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
               <a
                 href={storybookLink}
                 target="_blank"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-1"
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">Storybook</span>

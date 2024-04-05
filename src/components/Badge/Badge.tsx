@@ -33,7 +33,7 @@ export default function Badge({
 function RemoveButton({ onClick }: RemoveButtonProps) {
   return onClick ? (
     <button
-      className="h-4 w-4 appearance-none items-center justify-center rounded-full focus:outline-none hover:opacity-50"
+      className="h-4 w-4 appearance-none items-center justify-center rounded-full focus:outline-none hover:opacity-50 focus:ring-1 focus:ring-white"
       aria-label="Close"
       onClick={onClick}
     >
