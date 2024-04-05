@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { downloadPDF } from '../utils';
 import cv_pl_path from '../files/cv_pl.pdf';
 import DownloadFileButton from '../components/DownloadFileButton/DownloadFileButton';
 
