@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { within, expect, fn } from '@storybook/test';
+import { within, expect, fn, userEvent } from '@storybook/test';
 import Badge from './Badge';
 
-// import testResults from '../../../test-output.json';
-// import { withTests } from '@storybook/addon-jest';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../.jest-test-results.json';
 
 const meta = {
   title: 'Portfolio/Badge',
@@ -11,7 +11,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  // decorators: [withTests({ testResults })],
+  decorators: [withTests({ results })],
   tags: ['autodocs'],
 } satisfies Meta<typeof Badge>;
 

@@ -1,6 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-vite';
-
-const config: StorybookConfig = {
+export default {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-onboarding',
@@ -17,5 +15,22 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  core: {
+    builder: '@storybook/builder-vite',
+  },
+  async viteFinal(config) {
+    const { mergeConfig } = await import('vite');
+    config.resolve = {
+      ...config.resolve,
+      alias: {
+        ...config.resolve.alias,
+        path: require.resolve('path-browserify'),
+      },
+    };
+    return mergeConfig(config, {
+      optimizeDeps: {
+        include: ['storybook-dark-mode'],
+      },
+    });
+  },
 };
-export default config;

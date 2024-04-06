@@ -1,0 +1,83 @@
+{
+  "numFailedTestSuites": 0,
+  "numFailedTests": 0,
+  "numPassedTestSuites": 1,
+  "numPassedTests": 3,
+  "numPendingTestSuites": 0,
+  "numPendingTests": 0,
+  "numRuntimeErrorTestSuites": 0,
+  "numTodoTests": 0,
+  "numTotalTestSuites": 1,
+  "numTotalTests": 3,
+  "openHandles": [],
+  "snapshot": {
+    "added": 0,
+    "didUpdate": false,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0
+  },
+  "startTime": 1712424254204,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Badge tests"],
+          "duration": 40,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Badge tests Should have text equal to the badge text prop",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "Should have text equal to the badge text prop"
+        },
+        {
+          "ancestorTitles": ["Badge tests"],
+          "duration": 4,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Badge tests Should have classes bg-slate-400 text-slate-700 if variant prop was not passed",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "Should have classes bg-slate-400 text-slate-700 if variant prop was not passed"
+        },
+        {
+          "ancestorTitles": ["Badge tests"],
+          "duration": 3,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Badge tests Should have classes bg-slate-400 text-slate-700 if variant prop is equal to main",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "Should have classes bg-slate-400 text-slate-700 if variant prop is equal to main"
+        }
+      ],
+      "endTime": 1712424258261,
+      "message": "",
+      "name": "C:\\Users\\xanoo\\OneDrive\\Pulpit\\Front-End\\development\\portfolio-react\\src\\components\\Badge\\Badge.test.tsx",
+      "startTime": 1712424254906,
+      "status": "passed",
+      "summary": ""
+    }
+  ],
+  "wasInterrupted": false
+}
