@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { within, expect, fn, userEvent } from '@storybook/test';
+import { within, expect, fn } from '@storybook/test';
 import Badge from './Badge';
 
 import { withTests } from '@storybook/addon-jest';
