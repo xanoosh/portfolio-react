@@ -2,12 +2,16 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { within, expect, fn } from '@storybook/test';
 import Badge from './Badge';
 
+// import testResults from '../../../test-output.json';
+// import { withTests } from '@storybook/addon-jest';
+
 const meta = {
   title: 'Portfolio/Badge',
   component: Badge,
   parameters: {
     layout: 'centered',
   },
+  // decorators: [withTests({ testResults })],
   tags: ['autodocs'],
 } satisfies Meta<typeof Badge>;
 
