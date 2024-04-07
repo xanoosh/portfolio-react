@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import cv_pl_path from '../files/CV_PL.pdf';
-import cv_en_path from '../files/CV_EN.pdf';
+import cv_pl_path from '../files/jb_cv_pl.pdf';
+import cv_en_path from '../files/jb_cv_en.pdf';
 import Button from '../components/Button/Button';
 import DownloadFileButton from '../components/DownloadFileButton/DownloadFileButton';
 import Badge from '../components/Badge/Badge';
