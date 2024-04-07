@@ -12,10 +12,10 @@ export interface SingleProjectInterface {
 }
 
 export interface ProjectCardProps {
-  title: string;
-  description: string;
-  badges: string[];
-  buttons: ButtonProps[];
+  title?: string;
+  description?: string;
+  badges?: string[];
+  buttons?: ButtonProps[];
 }
 
 export interface ButtonProps {

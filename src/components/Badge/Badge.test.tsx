@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Badge from './Badge';
 
-describe('Badge tests', () => {
+describe('Badge: ', () => {
   it('Should have text equal to the badge text prop', () => {
     render(<Badge text="badge" />);
     expect(screen.getByText('badge')).toBeInTheDocument();

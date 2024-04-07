@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { within, expect } from '@storybook/test';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../.jest-test-results.json';
 import Button from './Button';
 
 const meta = {
@@ -8,17 +9,12 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  decorators: [withTests({ results })],
   tags: ['autodocs'],
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const buttonUnitTests = async (canvasElement: HTMLElement, text: string) => {
-  const canvas = within(canvasElement);
-  const button = canvas.getByText(text);
-  await expect(button).toBeInTheDocument();
-};
 
 export const ButtonPrimary: Story = {
   args: {
@@ -26,8 +22,6 @@ export const ButtonPrimary: Story = {
     url: '#',
     variant: 'primary',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example primary button text'),
 };
 
 export const ButtonPink: Story = {
@@ -36,20 +30,14 @@ export const ButtonPink: Story = {
     url: '#',
     variant: 'pink',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example pink button text'),
 };
-
 export const ButtonSecondary: Story = {
   args: {
     text: 'example secondary button text',
     url: '#',
     variant: 'secondary',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example secondary button text'),
 };
-
 export const DisabledButtonPrimary: Story = {
   args: {
     text: 'example disabled primary button text',
@@ -57,10 +45,7 @@ export const DisabledButtonPrimary: Story = {
     variant: 'primary',
     disabled: true,
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example disabled primary button text'),
 };
-
 export const DisabledButtonPink: Story = {
   args: {
     text: 'example disabled pink button text',
@@ -68,10 +53,7 @@ export const DisabledButtonPink: Story = {
     variant: 'pink',
     disabled: true,
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example disabled pink button text'),
 };
-
 export const DisabledButtonSecondary: Story = {
   args: {
     text: 'example disabled secondary button text',
@@ -79,10 +61,7 @@ export const DisabledButtonSecondary: Story = {
     variant: 'secondary',
     disabled: true,
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example disabled secondary button text'),
 };
-
 export const ButtonPrimaryWebIcon: Story = {
   args: {
     text: 'example primary button with web icon',
@@ -90,10 +69,7 @@ export const ButtonPrimaryWebIcon: Story = {
     variant: 'primary',
     icon: 'webIcon',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example primary button with web icon'),
 };
-
 export const ButtonPrimaryCodeIcon: Story = {
   args: {
     text: 'example primary button with code icon',
@@ -101,10 +77,7 @@ export const ButtonPrimaryCodeIcon: Story = {
     variant: 'primary',
     icon: 'codeIcon',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example primary button with code icon'),
 };
-
 export const ButtonPinkWebIcon: Story = {
   args: {
     text: 'example pink button with web icon',
@@ -112,10 +85,7 @@ export const ButtonPinkWebIcon: Story = {
     variant: 'pink',
     icon: 'webIcon',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example pink button with web icon'),
 };
-
 export const ButtonPinkCodeIcon: Story = {
   args: {
     text: 'example pink button with code icon',
@@ -123,10 +93,7 @@ export const ButtonPinkCodeIcon: Story = {
     variant: 'pink',
     icon: 'codeIcon',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example pink button with code icon'),
 };
-
 export const ButtonSecondaryWebIcon: Story = {
   args: {
     text: 'example secondary button with web icon',
@@ -134,10 +101,7 @@ export const ButtonSecondaryWebIcon: Story = {
     variant: 'secondary',
     icon: 'webIcon',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example secondary button with web icon'),
 };
-
 export const ButtonSecondaryCodeIcon: Story = {
   args: {
     text: 'example secondary button with code icon',
@@ -145,6 +109,4 @@ export const ButtonSecondaryCodeIcon: Story = {
     variant: 'secondary',
     icon: 'codeIcon',
   },
-  play: ({ canvasElement }) =>
-    buttonUnitTests(canvasElement, 'example secondary button with code icon'),
 };

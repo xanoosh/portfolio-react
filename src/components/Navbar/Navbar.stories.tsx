@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { withRouter } from 'storybook-addon-remix-react-router';
-import { within, expect } from '@storybook/test';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../.jest-test-results.json';
 import Navbar from './Navbar';
 
 const meta = {
@@ -9,19 +10,12 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  decorators: [withTests({ results }), withRouter],
   tags: ['autodocs'],
-  decorators: withRouter,
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const navbarUnitTests = async (canvasElement: HTMLElement) => {
-  const canvas = within(canvasElement);
-  await expect(canvas.getByText('firstEl')).toBeInTheDocument();
-  await expect(canvas.getByText('secondEl')).toBeInTheDocument();
-  await expect(canvas.getByText('thirdEl')).toBeInTheDocument();
-};
 
 export const ExampleNavbar: Story = {
   args: {
@@ -32,5 +26,4 @@ export const ExampleNavbar: Story = {
     ],
     storybookLink: '#',
   },
-  play: ({ canvasElement }) => navbarUnitTests(canvasElement),
 };

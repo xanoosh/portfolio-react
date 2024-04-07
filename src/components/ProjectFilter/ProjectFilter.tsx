@@ -62,7 +62,7 @@ export default function ProjectFilter({
       {/* tagList: */}
       <div className="flex gap-4 items-center flex-wrap md:col-span-4">
         {activeBadges.length === 0 ? (
-          <p className="text-white">no active tag</p>
+          <p className="text-white">no active badges available</p>
         ) : null}
         {activeBadges.length > 0 ? (
           <AnimatePresence>

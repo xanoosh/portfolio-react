@@ -3,7 +3,6 @@ export default {
   testEnvironment: 'jest-environment-jsdom',
   transform: {
     '^.+\\.jsx?$': 'ts-jest',
-    // process `*.tsx` files with `ts-jest`
   },
   rootDir: 'src',
   moduleNameMapper: {

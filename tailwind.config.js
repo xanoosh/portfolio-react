@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         'custom-blue': '#1f8adb',
-        'custom-pink': '#f52a8c',
+        'custom-pink': '#ff4785',
       },
       backgroundImage: {
         pattern: "url('/src/img/pattern.svg')",

@@ -4,7 +4,6 @@ export default {
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     'storybook-addon-remix-react-router',
     '@storybook/addon-jest',
   ],

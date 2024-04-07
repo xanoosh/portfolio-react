@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { within, expect, fn } from '@storybook/test';
-import Badge from './Badge';
-
 import { withTests } from '@storybook/addon-jest';
 import results from '../../../.jest-test-results.json';
+import Badge from './Badge';
 
 const meta = {
   title: 'Portfolio/Badge',
@@ -18,81 +16,32 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const badgeUnitTests = async (
-  canvasElement: HTMLElement,
-  text: string,
-  handleRemove?: () => void
-) => {
-  const canvas = within(canvasElement);
-  await expect(canvas.getByText(text)).toBeInTheDocument();
-  if (handleRemove) {
-    await expect(canvas.getByLabelText('Close')).toBeInTheDocument();
-  }
-};
-
-export const SmallMainBadge: Story = {
-  args: {
-    text: 'small main badge text',
-    size: 'sm',
-  },
-  play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'small main badge text'),
-};
-
-export const LargeMainBadge: Story = {
-  args: {
-    text: 'large main badge text',
-    size: 'lg',
-  },
-  play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'large main badge text'),
-};
-
 export const SmallPinkBadge: Story = {
   args: {
     text: 'small pink badge text',
     variant: 'pink',
     size: 'sm',
   },
-  play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'small pink badge text'),
 };
-
 export const LargePinkBadge: Story = {
   args: {
     text: 'large pink badge text',
     variant: 'pink',
     size: 'lg',
   },
-  play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'large pink badge text'),
 };
-
-export const SmallMainBadgeWithRemoveButton: Story = {
+export const SmallMainBadge: Story = {
   args: {
-    text: 'small main badge with remove button text',
+    text: 'small main badge text',
     size: 'sm',
-    handleRemove: () => {
-      fn();
-    },
   },
-  play: ({ args, canvasElement }) =>
-    badgeUnitTests(
-      canvasElement,
-      'small main badge with remove button text',
-      args.handleRemove
-    ),
 };
-export const LargeMainBadgeWithRemoveButton: Story = {
+export const LargeMainBadge: Story = {
   args: {
-    text: 'large main badge with remove button text',
+    text: 'large main badge text',
     size: 'lg',
-    handleRemove: () => console.log('remove'),
   },
-  play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'large main badge with remove button text'),
 };
-
 export const SmallPinkBadgeWithRemoveButton: Story = {
   args: {
     text: 'small pink badge with remove button text',
@@ -100,8 +49,6 @@ export const SmallPinkBadgeWithRemoveButton: Story = {
     size: 'sm',
     handleRemove: () => console.log('remove'),
   },
-  play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'small pink badge with remove button text'),
 };
 export const LargePinkBadgeWithRemoveButton: Story = {
   args: {
@@ -110,6 +57,18 @@ export const LargePinkBadgeWithRemoveButton: Story = {
     size: 'lg',
     handleRemove: () => console.log('remove'),
   },
-  play: ({ canvasElement }) =>
-    badgeUnitTests(canvasElement, 'large pink badge with remove button text'),
+};
+export const SmallMainBadgeWithRemoveButton: Story = {
+  args: {
+    text: 'small main badge with remove button text',
+    size: 'sm',
+    handleRemove: () => console.log('remove'),
+  },
+};
+export const LargeMainBadgeWithRemoveButton: Story = {
+  args: {
+    text: 'large main badge with remove button text',
+    size: 'lg',
+    handleRemove: () => console.log('remove'),
+  },
 };

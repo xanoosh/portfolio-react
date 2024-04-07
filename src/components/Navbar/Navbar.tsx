@@ -1,6 +1,6 @@
-import storybookSvgPath from '../../img/storybook.svg';
 import { NavLink } from 'react-router-dom';
 import { NavbarProps } from '../../interfaces';
+import storybookSvgPath from '../../img/storybook.svg';
 import reactLogoPath from '../../img/react-logo.svg';
 
 export default function Navbar({ navigation, storybookLink }: NavbarProps) {
@@ -13,7 +13,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
             <div className="flex flex-shrink-0 items-center">
               <img
                 className="h-8 w-auto"
-                src={reactLogoPath}
+                src={'../../img/react-logo.svg'}
                 alt="React Logo"
               />
             </div>
@@ -49,7 +49,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
                 <span className="sr-only">Storybook</span>
                 <img
                   className="h-6 w-6"
-                  src={storybookSvgPath}
+                  src={'../../img/storybook.svg'}
                   alt="storybook svg"
                 />
               </a>

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { within, expect } from '@storybook/test';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../.jest-test-results.json';
 import Loader from './Loader';
 
 const meta = {
@@ -8,18 +9,11 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  decorators: [withTests({ results })],
   tags: ['autodocs'],
 } satisfies Meta<typeof Loader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const loaderUnitTests = async (canvasElement: HTMLElement) => {
-  const canvas = within(canvasElement);
-  const button = canvas.getByTestId('oval-loading');
-  await expect(button).toBeInTheDocument();
-};
-
-export const ExampleLoader: Story = {
-  play: ({ canvasElement }) => loaderUnitTests(canvasElement),
-};
+export const ExampleLoader: Story = {};

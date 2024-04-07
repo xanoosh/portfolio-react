@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../.jest-test-results.json';
 import ProjectCard from './ProjectCard';
 
 const meta = {
@@ -10,6 +12,7 @@ const meta = {
       default: 'dark',
     },
   },
+  decorators: [withTests({ results })],
   tags: ['autodocs'],
 } satisfies Meta<typeof ProjectCard>;
 

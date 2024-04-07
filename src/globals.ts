@@ -90,7 +90,7 @@ export const projectsArray = [
   {
     title: 'Terraforming calculator',
     description:
-      'This app allowes you to search for recipes by ingredients you have. Created with zero-waste approach in mind. ',
+      'Simple app created in React Native with Expo. It was created to calculate resources in a board game, stores data locally. Build can be deployed to Android and IOS.',
     badges: ['React Native', 'Expo', 'Async Storage', 'ES6'],
 
     buttons: [
@@ -137,7 +137,7 @@ export const projectsArray = [
     buttons: [
       {
         text: 'App',
-        url: 'https://xanoosh.github.io/portfolio/snake/',
+        url: 'https://xanoosh.github.io/portfolio/time-zones/',
         icon: 'webIcon',
       },
     ],

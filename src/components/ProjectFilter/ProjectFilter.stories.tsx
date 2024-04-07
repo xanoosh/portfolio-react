@@ -1,4 +1,6 @@
 import type { Meta } from '@storybook/react';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../.jest-test-results.json';
 import ProjectFilter from './ProjectFilter';
 import { useState } from 'react';
 
@@ -11,6 +13,7 @@ const meta = {
       default: 'dark',
     },
   },
+  decorators: [withTests({ results })],
   tags: ['autodocs'],
 } satisfies Meta<typeof ProjectFilter>;
 
