@@ -97,13 +97,13 @@ export default function AboutPage() {
         <div className="flex flex-row gap-4 flex-wrap">
           <DownloadFileButton
             text="Download CV (pl)"
-            fileName="CV_EN.pdf"
+            fileName="jb_cv_pl.pdf"
             filePath={cv_pl_path}
             variant="primary"
           />
           <DownloadFileButton
             text="Download CV (en)"
-            fileName="CV_EN.pdf"
+            fileName="jb_cv_en.pdf"
             filePath={cv_en_path}
             variant="primary"
           />
