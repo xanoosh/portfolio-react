@@ -57,15 +57,15 @@ export default function AboutPage() {
         </section>
         <section className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50 md:col-span-1">
           <h1 className="text-2xl font-semibold">Technologies</h1>
-          {techStack.map(({ title, technologies }) => (
-            <>
+          {techStack.map(({ title, technologies }, i) => (
+            <div key={i}>
               <h2 className="text-xl">{title}</h2>
               <div className="flex flex-row gap-2 flex-wrap">
-                {technologies.map((el) => (
-                  <Badge text={el} variant="pink" />
+                {technologies.map((el, i) => (
+                  <Badge text={el} variant="pink" key={i} />
                 ))}
               </div>
-            </>
+            </div>
           ))}
         </section>
       </div>
