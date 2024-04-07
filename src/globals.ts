@@ -3,7 +3,17 @@ export const projectsArray = [
     title: 'React portfolio',
     description:
       'This project -> my projects list and additional info. Upgraded from previous version (html+bootstrap on github pages), deployed on Vercel. No App link needed - You are already browsing it  :)',
-    badges: ['Vite', 'React', 'React Router', 'Lazy', 'ES6', 'Tailwind'],
+    badges: [
+      'Vite',
+      'React',
+      'React Router',
+      'Lazy',
+      'ES6',
+      'Tailwind',
+      'Typescript',
+      'Jest',
+      'React Testing Library',
+    ],
     buttons: [
       {
         text: 'Code',
@@ -16,7 +26,16 @@ export const projectsArray = [
     title: 'Storybook - React portfolio',
     description:
       'Documentation of React components, which were used to create this portfolio app, deployed on Vercel',
-    badges: ['Vite', 'React', 'React Router', 'Lazy', 'ES6', 'Tailwind'],
+    badges: [
+      'Vite',
+      'React',
+      'React Router',
+      'Lazy',
+      'ES6',
+      'Tailwind',
+      'Typescript',
+      'Jest',
+    ],
     buttons: [
       {
         text: 'App',
@@ -213,6 +232,9 @@ export const badgesArray = [
   'Headless Components',
   'Local Storage',
   'Async Storage',
+  'Typescript',
+  'Jest',
+  'React Testing Library',
   'ES6',
   'SASS',
   'BEM',
@@ -222,3 +244,50 @@ export const badgesArray = [
 
 export const storybookLink =
   'https://portfolio-react-vite-storybook.vercel.app/storybook/index.html';
+
+export const techStack = [
+  {
+    title: 'React Framework',
+    technologies: [
+      'React',
+      'Vite',
+      'Headless Components',
+      'Redux',
+      'TanStack Query',
+      'React Hook Form',
+      'React Router',
+      'React Native',
+      'Expo',
+      'React Lazy',
+      'Storybook',
+    ],
+  },
+  {
+    title: 'Tests',
+    technologies: [
+      'React Testing Library',
+      'Jest',
+      'Vitest',
+      'Storybook Interactions',
+    ],
+  },
+  {
+    title: 'Styling',
+    technologies: ['CSS', 'SASS', 'BEM', 'Tailwind'],
+  },
+  {
+    title: 'General',
+    technologies: [
+      'Javascript',
+      'JQuery',
+      'Typescript',
+      'REST API',
+      'Local Storage',
+      'Async Storage',
+    ],
+  },
+  {
+    title: 'Wordpress',
+    technologies: ['Wordpress', 'PHP', 'ACF', 'CPT UI', 'Contact Form'],
+  },
+];

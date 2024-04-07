@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import cv_pl_path from '../files/cv_pl.pdf';
+import Button from '../components/Button/Button';
 import DownloadFileButton from '../components/DownloadFileButton/DownloadFileButton';
+import Badge from '../components/Badge/Badge';
+import { techStack } from '../globals';
 
 export default function AboutPage() {
   return (
@@ -10,35 +13,87 @@ export default function AboutPage() {
       transition={{ duration: 0.2 }}
       className="flex flex-col gap-6 py-6 px-6 sm:px-12"
     >
-      <div className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
-        <h2 className="text-white">About me</h2>
-        <p className="text-white">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
-          temporibus iste ullam praesentium provident reiciendis sequi neque,
-          tempore officiis adipisci mollitia similique minus nobis voluptate,
-          ipsam quod repudiandae deserunt!
-        </p>
-      </div>
-      <div className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
-        <h2>About me</h2>
-        <>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga</>
-        <ul className="list-square pl-4">
-          <li>temporibus iste ullam praesentium provident</li>
-          <li>reiciendis sequi neque,</li>
-          <li>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50 text-white md:col-span-2">
+          <h1 className="text-2xl font-semibold">About me</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
+            temporibus iste ullam praesentium provident reiciendis sequi neque,
             tempore officiis adipisci mollitia similique minus nobis voluptate,
-          </li>
-          <li>ipsam quod repudiandae deserunt!</li>
-        </ul>
+            ipsam quod repudiandae deserunt!
+          </p>
+          <ul className="list-square pl-4 [&>*]:pb-2">
+            <li>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
+              temporibus iste ullam praesentium provident reiciendis sequi
+              neque, tempore officiis adipisci mollitia similique minus nobis
+              voluptate.
+            </li>
+            <li>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
+              temporibus iste ullam praesentium provident reiciendis sequi
+              neque, tempore officiis adipisci mollitia similique minus nobis
+              voluptate.
+            </li>
+            <li>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
+              temporibus iste ullam praesentium provident reiciendis sequi
+              neque, tempore officiis adipisci mollitia similique minus nobis
+              voluptate.
+            </li>
+            <li>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
+              temporibus iste ullam praesentium provident reiciendis sequi
+              neque, tempore officiis adipisci mollitia similique minus nobis
+              voluptate.
+            </li>
+            <li>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
+              temporibus iste ullam praesentium provident reiciendis sequi
+              neque, tempore officiis adipisci mollitia similique minus nobis
+              voluptate.
+            </li>
+          </ul>
+        </section>
+        <section className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50 md:col-span-1">
+          <h1 className="text-2xl font-semibold">Technologies</h1>
+          {techStack.map(({ title, technologies }) => (
+            <>
+              <h2 className="text-xl">{title}</h2>
+              <div className="flex flex-row gap-2 flex-wrap">
+                {technologies.map((el) => (
+                  <Badge text={el} variant="pink" />
+                ))}
+              </div>
+            </>
+          ))}
+        </section>
       </div>
 
-      <div className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
-        <h2 className="text-white">Download Curriculum Vitae</h2>
-        <p className="text-white">
+      <section className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
+        <h1 className="text-2xl font-semibold">Useful links</h1>
+        <p>Links to my socials and code repositories.</p>
+        <div className="flex flex-row gap-4 flex-wrap">
+          <Button
+            text="My linkedin profile"
+            url="https://www.linkedin.com/in/janusz-bielczynski/"
+            icon="webIcon"
+          />
+          <Button
+            text="My github account"
+            url="https://github.com/xanoosh"
+            icon="webIcon"
+          />
+        </div>
+      </section>
+
+      <section className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
+        <h1 className="text-2xl font-semibold">Download CV</h1>
+        <p className="">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
           temporibus iste ullam praesentium provident reiciendis.
         </p>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 flex-wrap">
           <DownloadFileButton
             text="Download CV (pl)"
             fileName="cv_pl.pdf"
@@ -49,11 +104,11 @@ export default function AboutPage() {
             text="Download CV (en)"
             fileName="cv_pl.pdf"
             filePath={cv_pl_path}
-            variant="pink"
+            variant="primary"
             disabled={true}
           />
         </div>
-      </div>
+      </section>
     </motion.div>
   );
 }
