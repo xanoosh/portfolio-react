@@ -13,7 +13,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
             <div className="flex flex-shrink-0 items-center">
               <img
                 className="h-8 w-auto"
-                src={'../../img/react-logo.svg'}
+                src={reactLogoPath}
                 alt="React Logo"
               />
             </div>
@@ -49,7 +49,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
                 <span className="sr-only">Storybook</span>
                 <img
                   className="h-6 w-6"
-                  src={'../../img/storybook.svg'}
+                  src={storybookSvgPath}
                   alt="storybook svg"
                 />
               </a>
