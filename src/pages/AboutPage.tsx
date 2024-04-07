@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import cv_pl_path from '../files/cv_pl.pdf';
+import cv_pl_path from '../files/CV_PL.pdf';
+import cv_en_path from '../files/CV_EN.pdf';
 import Button from '../components/Button/Button';
 import DownloadFileButton from '../components/DownloadFileButton/DownloadFileButton';
 import Badge from '../components/Badge/Badge';
@@ -59,7 +60,7 @@ export default function AboutPage() {
           <h1 className="text-2xl font-semibold">Technologies</h1>
           {techStack.map(({ title, technologies }, i) => (
             <div key={i}>
-              <h2 className="text-xl">{title}</h2>
+              <h2 className="text-xl mb-2">{title}</h2>
               <div className="flex flex-row gap-2 flex-wrap">
                 {technologies.map((el, i) => (
                   <Badge text={el} variant="pink" key={i} />
@@ -96,16 +97,15 @@ export default function AboutPage() {
         <div className="flex flex-row gap-4 flex-wrap">
           <DownloadFileButton
             text="Download CV (pl)"
-            fileName="cv_pl.pdf"
+            fileName="CV_EN.pdf"
             filePath={cv_pl_path}
             variant="primary"
           />
           <DownloadFileButton
             text="Download CV (en)"
-            fileName="cv_pl.pdf"
-            filePath={cv_pl_path}
+            fileName="CV_EN.pdf"
+            filePath={cv_en_path}
             variant="primary"
-            disabled={true}
           />
         </div>
       </section>
