@@ -2,8 +2,8 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Navbar from './Navbar';
 
-describe('Loader: ', () => {
-  it('Should have text equal to the badge text prop', () => {
+describe('Navbar: ', () => {
+  it('Should display text of each element.name from navigation prop', () => {
     render(
       <Navbar
         navigation={[
@@ -11,7 +11,7 @@ describe('Loader: ', () => {
           { name: 'secondEl', link: '' },
           { name: 'thirdEl', link: '' },
         ]}
-        storybookLink=""
+        storybookLink="#"
       />
     );
     expect(screen.getByText('firstEl')).toBeInTheDocument();

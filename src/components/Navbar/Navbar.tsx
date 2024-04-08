@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { NavbarProps } from '../../interfaces';
 import storybookSvgPath from '../../img/storybook.svg';
-import reactLogoPath from '../../img/react-logo.svg';
+import logoPath from '../../img/react-logo.svg';
 
 export default function Navbar({ navigation, storybookLink }: NavbarProps) {
   if (!navigation) return null;
@@ -11,11 +11,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex flex-1 items-stretch justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <img
-                className="h-8 w-auto"
-                src={reactLogoPath}
-                alt="React Logo"
-              />
+              <img className="h-8 w-auto" src={logoPath} alt="React Logo" />
             </div>
             <div className="ml-6">
               <div className="flex space-x-4">

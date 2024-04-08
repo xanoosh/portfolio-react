@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import DownloadFileButton from './DownloadFileButton';
 
 describe('DownloadFileButton: ', () => {
-  it('Should have text equal to the badge text prop', () => {
+  it('Should have text equal to the DownloadFileButton text prop', () => {
     render(
       <DownloadFileButton
         fileName="file"

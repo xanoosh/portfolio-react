@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Loader from './Loader';
 
 describe('Loader: ', () => {
-  it('Should have text equal to the badge text prop', () => {
+  it('Should be in the document', () => {
     render(<Loader />);
     expect(screen.getByTestId('oval-loading')).toBeInTheDocument();
   });

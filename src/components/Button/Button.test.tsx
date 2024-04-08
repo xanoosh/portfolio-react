@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Button from './Button';
 
 describe('Button: ', () => {
-  it('Should have text equal to the badge text prop', () => {
+  it('Should have text equal to the button text prop', () => {
     render(<Button url="" text="button" />);
     expect(screen.getByText('button')).toBeInTheDocument();
   });
