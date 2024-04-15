@@ -1,22 +1,24 @@
 export default {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     'storybook-addon-remix-react-router',
     '@storybook/addon-jest',
+    '@chromatic-com/storybook'
   ],
+
   framework: {
     name: '@storybook/react-vite',
     options: {},
   },
+
   docs: {
     autodocs: 'tag',
   },
-  core: {
-    builder: '@storybook/builder-vite',
-  },
+
   async viteFinal(config) {
     const { mergeConfig } = await import('vite');
     config.resolve = {
@@ -31,5 +33,5 @@ export default {
         include: ['storybook-dark-mode'],
       },
     });
-  },
+  }
 };
