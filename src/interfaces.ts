@@ -62,7 +62,7 @@ interface ExperienceListElement {
 }
 
 export interface ExperienceSectionProps {
-  title: string;
-  text: string;
-  list: ExperienceListElement[];
+  title?: string;
+  text?: string;
+  list?: ExperienceListElement[];
 }
