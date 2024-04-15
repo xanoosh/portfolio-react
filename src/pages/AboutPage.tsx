@@ -4,7 +4,8 @@ import cv_en_path from '../files/jb_cv_en.pdf';
 import Button from '../components/Button/Button';
 import DownloadFileButton from '../components/DownloadFileButton/DownloadFileButton';
 import Badge from '../components/Badge/Badge';
-import { techStack } from '../globals';
+import { experience, techStack } from '../globals';
+import ExperienceSection from '../components/ExperienceSection/ExperienceSection';
 
 export default function AboutPage() {
   return (
@@ -15,52 +16,18 @@ export default function AboutPage() {
       className="flex flex-col gap-6 py-6 px-6 sm:px-12"
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <section className="w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50 text-white md:col-span-2">
-          <h1 className="text-2xl font-semibold">About me</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
-            temporibus iste ullam praesentium provident reiciendis sequi neque,
-            tempore officiis adipisci mollitia similique minus nobis voluptate,
-            ipsam quod repudiandae deserunt!
-          </p>
-          <ul className="list-square pl-4 [&>*]:pb-2">
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
-              temporibus iste ullam praesentium provident reiciendis sequi
-              neque, tempore officiis adipisci mollitia similique minus nobis
-              voluptate.
-            </li>
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
-              temporibus iste ullam praesentium provident reiciendis sequi
-              neque, tempore officiis adipisci mollitia similique minus nobis
-              voluptate.
-            </li>
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
-              temporibus iste ullam praesentium provident reiciendis sequi
-              neque, tempore officiis adipisci mollitia similique minus nobis
-              voluptate.
-            </li>
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
-              temporibus iste ullam praesentium provident reiciendis sequi
-              neque, tempore officiis adipisci mollitia similique minus nobis
-              voluptate.
-            </li>
-            <li>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
-              temporibus iste ullam praesentium provident reiciendis sequi
-              neque, tempore officiis adipisci mollitia similique minus nobis
-              voluptate.
-            </li>
-          </ul>
+        <section className="w-full backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50 md:col-span-2">
+          <ExperienceSection
+            title={experience.title}
+            text={experience.text}
+            list={experience.list}
+          />
         </section>
         <section className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50 md:col-span-1">
           <h1 className="text-2xl font-semibold">Technologies</h1>
           {techStack.map(({ title, technologies }, i) => (
             <div key={i}>
-              <h2 className="text-xl mb-2">{title}</h2>
+              <h2 className="text-xl mb-4">{title}</h2>
               <div className="flex flex-row gap-2 flex-wrap">
                 {technologies.map((el, i) => (
                   <Badge text={el} variant="pink" key={i} />
@@ -76,12 +43,12 @@ export default function AboutPage() {
         <p>Links to my socials and code repositories.</p>
         <div className="flex flex-row gap-4 flex-wrap">
           <Button
-            text="My linkedin profile"
+            text="Linkedin profile"
             url="https://www.linkedin.com/in/janusz-bielczynski/"
             icon="webIcon"
           />
           <Button
-            text="My github account"
+            text="Github account"
             url="https://github.com/xanoosh"
             icon="webIcon"
           />
@@ -90,10 +57,7 @@ export default function AboutPage() {
 
       <section className="text-white w-full flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50">
         <h1 className="text-2xl font-semibold">Download CV</h1>
-        <p className="">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id fuga
-          temporibus iste ullam praesentium provident reiciendis.
-        </p>
+        <p className="">Get my curriculum vitae in PDF format.</p>
         <div className="flex flex-row gap-4 flex-wrap">
           <DownloadFileButton
             text="Download CV (pl)"

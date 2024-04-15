@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import ProjectFilter from './ProjectFilter';
 
 describe('ProjectFilter: ', () => {
-  it('Should display text "no active badges available" if activeBadges array is empty', () => {
+  it('Should display text "No active tag selected." if activeBadges array is empty', () => {
     render(
       <ProjectFilter
         activeBadges={[]}
@@ -11,7 +11,7 @@ describe('ProjectFilter: ', () => {
         handleBadgeClick={() => {}}
       />
     );
-    expect(screen.getByText('no active badges available')).toBeInTheDocument();
+    expect(screen.getByText('No active tag selected.')).toBeInTheDocument();
   });
   it('Should display badges if activeBadges array is not empty', () => {
     render(

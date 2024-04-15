@@ -291,3 +291,44 @@ export const techStack = [
     technologies: ['Wordpress', 'PHP', 'ACF', 'CPT UI', 'Contact Form'],
   },
 ];
+
+export const experience = {
+  title: 'About me',
+  text: 'My job experience in a nutshell, you can download my CV or navigate to my Github or LinkedIn account in the section below',
+  list: [
+    {
+      title: 'HRLink | Frontend Developer - React',
+      date: '08.2022 – 02.2024',
+      responsibilities: [
+        'Maintenance and development work in the ATS system and additional modules written in React',
+        'Redesigning the system - rewriting parts of the ATS system into React using the technologies listed in the Framework section',
+        'Unit testing of React components',
+      ],
+    },
+    {
+      title: 'Gorillas.dev | Frontend Developer - React',
+      date: '09.2021 – 06.2022',
+      responsibilities: [
+        'Maintenance and developmental work on a web application supporting the servicing and rental of printers, written in React',
+        'Utilizing Redux and Apollo GraphQ',
+      ],
+    },
+    {
+      title: 'DNS Group | Web Developer',
+      date: '06.2019 - 09.2020',
+      responsibilities: [
+        'Creating website templates in WordPress tailored to client requirements',
+        'Client communication and discussing the direction of project development',
+        'Optimizing websites for search engines (SEO)',
+      ],
+    },
+    {
+      title: 'Page Interactive | Web Developer',
+      date: '01.2019 - 06.2019',
+      responsibilities: [
+        'Involvement in the process of designing and prototyping websites',
+        'Creating website templates using ACF and CPT UI in WordPress',
+      ],
+    },
+  ],
+};

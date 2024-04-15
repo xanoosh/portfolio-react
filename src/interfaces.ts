@@ -54,3 +54,15 @@ export interface NavbarProps {
   navigation: { name: string; link: string }[] | undefined;
   storybookLink: string;
 }
+
+interface ExperienceListElement {
+  title: string;
+  date: string;
+  responsibilities: string[];
+}
+
+export interface ExperienceSectionProps {
+  title: string;
+  text: string;
+  list: ExperienceListElement[];
+}
