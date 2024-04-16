@@ -8,6 +8,7 @@ export const projectsArray = [
       'React',
       'React Router',
       'Lazy',
+      'Framer motion',
       'ES6',
       'Tailwind',
       'Typescript',
@@ -74,6 +75,34 @@ export const projectsArray = [
       {
         text: 'Code',
         url: 'https://github.com/xanoosh/github-user-search',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
+    title: 'ETF Charts',
+    description:
+      'WORK IN PROGRESS! App utilizes API to get ETF stock data. Data is presented using charts from nivo. Deployed on Vercel',
+    badges: [
+      'Vite',
+      'React',
+      'Nivo Charts',
+      'React-Use',
+      'React Router',
+      'Lazy',
+      'REST API',
+      'ES6',
+      'Tailwind',
+    ],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://etf-charts.vercel.app',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/etf-charts',
         icon: 'codeIcon',
       },
     ],
@@ -216,13 +245,15 @@ export const projectsArray = [
     ],
   },
 ];
-
 export const badgesArray = [
   'Vite',
   'React',
   'TanStack Query',
   'React Hook Form',
   'React Router',
+  'Nivo Charts',
+  'React-Use',
+  'Framer-motion',
   'React Native',
   'Tailwind',
   'Expo',
@@ -250,26 +281,32 @@ export const techStack = [
     title: 'React Framework',
     technologies: [
       'React',
+      'React Hooks',
       'Vite',
       'Headless Components',
+      'Radix-UI',
       'Redux',
+      'Redux Middleware',
       'TanStack Query',
       'React Hook Form',
+      'Zod',
+      'React-i18next',
       'React Router',
+      'Code Splitting (Lazy)',
+      'React Use',
+      'Framer Motion',
+      'Nivo Charts',
       'React Native',
       'Expo',
-      'React Lazy',
-      'Storybook',
     ],
   },
   {
-    title: 'Tests',
-    technologies: [
-      'React Testing Library',
-      'Jest',
-      'Vitest',
-      'Storybook Interactions',
-    ],
+    title: 'Unit Tests',
+    technologies: ['React Testing Library', 'Jest', 'Vitest'],
+  },
+  {
+    title: 'Tools',
+    technologies: ['Jira', 'GitLab', 'Git', 'Github', 'Storybook'],
   },
   {
     title: 'Styling',
@@ -279,16 +316,20 @@ export const techStack = [
     title: 'General',
     technologies: [
       'Javascript',
-      'JQuery',
       'Typescript',
+      'JQuery',
       'REST API',
       'Local Storage',
       'Async Storage',
+      'SEO',
+      'HTML',
+      'PHP',
+      'Smarty',
     ],
   },
   {
     title: 'Wordpress',
-    technologies: ['Wordpress', 'PHP', 'ACF', 'CPT UI', 'Contact Form'],
+    technologies: ['Wordpress', 'ACF', 'CPT UI', 'Contact Form 7'],
   },
 ];
 
@@ -301,7 +342,7 @@ export const experience = {
       date: '08.2022 – 02.2024',
       responsibilities: [
         'Maintenance and development work in the ATS system and additional modules written in React',
-        'Redesigning the system - rewriting parts of the ATS system into React using the technologies listed in the Framework section',
+        'Redesigning the system - rewriting parts of the ATS system into React using the technologies listed in the React Framework section',
         'Unit testing of React components',
       ],
     },

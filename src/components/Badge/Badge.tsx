@@ -10,7 +10,7 @@ export default function Badge({
 }: BadgeProps) {
   const colorClasses =
     variant === 'main'
-      ? 'bg-slate-400 text-slate-700'
+      ? 'bg-slate-900 text-slate-400'
       : 'bg-custom-pink text-white';
   const sizeClasses =
     size === 'sm'
