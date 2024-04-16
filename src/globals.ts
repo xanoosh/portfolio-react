@@ -253,7 +253,7 @@ export const badgesArray = [
   'React Router',
   'Nivo Charts',
   'React-Use',
-  'Framer-motion',
+  'Framer motion',
   'React Native',
   'Tailwind',
   'Expo',
