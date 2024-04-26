@@ -119,8 +119,7 @@ export const projectsArray = [
       'Local Storage',
       'REST API',
       'ES6',
-      'HTML',
-      'CSS',
+      'SASS',
     ],
     buttons: [
       {
