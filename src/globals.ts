@@ -80,6 +80,35 @@ export const projectsArray = [
     ],
   },
   {
+    title: 'Stat calculator',
+    description:
+      'React app for fuzzy searching pokemon (Fuse.js integration) and calculating their stats based on formula and received data. Deployed on Vercel. ',
+    badges: [
+      'Vite',
+      'React',
+      'Fuse.js',
+      'Headless Components',
+      'Local Storage',
+      'Vitest',
+      'React Testing Library',
+      'REST API',
+      'ES6',
+      'SASS',
+    ],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://vite-stat-checker.vercel.app/',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/vite-stat-checker',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
     title: 'ETF Charts',
     description:
       'WORK IN PROGRESS! App utilizes API to get ETF stock data. Data is presented using charts from nivo. Deployed on Vercel',
@@ -103,33 +132,6 @@ export const projectsArray = [
       {
         text: 'Code',
         url: 'https://github.com/xanoosh/etf-charts',
-        icon: 'codeIcon',
-      },
-    ],
-  },
-  {
-    title: 'Pokemon stat calculator',
-    description:
-      'React app for fuzzy searching pokemon (Fuse.js integration) and calculating their stats based on formula and received data. Deployed on Vercel. ',
-    badges: [
-      'Vite',
-      'React',
-      'Fuse.js',
-      'Headless Components',
-      'Local Storage',
-      'REST API',
-      'ES6',
-      'SASS',
-    ],
-    buttons: [
-      {
-        text: 'App',
-        url: 'https://vite-stat-checker.vercel.app/',
-        icon: 'webIcon',
-      },
-      {
-        text: 'Code',
-        url: 'https://github.com/xanoosh/vite-stat-checker',
         icon: 'codeIcon',
       },
     ],
@@ -263,6 +265,7 @@ export const badgesArray = [
   'Local Storage',
   'Async Storage',
   'Typescript',
+  'Vitest',
   'Jest',
   'React Testing Library',
   'ES6',
