@@ -7,6 +7,7 @@ export default function Badge({
   variant = 'main',
   size = 'sm',
   handleRemove,
+  handleClick,
 }: BadgeProps) {
   const colorClasses =
     variant === 'main'
@@ -22,7 +23,8 @@ export default function Badge({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className={`${colorClasses} ${sizeClasses} rounded-full flex flex-row gap-2 items-center`}
+      className={`${colorClasses} ${sizeClasses} rounded-full flex flex-row gap-2 items-center cursor-pointer`}
+      onClick={handleClick ? handleClick : () => null}
     >
       <span className="">{text}</span>
       {handleRemove ? <RemoveButton onClick={handleRemove} /> : null}

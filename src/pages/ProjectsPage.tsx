@@ -47,6 +47,7 @@ export default function ProjectsPage() {
               title={title}
               description={description}
               badges={badges}
+              handleBadgeClick={handleBadgeClick}
               buttons={buttons}
             />
           ))}

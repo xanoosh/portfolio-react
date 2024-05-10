@@ -8,6 +8,7 @@ export default function ProjectCard({
   description,
   badges,
   buttons,
+  handleBadgeClick,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -28,7 +29,13 @@ export default function ProjectCard({
       {badges ? (
         <div className="flex flex-row gap-2 flex-wrap">
           {badges.map((badge, i: number) => (
-            <Badge key={i} text={badge} />
+            <Badge
+              key={i}
+              text={badge}
+              handleClick={
+                handleBadgeClick ? () => handleBadgeClick(badge) : () => null
+              }
+            />
           ))}
         </div>
       ) : null}

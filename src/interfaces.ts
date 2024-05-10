@@ -16,6 +16,7 @@ export interface ProjectCardProps {
   description?: string;
   badges?: string[];
   buttons?: ButtonProps[];
+  handleBadgeClick?: (badgeName: string) => void;
 }
 
 export interface ButtonProps {
@@ -42,6 +43,7 @@ export interface BadgeProps {
   variant?: 'main' | 'pink';
   size?: 'sm' | 'lg';
   handleRemove?: undefined | (() => void);
+  handleClick?: undefined | (() => void);
 }
 
 export interface ProjectFilterProps {
