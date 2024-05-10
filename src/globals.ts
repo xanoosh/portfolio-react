@@ -87,6 +87,7 @@ export const projectsArray = [
       'Vite',
       'React',
       'Fuse.js',
+      'TanStack Query',
       'Headless Components',
       'Local Storage',
       'Vitest',
