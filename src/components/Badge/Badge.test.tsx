@@ -8,13 +8,13 @@ describe('Badge: ', () => {
     expect(screen.getByText('badge')).toBeInTheDocument();
   });
 
-  it('Should have classes bg-slate-400 text-slate-700 if variant prop was not passed', () => {
+  it('Should have classes bg-slate-900 text-slate-400 if variant prop was not passed', () => {
     const { container } = render(<Badge text="badge" />);
-    expect(container.firstChild).toHaveClass('bg-slate-400 text-slate-700');
+    expect(container.firstChild).toHaveClass('bg-slate-900 text-slate-400');
   });
 
-  it('Should have classes bg-slate-400 text-slate-700 if variant prop is equal to main', () => {
+  it('Should have classes bg-slate-900 text-slate-400 if variant prop is equal to main', () => {
     const { container } = render(<Badge text="badge" variant="main" />);
-    expect(container.firstChild).toHaveClass('bg-slate-400 text-slate-700');
+    expect(container.firstChild).toHaveClass('bg-slate-900 text-slate-400');
   });
 });
