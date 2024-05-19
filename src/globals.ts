@@ -7,6 +7,7 @@ export const projectsArray = [
       'Vite',
       'React',
       'React Router',
+      'Headless Components',
       'Lazy',
       'Framer motion',
       'ES6',
@@ -31,11 +32,14 @@ export const projectsArray = [
       'Vite',
       'React',
       'React Router',
+      'Headless Components',
       'Lazy',
+      'Framer motion',
       'ES6',
       'Tailwind',
       'Typescript',
       'Jest',
+      'React Testing Library',
     ],
     buttons: [
       {
