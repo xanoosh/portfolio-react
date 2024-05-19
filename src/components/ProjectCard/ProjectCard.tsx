@@ -7,6 +7,7 @@ export default function ProjectCard({
   title,
   description,
   badges,
+  activeBadges,
   buttons,
   handleBadgeClick,
 }: ProjectCardProps) {
@@ -32,6 +33,7 @@ export default function ProjectCard({
             <Badge
               key={i}
               text={badge}
+              variant={activeBadges?.includes(badge) ? 'pink' : 'main'}
               handleClick={
                 handleBadgeClick ? () => handleBadgeClick(badge) : () => null
               }

@@ -15,6 +15,7 @@ export interface ProjectCardProps {
   title?: string;
   description?: string;
   badges?: string[];
+  activeBadges?: string[];
   buttons?: ButtonProps[];
   handleBadgeClick?: (badgeName: string) => void;
 }
