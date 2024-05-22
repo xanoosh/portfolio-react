@@ -9,21 +9,30 @@ export default function Badge({
   handleRemove,
   handleClick,
 }: BadgeProps) {
-  const colorClasses =
-    variant === 'main'
-      ? 'bg-slate-900 text-slate-400'
-      : 'bg-custom-pink text-white';
-  const sizeClasses =
-    size === 'sm'
-      ? 'text-xs font-medium px-2.5 py-1'
-      : 'text-sm font-lg px-4 py-1.5';
+  const colorClasses = () => {
+    switch (variant) {
+      case 'main':
+        return 'bg-slate-900 text-slate-400';
+      case 'pink':
+        return 'bg-custom-pink text-white';
+    }
+  };
+  const sizeClasses = () => {
+    switch (size) {
+      case 'sm':
+        return 'text-xs font-medium px-2.5 py-1';
+      case 'lg':
+        return 'text-sm font-lg px-4 py-1.5';
+    }
+  };
+
   return text.length === 0 ? null : (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className={`${colorClasses} ${sizeClasses} rounded-full flex flex-row gap-2 items-center cursor-pointer`}
+      className={`${colorClasses()} ${sizeClasses()} rounded-full flex flex-row gap-2 items-center ${handleClick ? 'cursor-pointer' : ''}`}
       onClick={handleClick ? handleClick : () => null}
     >
       <span className="">{text}</span>
