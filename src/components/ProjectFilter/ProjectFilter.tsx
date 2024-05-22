@@ -20,7 +20,10 @@ export default function ProjectFilter({
       {/* Select */}
       <Listbox value={activeBadges} onChange={setActiveBadges} multiple>
         <div className="md:col-span-2 relative">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-slate-300 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-slate-300 ring-offset-4 focus:ring-offset-slate-800 sm:text-sm">
+          <Listbox.Button
+            id="listbox-button"
+            className="relative w-full cursor-default rounded-lg bg-slate-300 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-slate-300 ring-offset-4 focus:ring-offset-slate-800 sm:text-sm"
+          >
             <span className="block truncate">Filter projects by tag</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon

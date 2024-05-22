@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import ProjectFilter from './ProjectFilter';
 
 describe('ProjectFilter: ', () => {
@@ -23,5 +23,79 @@ describe('ProjectFilter: ', () => {
     );
     expect(screen.getByText('badge1')).toBeInTheDocument();
     expect(screen.getByText('badge2')).toBeInTheDocument();
+  });
+
+  it('Should display button with id listbox-button', () => {
+    const { container } = render(
+      <ProjectFilter
+        activeBadges={[]}
+        setActiveBadges={() => {}}
+        handleBadgeClick={() => {}}
+      />
+    );
+    expect(
+      container.querySelector('button#listbox-button')
+    ).toBeInTheDocument();
+  });
+
+  it('Should display button with id listbox-button', () => {
+    const { container } = render(
+      <ProjectFilter
+        activeBadges={[]}
+        setActiveBadges={() => {}}
+        handleBadgeClick={() => {}}
+      />
+    );
+    expect(
+      container.querySelector('button#listbox-button')
+    ).toBeInTheDocument();
+  });
+
+  it('Should display ul with role listbox when listbox-trigger button in clicked ', () => {
+    const { container } = render(
+      <ProjectFilter
+        activeBadges={[]}
+        setActiveBadges={() => {}}
+        handleBadgeClick={() => {}}
+      />
+    );
+
+    fireEvent.click(container.querySelector('button#listbox-button')!);
+    expect(container.querySelector('ul[role=listbox]')).toBeInTheDocument();
+  });
+
+  const setActiveBadgesMock = jest.fn();
+  const handleBadgeClickMock = jest.fn();
+
+  it('setActiveBadges function should be called on each listbox element click', () => {
+    const { container } = render(
+      <ProjectFilter
+        activeBadges={[]}
+        setActiveBadges={setActiveBadgesMock}
+        handleBadgeClick={() => {}}
+      />
+    );
+
+    fireEvent.click(container.querySelector('button#listbox-button')!);
+    fireEvent.click(
+      container.querySelector('ul[role=listbox] li:first-of-type')!
+    );
+    expect(setActiveBadgesMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('handleBadgeClickMock function should be called on each badge button click', () => {
+    const { container } = render(
+      <ProjectFilter
+        activeBadges={['badge1', 'badge2']}
+        setActiveBadges={() => {}}
+        handleBadgeClick={handleBadgeClickMock}
+      />
+    );
+
+    fireEvent.click(
+      container.querySelector('div.bg-custom-pink:first-of-type button ')!
+    );
+
+    expect(handleBadgeClickMock).toHaveBeenCalledTimes(1);
   });
 });
