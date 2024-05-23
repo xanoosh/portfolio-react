@@ -7,4 +7,8 @@ describe('Loader: ', () => {
     render(<Loader />);
     expect(screen.getByTestId('oval-loading')).toBeInTheDocument();
   });
+  it('Should display svg', () => {
+    const { container } = render(<Loader />);
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
 });

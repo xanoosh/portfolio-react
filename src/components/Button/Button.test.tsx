@@ -19,4 +19,24 @@ describe('Button: ', () => {
     );
     expect(container.firstChild).toHaveClass('bg-custom-blue ring-custom-blue');
   });
+
+  it('Should not display svg is icon prop is undefined', () => {
+    const { container } = render(
+      <Button url="" text="button" variant="primary" />
+    );
+    expect(container.querySelector('svg')).not.toBeInTheDocument();
+  });
+
+  it('Should display svg is icon prop is codeIcon', () => {
+    const { container } = render(
+      <Button url="" icon="codeIcon" text="button" variant="primary" />
+    );
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
+  it('Should display svg is icon prop is webIcon', () => {
+    const { container } = render(
+      <Button url="" icon="webIcon" text="button" variant="primary" />
+    );
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
 });

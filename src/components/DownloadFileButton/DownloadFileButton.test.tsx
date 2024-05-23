@@ -36,4 +36,16 @@ describe('DownloadFileButton: ', () => {
     );
     expect(container.firstChild).toHaveClass('bg-custom-blue ring-custom-blue');
   });
+
+  it('Should display svg', () => {
+    const { container } = render(
+      <DownloadFileButton
+        fileName="file"
+        filePath="path"
+        text="DownloadFileButton"
+        variant="primary"
+      />
+    );
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
 });
