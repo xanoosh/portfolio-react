@@ -6,45 +6,39 @@ export const useActiveBadgesStore = create<StoreInterface>()((set, get) => ({
   activeProjects: projectsArray,
   activeBadges: [],
 
-  filterProjects: () =>
-    set((state) => {
-      if (state.activeBadges.length === 0) {
+  filterProjects: (activeBadgesArray) =>
+    set(() => {
+      if (activeBadgesArray.length === 0) {
         return { activeProjects: projectsArray };
       } else {
-        const filteredProjects = state.activeProjects.filter((project) =>
-          state.activeBadges.every((badge: string) =>
+        const filteredProjects = projectsArray.filter((project) =>
+          activeBadgesArray.every((badge: string) =>
             project.badges.includes(badge)
           )
         );
         return { activeProjects: filteredProjects };
       }
     }),
-
-  saveActiveBadges: (activeBadgesArray) =>
+  setActiveBadges: (activeBadgesArray) =>
     set(() => {
+      get().filterProjects(activeBadgesArray);
       return { activeBadges: activeBadgesArray };
     }),
-  toggleActiveBadge: (badgeName) =>
+  handleBadgeClick: (badgeName) =>
     set((state) => {
-      get().filterProjects();
+      let newActiveBadgesArray;
       if (state.activeBadges.includes(badgeName)) {
+        newActiveBadgesArray = state.activeBadges.filter(
+          (el) => el !== badgeName
+        );
+        get().filterProjects(newActiveBadgesArray);
         return {
-          activeBadges: state.activeBadges.filter((el) => el !== badgeName),
+          activeBadges: newActiveBadgesArray,
         };
       } else {
-        return { activeBadges: [...state.activeBadges, badgeName] };
+        newActiveBadgesArray = [...state.activeBadges, badgeName];
+        get().filterProjects(newActiveBadgesArray);
+        return { activeBadges: newActiveBadgesArray };
       }
     }),
-  setActiveBadges: (activeBadgesArray) => {
-    get().saveActiveBadges(activeBadgesArray);
-    get().filterProjects();
-  },
-
-  handleBadgeClick: (badgeName) => {
-    get().toggleActiveBadge(badgeName);
-    get().filterProjects();
-  },
 }));
-
-//remove filterprojects OR implement it with arument not the state (badges array)
-// remove saveactivebadges & toggleActiveBadge , 3 actions should be enough

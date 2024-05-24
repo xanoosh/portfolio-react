@@ -73,9 +73,7 @@ export interface ExperienceSectionProps {
 export interface StoreInterface {
   activeProjects: ProjectCardProps[];
   activeBadges: string[];
-  filterProjects: () => void;
-  saveActiveBadges: (activeBadgesArray: string[]) => void;
+  filterProjects: (activeBadgesArray: string[]) => void;
   setActiveBadges: (activeBadgesArray: string[]) => void;
-  toggleActiveBadge: (badgeName: string) => void;
   handleBadgeClick: (badgeName: string) => void;
 }
