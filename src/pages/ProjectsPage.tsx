@@ -1,12 +1,14 @@
 import ProjectCard from '../components/ProjectCard/ProjectCard';
 import ProjectFilter from '../components/ProjectFilter/ProjectFilter';
-import { projectsArray } from '../globals';
+import { projectsArray } from '../globals/globals';
 import { SingleProjectInterface } from '../interfaces';
 import { useMemo, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useActiveBadgesStore } from '../store/store';
 
 export default function ProjectsPage() {
-  const [activeBadges, setActiveBadges] = useState<string[]>([]);
+  const { activeBadges, setActiveBadges, handleBadgeClick } =
+    useActiveBadgesStore();
   const [activeProjects, setActiveProjects] = useState<
     SingleProjectInterface[]
   >([]);
@@ -16,19 +18,11 @@ export default function ProjectsPage() {
       setActiveProjects(projectsArray);
     } else {
       const newProjectsArray = projectsArray.filter((project) =>
-        activeBadges.every((badge) => project.badges.includes(badge))
+        activeBadges.every((badge: string) => project.badges.includes(badge))
       );
       setActiveProjects(newProjectsArray);
     }
   }, [activeBadges]);
-
-  const handleBadgeClick = (badgeName: string) => {
-    if (activeBadges.includes(badgeName)) {
-      setActiveBadges((prev) => prev.filter((el) => el !== badgeName));
-    } else {
-      setActiveBadges((prev) => [...prev, badgeName]);
-    }
-  };
 
   return projectsArray.length ? (
     <div className="flex flex-col gap-6 py-6 px-6 sm:px-12">

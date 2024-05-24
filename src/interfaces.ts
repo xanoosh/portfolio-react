@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+// import { Dispatch, SetStateAction } from 'react';
 
 export interface SingleProjectInterface {
   title: string;
@@ -49,7 +49,7 @@ export interface BadgeProps {
 
 export interface ProjectFilterProps {
   activeBadges: string[];
-  setActiveBadges: Dispatch<SetStateAction<string[]>>;
+  setActiveBadges: (value: string[]) => void;
   handleBadgeClick: (badgeName: string) => void;
 }
 

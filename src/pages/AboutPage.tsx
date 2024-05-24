@@ -4,7 +4,7 @@ import cv_en_path from '../files/jb_cv_en.pdf';
 import Button from '../components/Button/Button';
 import DownloadFileButton from '../components/DownloadFileButton/DownloadFileButton';
 import Badge from '../components/Badge/Badge';
-import { experience, techStack } from '../globals';
+import { experience, techStack } from '../globals/globals';
 import ExperienceSection from '../components/ExperienceSection/ExperienceSection';
 
 export default function AboutPage() {

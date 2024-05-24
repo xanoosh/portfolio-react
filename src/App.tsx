@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
-import { storybookLink } from './globals';
+import { storybookLink } from './globals/globals';
 
 function App() {
   return (

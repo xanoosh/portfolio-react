@@ -2,7 +2,7 @@ import { Listbox } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import Badge from '../Badge/Badge';
 import { ProjectFilterProps } from '../../interfaces';
-import { badgesArray } from '../../globals';
+import { badgesArray } from '../../globals/globals';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function ProjectFilter({
