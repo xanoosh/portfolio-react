@@ -1,17 +1,32 @@
 import { create } from 'zustand';
+import { StoreInterface } from '../interfaces';
+import { projectsArray } from '../globals/globals';
 
-interface ActiveBadgesInterface {
-  activeBadges: string[];
-  setActiveBadges: (badgeName: string[]) => void;
-  handleBadgeClick: (badgeName: string) => void;
-}
-
-export const useActiveBadgesStore = create<ActiveBadgesInterface>()((set) => ({
+export const useActiveBadgesStore = create<StoreInterface>()((set, get) => ({
+  activeProjects: projectsArray,
   activeBadges: [],
-  setActiveBadges: (activeBadgesArray) =>
-    set(() => ({ activeBadges: activeBadgesArray })),
-  handleBadgeClick: (badgeName) =>
+
+  filterProjects: () =>
     set((state) => {
+      if (state.activeBadges.length === 0) {
+        return { activeProjects: projectsArray };
+      } else {
+        const filteredProjects = state.activeProjects.filter((project) =>
+          state.activeBadges.every((badge: string) =>
+            project.badges.includes(badge)
+          )
+        );
+        return { activeProjects: filteredProjects };
+      }
+    }),
+
+  saveActiveBadges: (activeBadgesArray) =>
+    set(() => {
+      return { activeBadges: activeBadgesArray };
+    }),
+  toggleActiveBadge: (badgeName) =>
+    set((state) => {
+      get().filterProjects();
       if (state.activeBadges.includes(badgeName)) {
         return {
           activeBadges: state.activeBadges.filter((el) => el !== badgeName),
@@ -20,4 +35,13 @@ export const useActiveBadgesStore = create<ActiveBadgesInterface>()((set) => ({
         return { activeBadges: [...state.activeBadges, badgeName] };
       }
     }),
+  setActiveBadges: (activeBadgesArray) => {
+    get().saveActiveBadges(activeBadgesArray);
+    get().filterProjects();
+  },
+
+  handleBadgeClick: (badgeName) => {
+    get().toggleActiveBadge(badgeName);
+    get().filterProjects();
+  },
 }));

@@ -14,7 +14,7 @@ export interface SingleProjectInterface {
 export interface ProjectCardProps {
   title?: string;
   description?: string;
-  badges?: string[];
+  badges: string[];
   activeBadges?: string[];
   buttons?: ButtonProps[];
   handleBadgeClick?: (badgeName: string) => void;
@@ -68,4 +68,14 @@ export interface ExperienceSectionProps {
   title?: string;
   text?: string;
   list?: ExperienceListElement[];
+}
+
+export interface StoreInterface {
+  activeProjects: ProjectCardProps[];
+  activeBadges: string[];
+  filterProjects: () => void;
+  saveActiveBadges: (activeBadgesArray: string[]) => void;
+  setActiveBadges: (activeBadgesArray: string[]) => void;
+  toggleActiveBadge: (badgeName: string) => void;
+  handleBadgeClick: (badgeName: string) => void;
 }
