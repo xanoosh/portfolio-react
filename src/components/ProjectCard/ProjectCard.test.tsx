@@ -4,18 +4,19 @@ import ProjectCard from './ProjectCard';
 
 describe('ProjectCard: ', () => {
   it('Should display title if title prop was passed', () => {
-    render(<ProjectCard title="ProjectCard title" />);
+    render(<ProjectCard badges={[]} title="ProjectCard title" />);
     expect(screen.getByText('ProjectCard title')).toBeInTheDocument();
   });
 
   it('Should display description if description prop was passed', () => {
-    render(<ProjectCard description="ProjectCard description" />);
+    render(<ProjectCard badges={[]} description="ProjectCard description" />);
     expect(screen.getByText('ProjectCard description')).toBeInTheDocument();
   });
 
   it('Should display buttons if buttons array prop is passed & not empty', () => {
     render(
       <ProjectCard
+        badges={[]}
         buttons={[
           { text: 'button1', url: '' },
           { text: 'button2', url: '' },

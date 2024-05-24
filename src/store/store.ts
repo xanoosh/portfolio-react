@@ -45,3 +45,6 @@ export const useActiveBadgesStore = create<StoreInterface>()((set, get) => ({
     get().filterProjects();
   },
 }));
+
+//remove filterprojects OR implement it with arument not the state (badges array)
+// remove saveactivebadges & toggleActiveBadge , 3 actions should be enough
