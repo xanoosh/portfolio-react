@@ -27,7 +27,35 @@ describe('ExperienceSection: ', () => {
     );
     expect(container.querySelector('ol')).toBeInTheDocument();
   });
-  it('Should display responsibility text from list prop', () => {
+  it('Should display title string from list prop', () => {
+    render(
+      <ExperienceSection
+        list={[
+          {
+            title: 'title',
+            date: 'date',
+            responsibilities: ['responsibility'],
+          },
+        ]}
+      />
+    );
+    expect(screen.getByText('title')).toBeInTheDocument();
+  });
+  it('Should display date string from list prop', () => {
+    render(
+      <ExperienceSection
+        list={[
+          {
+            title: 'title',
+            date: 'date',
+            responsibilities: ['responsibility'],
+          },
+        ]}
+      />
+    );
+    expect(screen.getByText('date')).toBeInTheDocument();
+  });
+  it('Should display responsibility string from list prop', () => {
     render(
       <ExperienceSection
         list={[
