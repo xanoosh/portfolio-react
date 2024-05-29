@@ -15,9 +15,7 @@ export default {
     options: {},
   },
 
-  docs: {
-    autodocs: 'tag',
-  },
+  docs: {},
 
   async viteFinal(config) {
     const { mergeConfig } = await import('vite');
@@ -33,5 +31,9 @@ export default {
         include: ['storybook-dark-mode'],
       },
     });
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
   }
 };
