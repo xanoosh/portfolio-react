@@ -4,13 +4,15 @@ import { ReactNode } from 'react';
 export default function TooltipComponent({
   children,
   text,
+  defaultOpen,
 }: {
   children: ReactNode;
   text: string;
+  defaultOpen: boolean | undefined;
 }) {
   return (
     <Tooltip.Provider>
-      <Tooltip.Root>
+      <Tooltip.Root defaultOpen={defaultOpen}>
         <Tooltip.Trigger>{children}</Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
