@@ -38,7 +38,6 @@ export default function ProjectCard({
                   ? 'Click to remove this item from taglist'
                   : 'Click to add this item to taglist'
               }
-              defaultOpen={true}
             >
               <Badge
                 text={badge}

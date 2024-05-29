@@ -8,7 +8,7 @@ export default function TooltipComponent({
 }: {
   children: ReactNode;
   text: string;
-  defaultOpen: boolean | undefined;
+  defaultOpen?: boolean;
 }) {
   return (
     <Tooltip.Provider>
