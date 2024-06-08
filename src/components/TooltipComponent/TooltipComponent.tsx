@@ -1,17 +1,14 @@
 import * as Tooltip from '@radix-ui/react-tooltip';
-import { ReactNode } from 'react';
+import { TooltipComponentProps } from '../../interfaces';
 
 export default function TooltipComponent({
   children,
   text,
   defaultOpen,
-}: {
-  children: ReactNode;
-  text: string;
-  defaultOpen?: boolean;
-}) {
+  delayDuration = 500,
+}: TooltipComponentProps) {
   return (
-    <Tooltip.Provider>
+    <Tooltip.Provider delayDuration={delayDuration}>
       <Tooltip.Root defaultOpen={defaultOpen}>
         <Tooltip.Trigger>{children}</Tooltip.Trigger>
         <Tooltip.Portal>

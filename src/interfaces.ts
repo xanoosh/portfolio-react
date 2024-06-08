@@ -1,4 +1,5 @@
 // import { Dispatch, SetStateAction } from 'react';
+import { ReactNode } from 'react';
 
 export interface SingleProjectInterface {
   title: string;
@@ -45,6 +46,13 @@ export interface BadgeProps {
   size?: 'sm' | 'lg';
   handleRemove?: undefined | (() => void);
   handleClick?: undefined | (() => void);
+}
+
+export interface TooltipComponentProps {
+  children: ReactNode;
+  text: string;
+  defaultOpen?: boolean;
+  delayDuration?: number;
 }
 
 export interface ProjectFilterProps {
