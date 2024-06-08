@@ -4,7 +4,7 @@ import { TooltipComponentProps } from '../../interfaces';
 export default function TooltipComponent({
   children,
   text,
-  defaultOpen,
+  defaultOpen = false,
   delayDuration = 500,
 }: TooltipComponentProps) {
   return (
