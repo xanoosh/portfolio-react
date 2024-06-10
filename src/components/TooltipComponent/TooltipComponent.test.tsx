@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
-import { render, fireEvent, waitFor } from '@testing-library/react';
-// import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import TooltipComponent from './TooltipComponent';
 
@@ -48,7 +47,7 @@ describe('TooltipComponent: ', () => {
         </TooltipComponent>
       </section>
     );
-    fireEvent.mouseEnter(container.querySelector('button')!);
+    userEvent.hover(container.querySelector('button')!);
     await waitFor(() =>
       expect(container.querySelector('button')).toHaveAttribute(
         'data-state',
