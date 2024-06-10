@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import ProjectFilter from './ProjectFilter';
+import userEvent from '@testing-library/user-event';
 
 describe('ProjectFilter: ', () => {
   it('Should display text "No active tag selected." if activeBadges array is empty', () => {
@@ -97,5 +98,20 @@ describe('ProjectFilter: ', () => {
     );
 
     expect(handleBadgeClickMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should show ul on listbox button click', async () => {
+    const { container } = render(
+      <ProjectFilter
+        activeBadges={['badge1', 'badge2']}
+        setActiveBadges={() => {}}
+        handleBadgeClick={handleBadgeClickMock}
+      />
+    );
+
+    userEvent.click(container.querySelector('#listbox-button')!);
+    await waitFor(() =>
+      expect(container.querySelector('ul')).toBeInTheDocument()
+    );
   });
 });
