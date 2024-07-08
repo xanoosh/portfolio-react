@@ -10,7 +10,7 @@ export default function TooltipComponent({
   return (
     <Tooltip.Provider delayDuration={delayDuration}>
       <Tooltip.Root defaultOpen={defaultOpen}>
-        <Tooltip.Trigger>{children}</Tooltip.Trigger>
+        <Tooltip.Trigger tabIndex={-1}>{children}</Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
             className={`rounded-lg shadow bg-slate-800 text-slate-300 text-xs py-2 px-4`}

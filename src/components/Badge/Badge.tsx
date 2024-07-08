@@ -26,14 +26,27 @@ export default function Badge({
     }
   };
 
+  const focusClasses = () => {
+    switch (variant) {
+      case 'main':
+        return 'focus:outline-none focus:ring-1 ring-offset-2 ring-offset-slate-800 ring-slate-900';
+      case 'pink':
+        return 'focus:outline-none focus:ring-1 ring-offset-2 ring-offset-slate-800 ring-custom-pink';
+    }
+  };
+
   return text.length === 0 ? null : (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className={`${colorClasses()} ${sizeClasses()} rounded-full flex flex-row gap-2 items-center ${handleClick ? 'cursor-pointer' : ''}`}
+      className={`${colorClasses()} ${sizeClasses()} ${focusClasses()} rounded-full flex flex-row gap-2 items-center ${handleClick ? 'cursor-pointer' : ''}`}
       onClick={handleClick ? handleClick : () => null}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.code === 'Enter') handleClick ? handleClick() : (() => null)();
+      }}
     >
       <span className="">{text}</span>
       {handleRemove ? <RemoveButton onClick={handleRemove} /> : null}

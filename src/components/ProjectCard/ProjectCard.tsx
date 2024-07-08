@@ -35,8 +35,8 @@ export default function ProjectCard({
               key={i}
               text={
                 activeBadges?.includes(badge)
-                  ? 'Click to remove this item from taglist'
-                  : 'Click to add this item to taglist'
+                  ? 'Click or press Enter key to remove this item from taglist'
+                  : 'Click or press Enter to add this item to taglist'
               }
             >
               <Badge
