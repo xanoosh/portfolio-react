@@ -119,7 +119,7 @@ export const projectsArray = [
   {
     title: 'ETF Charts',
     description:
-      'WORK IN PROGRESS! App utilizes API to get ETF stock data. Data is presented using charts from nivo. Deployed on Vercel',
+      'WORK IN PROGRESS - still looking for a decent API. App utilizes API to get ETF stock data. Data is presented using charts from nivo. Deployed on Vercel',
     badges: [
       'Vite',
       'React',
@@ -310,6 +310,10 @@ export const techStack = [
       'React Native',
       'Expo',
     ],
+  },
+  {
+    title: 'Backend',
+    technologies: ['Node', 'Express', 'Mongo DB'],
   },
   {
     title: 'Unit Tests',
