@@ -313,7 +313,7 @@ export const techStack = [
   },
   {
     title: 'Backend',
-    technologies: ['Node', 'Express', 'Mongo DB'],
+    technologies: ['Node.js', 'Express.js', 'MongoDB'],
   },
   {
     title: 'Unit Tests',
