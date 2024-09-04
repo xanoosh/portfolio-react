@@ -117,6 +117,34 @@ export const projectsArray = [
     ],
   },
   {
+    title: 'Weather app',
+    description:
+      '5 day forecast app, build with Tommmorow.io weather API. Data is presented with charts from nivo, tailwind & headless components (Headless UI & Radix). Deployed on Vercel',
+    badges: [
+      'Vite',
+      'React',
+      'Nivo Charts',
+      'React-Use',
+      'Headless Components',
+      'TanStack Query',
+      'REST API',
+      'ES6',
+      'Tailwind',
+    ],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://weather-app-blond-kappa.vercel.app/',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/weather-app/',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
     title: 'ETF Charts',
     description:
       'WORK IN PROGRESS - still looking for a decent API. App utilizes API to get ETF stock data. Data is presented using charts from nivo. Deployed on Vercel',
