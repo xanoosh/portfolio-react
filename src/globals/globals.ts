@@ -126,6 +126,7 @@ export const projectsArray = [
       'Nivo Charts',
       'React-Use',
       'Headless Components',
+      'Framer motion',
       'TanStack Query',
       'REST API',
       'ES6',
