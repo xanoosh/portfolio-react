@@ -129,7 +129,8 @@ export const projectsArray = [
       'Framer motion',
       'TanStack Query',
       'REST API',
-      'ES6',
+      'Zustand',
+      'Typescript',
       'Tailwind',
     ],
     buttons: [
