@@ -119,7 +119,7 @@ export const projectsArray = [
   {
     title: 'Weather app',
     description:
-      '5 day forecast app, build with Tommmorow.io weather API. Data is presented with charts from nivo, tailwind & headless components (Headless UI & Radix). Deployed on Vercel',
+      '5 day forecast app, build with weather & geolocation API combined. Data is presented with charts from nivo, tailwind & headless components (Headless UI & Radix). Deployed on Vercel',
     badges: [
       'Vite',
       'React',
