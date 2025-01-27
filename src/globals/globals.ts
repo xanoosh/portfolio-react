@@ -147,6 +147,35 @@ export const projectsArray = [
     ],
   },
   {
+    title: 'Virtualized list',
+    description:
+      ' Simple app showcasing list virtualisation as well as lazy loading content. Both examples are built with custom hooks leveraging tanstack query and data consumption from 2 simple APIs. Deployed on Vercel',
+    badges: [
+      'Vite',
+      'React',
+      'TanStack Query',
+      'Virtualisation',
+      'React Router',
+      'Lazy',
+      'Typescript',
+      'Tailwind',
+      'REST API',
+      'ES6',
+    ],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://virtualised-list.vercel.app/',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/virtualised-list',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
     title: 'ETF Charts',
     description:
       'WORK IN PROGRESS - still looking for a decent API. App utilizes API to get ETF stock data. Data is presented using charts from nivo. Deployed on Vercel',
@@ -306,6 +335,7 @@ export const badgesArray = [
   'Local Storage',
   'Async Storage',
   'Typescript',
+  'Virtualisation',
   'Vitest',
   'Jest',
   'React Testing Library',
