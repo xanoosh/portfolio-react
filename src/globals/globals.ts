@@ -117,6 +117,31 @@ export const projectsArray = [
     ],
   },
   {
+    title: 'Investment calculator',
+    description:
+      'Simple investment calculator app, which calculates the future value of an investment based on user input. Deployed on Vercel',
+    badges: [
+      'Vite',
+      'React',
+      'Nivo Charts',
+      'React Hook Form',
+      'ES6',
+      'Tailwind',
+    ],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://investment-calculator-red-five.vercel.app/',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/investment-calculator',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
     title: 'Weather app',
     description:
       '5 day forecast app, build with weather & geolocation API combined. Data is presented with charts from nivo, tailwind & headless components (Headless UI & Radix). Deployed on Vercel',
