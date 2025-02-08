@@ -125,8 +125,10 @@ export const projectsArray = [
       'React',
       'Nivo Charts',
       'React Hook Form',
-      'ES6',
       'Tailwind',
+      'Typescript',
+      'React-Use',
+      'ES6',
     ],
     buttons: [
       {
