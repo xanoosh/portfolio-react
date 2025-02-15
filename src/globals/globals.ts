@@ -128,6 +128,7 @@ export const projectsArray = [
       'Framer motion',
       'React Hook Form',
       'Tailwind',
+      'Headless Components',
       'Typescript',
       'React-Use',
       'ES6',
