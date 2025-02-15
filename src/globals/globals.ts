@@ -124,6 +124,8 @@ export const projectsArray = [
       'Vite',
       'React',
       'Nivo Charts',
+      'Zustand',
+      'Framer motion',
       'React Hook Form',
       'Tailwind',
       'Typescript',
