@@ -56,34 +56,36 @@ export const projectsArray = [
     ],
   },
   {
-    title: 'Github user search',
+    title: 'Investment calculator',
     description:
-      'App uses external Github API to fetch user projects data based on login provided. It uses front-end validation for empty field & displays messages based on response, deployed on Vercel',
+      'Simple investment calculator app, which calculates the future value of an investment based on user input. Deployed on Vercel',
     badges: [
       'Vite',
       'React',
-      'TanStack Query',
+      'Nivo Charts',
+      'Zustand',
+      'Framer motion',
       'React Hook Form',
-      'React Router',
-      'Lazy',
-      'REST API',
+      'Tailwind',
+      'Headless Components',
+      'Typescript',
+      'React-Use',
       'ES6',
-      'SASS',
-      'BEM',
     ],
     buttons: [
       {
         text: 'App',
-        url: 'https://github-user-search-five-opal.vercel.app',
+        url: 'https://investment-calculator-red-five.vercel.app/',
         icon: 'webIcon',
       },
       {
         text: 'Code',
-        url: 'https://github.com/xanoosh/github-user-search',
+        url: 'https://github.com/xanoosh/investment-calculator',
         icon: 'codeIcon',
       },
     ],
   },
+
   {
     title: 'Stat calculator',
     description:
@@ -117,36 +119,6 @@ export const projectsArray = [
     ],
   },
   {
-    title: 'Investment calculator',
-    description:
-      'Simple investment calculator app, which calculates the future value of an investment based on user input. Deployed on Vercel',
-    badges: [
-      'Vite',
-      'React',
-      'Nivo Charts',
-      'Zustand',
-      'Framer motion',
-      'React Hook Form',
-      'Tailwind',
-      'Headless Components',
-      'Typescript',
-      'React-Use',
-      'ES6',
-    ],
-    buttons: [
-      {
-        text: 'App',
-        url: 'https://investment-calculator-red-five.vercel.app/',
-        icon: 'webIcon',
-      },
-      {
-        text: 'Code',
-        url: 'https://github.com/xanoosh/investment-calculator',
-        icon: 'codeIcon',
-      },
-    ],
-  },
-  {
     title: 'Weather app',
     description:
       '5 day forecast app, build with weather & geolocation API combined. Data is presented with charts from nivo, tailwind & headless components (Headless UI & Radix). Deployed on Vercel',
@@ -172,6 +144,35 @@ export const projectsArray = [
       {
         text: 'Code',
         url: 'https://github.com/xanoosh/weather-app/',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
+    title: 'Github user search',
+    description:
+      'App uses external Github API to fetch user projects data based on login provided. It uses front-end validation for empty field & displays messages based on response, deployed on Vercel',
+    badges: [
+      'Vite',
+      'React',
+      'TanStack Query',
+      'React Hook Form',
+      'React Router',
+      'Lazy',
+      'REST API',
+      'ES6',
+      'SASS',
+      'BEM',
+    ],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://github-user-search-five-opal.vercel.app',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/github-user-search',
         icon: 'codeIcon',
       },
     ],
