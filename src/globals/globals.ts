@@ -85,7 +85,36 @@ export const projectsArray = [
       },
     ],
   },
-
+  {
+    title: 'Weather app',
+    description:
+      '5 day forecast app, build with weather & geolocation API combined. Data is presented with charts from nivo, tailwind & headless components (Headless UI & Radix). Deployed on Vercel',
+    badges: [
+      'Vite',
+      'React',
+      'Nivo Charts',
+      'React-Use',
+      'Headless Components',
+      'Framer motion',
+      'TanStack Query',
+      'REST API',
+      'Zustand',
+      'Typescript',
+      'Tailwind',
+    ],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://weather-app-blond-kappa.vercel.app/',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/weather-app/',
+        icon: 'codeIcon',
+      },
+    ],
+  },
   {
     title: 'Stat calculator',
     description:
@@ -118,36 +147,7 @@ export const projectsArray = [
       },
     ],
   },
-  {
-    title: 'Weather app',
-    description:
-      '5 day forecast app, build with weather & geolocation API combined. Data is presented with charts from nivo, tailwind & headless components (Headless UI & Radix). Deployed on Vercel',
-    badges: [
-      'Vite',
-      'React',
-      'Nivo Charts',
-      'React-Use',
-      'Headless Components',
-      'Framer motion',
-      'TanStack Query',
-      'REST API',
-      'Zustand',
-      'Typescript',
-      'Tailwind',
-    ],
-    buttons: [
-      {
-        text: 'App',
-        url: 'https://weather-app-blond-kappa.vercel.app/',
-        icon: 'webIcon',
-      },
-      {
-        text: 'Code',
-        url: 'https://github.com/xanoosh/weather-app/',
-        icon: 'codeIcon',
-      },
-    ],
-  },
+
   {
     title: 'Github user search',
     description:
