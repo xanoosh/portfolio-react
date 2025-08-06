@@ -459,10 +459,11 @@ export const experience = {
     },
     {
       title: 'Gorillas.dev | Frontend Developer - React',
-      date: '09.2021 – 06.2022',
+      date: '09.2021 – 08.2025',
       responsibilities: [
         'Maintenance and developmental work on a web application supporting the servicing and rental of printers, written in React',
-        'Utilizing Redux and Apollo GraphQ',
+        'Utilizing Redux for state management',
+        'Using Apollo GraphQL for API interactions',
       ],
     },
     {
