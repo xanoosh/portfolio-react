@@ -46,6 +46,7 @@ export interface BadgeProps {
   size?: 'sm' | 'lg';
   handleRemove?: undefined | (() => void);
   handleClick?: undefined | (() => void);
+  noFocus?: boolean;
 }
 
 export interface TooltipComponentProps {

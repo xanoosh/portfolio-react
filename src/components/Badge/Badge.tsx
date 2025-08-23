@@ -8,6 +8,7 @@ export default function Badge({
   size = 'sm',
   handleRemove,
   handleClick,
+  noFocus = false,
 }: BadgeProps) {
   const colorClasses = () => {
     switch (variant) {
@@ -27,6 +28,7 @@ export default function Badge({
   };
 
   const focusClasses = () => {
+    if (noFocus) return '';
     switch (variant) {
       case 'main':
         return 'focus:outline-none focus:ring-1 ring-offset-2 ring-offset-slate-800 ring-slate-900';

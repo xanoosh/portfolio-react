@@ -30,7 +30,7 @@ export default function AboutPage() {
               <h2 className="text-xl mb-4">{title}</h2>
               <div className="flex flex-row gap-2 flex-wrap">
                 {technologies.map((el, i) => (
-                  <Badge text={el} variant="pink" key={i} />
+                  <Badge text={el} variant="pink" key={i} noFocus />
                 ))}
               </div>
             </div>
