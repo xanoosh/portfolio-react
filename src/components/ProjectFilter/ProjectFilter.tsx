@@ -1,4 +1,9 @@
-import { Listbox } from '@headlessui/react';
+import {
+  ListboxButton,
+  ListboxOption,
+  Listbox,
+  ListboxOptions,
+} from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import Badge from '../Badge/Badge';
 import { ProjectFilterProps } from '../../interfaces';
@@ -20,28 +25,29 @@ export default function ProjectFilter({
       {/* Select */}
       <Listbox value={activeBadges} onChange={setActiveBadges} multiple>
         <div className="md:col-span-2 relative">
-          <Listbox.Button
+          <ListboxButton
             id="listbox-button"
-            className="relative w-full cursor-default rounded-lg bg-slate-300 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-slate-300 ring-offset-4 focus:ring-offset-slate-800 sm:text-sm"
+            className="relative w-full cursor-default rounded-lg bg-slate-900 py-3 px-4 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-custom-blue focus:ring-offset-4 focus:ring-offset-slate-800 sm:text-sm"
           >
-            <span className="block truncate">Filter projects by tag</span>
+            <span className="block truncate text-white">
+              Filter projects by tag
+            </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon
-                className="h-5 w-5 text-slate-800"
+                className="h-5 w-5 text-white"
                 aria-hidden="true"
               />
             </span>
-          </Listbox.Button>
-          <Listbox.Options className="absolute z-10 mt-1 max-h-60 top-11 left-0 right-0 overflow-auto rounded-md bg-slate-300 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+          </ListboxButton>
+          <ListboxOptions
+            modal={false}
+            className="absolute z-10 mt-2 max-h-60 top-11 left-0 right-0 overflow-auto rounded-md bg-slate-900 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm"
+          >
             {badgesArray.map((tag, i) => (
-              <Listbox.Option
+              <ListboxOption
                 key={i}
                 value={tag}
-                className={({ active }) =>
-                  `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                    active ? 'bg-custom-blue text-white' : 'text-slate-900'
-                  }`
-                }
+                className={`relative cursor-default select-none py-3 pl-10 pr-4 text-slate-300 hover:bg-custom-blue hover:text-white focus:outline-none data-focus:bg-custom-blue data-focus:text-white data-selected:text-custom-pink data-focus:data-selected:text-white hover:data-selected:text-white`}
               >
                 <>
                   <span
@@ -57,9 +63,9 @@ export default function ProjectFilter({
                     </span>
                   ) : null}
                 </>
-              </Listbox.Option>
+              </ListboxOption>
             ))}
-          </Listbox.Options>
+          </ListboxOptions>
         </div>
       </Listbox>
       {/* tagList: */}
