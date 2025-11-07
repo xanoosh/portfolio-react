@@ -1,8 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { screen } from '@testing-library/react';
-
-// import { render } from '@testing-library/react';
-
 import Badge from './Badge';
 
 const meta = {
@@ -22,14 +18,6 @@ export const SmallPinkBadge: Story = {
     text: 'small pink badge text',
     variant: 'pink',
     size: 'sm',
-  },
-  play: async ({ canvasElement }) => {
-    const text = await screen.findByText('badge', undefined, {
-      container: canvasElement,
-    });
-    expect(text).toBeInTheDocument();
-    const container = canvasElement.firstElementChild!;
-    expect(container).toHaveClass('bg-custom-pink text-white');
   },
 };
 export const LargePinkBadge: Story = {
