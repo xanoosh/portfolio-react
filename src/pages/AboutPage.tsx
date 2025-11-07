@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import cv_pl_path from '../files/jb_cv_pl.pdf';
-import cv_en_path from '../files/jb_cv_en.pdf';
+import cv_pl_path from '../files/CV_Janusz_Bielczynski_Frontend_pl.pdf';
+import cv_en_path from '../files/CV_Janusz_Bielczynski_Frontend_en.pdf';
 import Button from '../components/Button/Button';
 import DownloadFileButton from '../components/DownloadFileButton/DownloadFileButton';
 import Badge from '../components/Badge/Badge';
@@ -58,13 +58,13 @@ export default function AboutPage() {
           <div className="flex flex-row gap-4 flex-wrap">
             <DownloadFileButton
               text="Download CV (pl)"
-              fileName="jb_cv_pl.pdf"
+              fileName="CV_Janusz_Bielczynski_Frontend_pl.pdf"
               filePath={cv_pl_path}
               variant="primary"
             />
             <DownloadFileButton
               text="Download CV (en)"
-              fileName="jb_cv_en.pdf"
+              fileName="CV_Janusz_Bielczynski_Frontend_en.pdf"
               filePath={cv_en_path}
               variant="primary"
             />
