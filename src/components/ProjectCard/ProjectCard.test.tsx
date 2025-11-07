@@ -1,5 +1,5 @@
-import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { vi } from 'vitest';
 import ProjectCard from './ProjectCard';
 
 describe('ProjectCard: ', () => {
@@ -32,7 +32,7 @@ describe('ProjectCard: ', () => {
     expect(screen.getByText('badge1')).toBeInTheDocument();
     expect(screen.getByText('badge2')).toBeInTheDocument();
   });
-  const handleBadgeClickMock = jest.fn();
+  const handleBadgeClickMock = vi.fn();
   it('handleBadgeClick should be called on badge click', () => {
     render(
       <ProjectCard
