@@ -25,7 +25,7 @@ export default function ExperienceSection({
                 </div>
 
                 {responsibilities.length > 0 ? (
-                  <ul className="list-square pl-4">
+                  <ul className=" pl-4 !list-square">
                     {responsibilities.map((responsibility, i) => (
                       <li key={i} className="marker:text-base mb-1">
                         {responsibility}
