@@ -1,15 +1,14 @@
-import '@testing-library/jest-dom';
 import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import TooltipComponent from './TooltipComponent';
 
-beforeEach(() => {
-  global.ResizeObserver = class MockedResizeObserver {
-    observe = jest.fn();
-    unobserve = jest.fn();
-    disconnect = jest.fn();
-  };
-});
+// beforeEach(() => {
+//   global.ResizeObserver = class MockedResizeObserver {
+//     observe = jest.fn();
+//     unobserve = jest.fn();
+//     disconnect = jest.fn();
+//   };
+// });
 
 describe('TooltipComponent: ', () => {
   it('Child element should have attribute data-state="closed" at the start', () => {

@@ -1,4 +1,6 @@
 import { createRequire } from 'module';
+import type { UserConfig } from 'vite';
+
 const require = createRequire(import.meta.url);
 
 export default {
@@ -8,9 +10,8 @@ export default {
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    'storybook-addon-remix-react-router',
-    '@storybook/addon-jest',
     '@chromatic-com/storybook',
+    '@storybook/test-runner',
   ],
 
   framework: {
@@ -20,12 +21,12 @@ export default {
 
   docs: {},
 
-  async viteFinal(config) {
+  async viteFinal(config: UserConfig) {
     const { mergeConfig } = await import('vite');
     config.resolve = {
       ...config.resolve,
       alias: {
-        ...config.resolve.alias,
+        ...config.resolve?.alias,
         path: require.resolve('path-browserify'),
       },
     };

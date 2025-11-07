@@ -1,6 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { withTests } from '@storybook/addon-jest';
-import results from '../../../.jest-test-results.json';
 import Badge from './Badge';
 
 const meta = {
@@ -9,7 +7,6 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [withTests({ results })],
   tags: ['autodocs'],
 } satisfies Meta<typeof Badge>;
 
@@ -22,6 +19,7 @@ export const SmallPinkBadge: Story = {
     variant: 'pink',
     size: 'sm',
   },
+  play: ({ canvasElement }) => canvasElement.focus(),
 };
 export const LargePinkBadge: Story = {
   args: {
