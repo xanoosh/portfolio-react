@@ -1,3 +1,4 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
 import { createRequire } from 'module';
 import type { UserConfig } from 'vite';
 
@@ -9,9 +10,9 @@ export default {
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@chromatic-com/storybook',
     '@storybook/test-runner',
+    '@storybook/addon-docs'
   ],
 
   framework: {

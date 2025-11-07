@@ -1,7 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { withRouter } from 'storybook-addon-remix-react-router';
-import { withTests } from '@storybook/addon-jest';
-import results from '../../../.jest-test-results.json';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Navbar from './Navbar';
 
 const meta = {
@@ -10,7 +7,6 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  decorators: [withTests({ results }), withRouter],
   tags: ['autodocs'],
 } satisfies Meta<typeof Navbar>;
 
