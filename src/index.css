@@ -1,3 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-custom-blue: #1f8adb;
+  --color-custom-pink: #ff4785;
+}
+
+@import 'tailwindcss';
