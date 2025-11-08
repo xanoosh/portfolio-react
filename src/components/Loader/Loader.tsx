@@ -10,7 +10,7 @@ export default function Loader() {
       color="#646cff"
       secondaryColor="#646cff"
       ariaLabel="oval-loading"
-      wrapperClass="h-[100vh] w-[100vw] flex justify-center items-center"
+      wrapperClass="h-[calc(100vh-64px)] w-full flex justify-center items-center"
     />
   );
 }

@@ -12,7 +12,7 @@ function App() {
         ]}
         storybookLink={storybookLink}
       />
-      <section className="bg-pattern bg-no-repeat bg-center bg-cover bg-fixed min-h-screen">
+      <section className="bg-pattern bg-no-repeat bg-center bg-cover bg-fixed min-h-[calc(100vh-64px)]">
         <Outlet />
       </section>
     </main>
