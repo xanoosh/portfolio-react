@@ -7,7 +7,14 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-
     setupFiles: './vitest.setup.ts',
+    server:{
+      deps:{
+        inline:[ 'react-loader-spinner']
+      }
+    }
   },
 }) as UserConfig;
+
+
+
