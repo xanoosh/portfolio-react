@@ -15,7 +15,7 @@ export default function Badge({
       case 'main':
         return 'bg-slate-900 text-slate-400';
       case 'pink':
-        return 'bg-custom-pink text-white';
+        return 'bg-pink-600 text-white';
     }
   };
   const sizeClasses = () => {
@@ -43,7 +43,9 @@ export default function Badge({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className={`${colorClasses()} ${sizeClasses()} ${focusClasses()} rounded-full flex flex-row gap-2 items-center ${handleClick ? 'cursor-pointer' : ''}`}
+      className={`${colorClasses()} ${sizeClasses()} ${focusClasses()} rounded-full flex flex-row gap-2 items-center ${
+        handleClick ? 'cursor-pointer' : ''
+      }`}
       onClick={handleClick ? handleClick : () => null}
       tabIndex={0}
       onKeyDown={(e) => {

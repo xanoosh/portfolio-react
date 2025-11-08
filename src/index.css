@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-custom-blue: #1f8adb;
-  --color-custom-pink: #ff4785;
   --list-style-type-square: square;
   --background-image-pattern: url('/src/img/pattern.svg');
 }

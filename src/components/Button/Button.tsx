@@ -12,8 +12,8 @@ export default function Button({
     switch (variant) {
       case 'primary':
         return disabled === true
-          ? 'bg-custom-blue ring-custom-blue'
-          : 'bg-custom-blue hover:bg-opacity-90 ring-custom-blue';
+          ? 'bg-sky-700 ring-sky-700'
+          : 'bg-sky-700 ring-sky-700 hover:bg-pink-600 hover:ring-pink-600';
       case 'pink':
         return disabled === true
           ? 'bg-custom-pink ring-custom-pink'
@@ -38,7 +38,9 @@ export default function Button({
       target="_blank"
       rel="noopener noreferrer"
       href={url}
-      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center ${focusClasses} ${variantClasses(variant)} ${buttonDisabledClasses}`}
+      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center ${focusClasses} ${variantClasses(
+        variant
+      )} ${buttonDisabledClasses}`}
     >
       {icon === 'codeIcon' ? <CodeBracketIcon className={iconClasses} /> : null}
       {icon === 'webIcon' ? <GlobeAltIcon className={iconClasses} /> : null}

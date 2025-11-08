@@ -27,7 +27,7 @@ export default function ProjectFilter({
         <div className="md:col-span-2 relative">
           <ListboxButton
             id="listbox-button"
-            className="relative w-full cursor-default rounded-lg bg-slate-900 py-3 px-4 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-custom-blue focus:ring-offset-4 focus:ring-offset-slate-800 sm:text-sm"
+            className="relative w-full cursor-default rounded-lg bg-slate-900 py-3 px-4 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-4 focus:ring-offset-slate-800 sm:text-sm"
           >
             <span className="block truncate text-white">
               Filter projects by tag
@@ -47,7 +47,7 @@ export default function ProjectFilter({
               <ListboxOption
                 key={i}
                 value={tag}
-                className={`relative cursor-default select-none py-3 pl-10 pr-4 text-slate-300 hover:bg-custom-blue hover:text-white focus:outline-none data-focus:bg-custom-blue data-focus:text-white data-selected:text-custom-pink data-focus:data-selected:text-white hover:data-selected:text-white`}
+                className={`relative cursor-default select-none py-3 pl-10 pr-4 text-slate-300 hover:bg-sky-700 hover:text-white focus:outline-none data-focus:bg-sky-700 data-focus:text-white data-selected:text-custom-pink data-focus:data-selected:text-white hover:data-selected:text-white`}
               >
                 <>
                   <span

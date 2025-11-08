@@ -14,7 +14,7 @@ describe('DownloadFileButton: ', () => {
     expect(screen.getByText('DownloadFileButton')).toBeInTheDocument();
   });
 
-  it('Should have classes bg-custom-blue ring-custom-blue if variant prop was not passed', () => {
+  it('Should have classes bg-sky-700 ring-sky-700 if variant prop was not passed', () => {
     const { container } = render(
       <DownloadFileButton
         fileName="file"
@@ -22,10 +22,10 @@ describe('DownloadFileButton: ', () => {
         text="DownloadFileButton"
       />
     );
-    expect(container.firstChild).toHaveClass('bg-custom-blue ring-custom-blue');
+    expect(container.firstChild).toHaveClass('bg-sky-700 ring-sky-700');
   });
 
-  it('Should have class bg-custom-blue ring-custom-blue if variant prop is equal to primary', () => {
+  it('Should have class bg-sky-700 ring-sky-700 if variant prop is equal to primary', () => {
     const { container } = render(
       <DownloadFileButton
         fileName="file"
@@ -34,7 +34,7 @@ describe('DownloadFileButton: ', () => {
         variant="primary"
       />
     );
-    expect(container.firstChild).toHaveClass('bg-custom-blue ring-custom-blue');
+    expect(container.firstChild).toHaveClass('bg-sky-700 ring-sky-700');
   });
 
   it('Should display svg', () => {

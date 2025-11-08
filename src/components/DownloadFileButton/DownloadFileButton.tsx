@@ -13,8 +13,8 @@ export default function DownloadFileButton({
     switch (variant) {
       case 'primary':
         return disabled === true
-          ? 'bg-custom-blue ring-custom-blue'
-          : 'bg-custom-blue hover:bg-opacity-90 ring-custom-blue';
+          ? 'bg-sky-700 ring-sky-700'
+          : 'bg-sky-700 hover:bg-opacity-90 ring-sky-700';
       case 'pink':
         return disabled === true
           ? 'bg-custom-pink ring-custom-pink'
@@ -36,7 +36,9 @@ export default function DownloadFileButton({
   return text.length === 0 ? null : (
     <button
       onClick={() => downloadPDF(fileName, filePath)}
-      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center ${focusClasses} ${variantClasses(variant)} ${disabledClasses}`}
+      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center ${focusClasses} ${variantClasses(
+        variant
+      )} ${disabledClasses}`}
       disabled={disabled}
     >
       <ArrowDownTrayIcon className="w-4 h-4" />

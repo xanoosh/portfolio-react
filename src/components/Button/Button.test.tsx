@@ -7,16 +7,16 @@ describe('Button: ', () => {
     expect(screen.getByText('button')).toBeInTheDocument();
   });
 
-  it('Should have classes bg-custom-blue ring-custom-blue if variant prop was not passed', () => {
+  it('Should have classes bg-sky-700 ring-sky-700 if variant prop was not passed', () => {
     const { container } = render(<Button url="" text="button" />);
-    expect(container.firstChild).toHaveClass('bg-custom-blue ring-custom-blue');
+    expect(container.firstChild).toHaveClass('bg-sky-700 ring-sky-700');
   });
 
-  it('Should have class bg-custom-blue ring-custom-blue if variant prop is equal to primary', () => {
+  it('Should have class bg-sky-700 ring-sky-700 if variant prop is equal to primary', () => {
     const { container } = render(
       <Button url="" text="button" variant="primary" />
     );
-    expect(container.firstChild).toHaveClass('bg-custom-blue ring-custom-blue');
+    expect(container.firstChild).toHaveClass('bg-sky-700 ring-sky-700');
   });
 
   it('Should not display svg is icon prop is undefined', () => {
