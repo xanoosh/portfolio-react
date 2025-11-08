@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
+import { render,waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import TooltipComponent from './TooltipComponent';
 
 describe('TooltipComponent: ', () => {
@@ -30,20 +30,20 @@ describe('TooltipComponent: ', () => {
     );
   });
 
-  // it('Child element should have attribute data-state="delayed-open" on hover', async () => {
-  //   const { container } = render(
-  //     <section>
-  //       <TooltipComponent text="tooltip text">
-  //         <button>button</button>
-  //       </TooltipComponent>
-  //     </section>
-  //   );
-  //   userEvent.hover(container.querySelector('button')!);
-  //   await waitFor(() =>
-  //     expect(container.querySelector('button')).toHaveAttribute(
-  //       'data-state',
-  //       'delayed-open'
-  //     )
-  //   );
-  // });
+  it('Child element should have attribute data-state="delayed-open" on hover', async () => {
+    const { container } = render(
+      <section>
+        <TooltipComponent text="tooltip text">
+          <button>button</button>
+        </TooltipComponent>
+      </section>
+    );
+    userEvent.hover(container.querySelector('button')!);
+    await waitFor(() =>
+      expect(container.querySelector('button')).toHaveAttribute(
+        'data-state',
+        'delayed-open'
+      )
+    );
+  });
 });
