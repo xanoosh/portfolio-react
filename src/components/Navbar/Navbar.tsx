@@ -39,7 +39,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
               <a
                 href={storybookLink}
                 target="_blank"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-custom-pink focus:ring-offset-slate-800 focus:ring-offset-4"
+                className="relative rounded-full bg-gray-800 p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-slate-800 focus:ring-offset-4"
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">Storybook</span>

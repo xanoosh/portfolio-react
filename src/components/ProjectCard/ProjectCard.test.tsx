@@ -50,12 +50,12 @@ describe('ProjectCard: ', () => {
       container.querySelector('.bg-slate-900.text-slate-400')
     ).toBeInTheDocument();
   });
-  it('Badge should have classes bg-custom-pink text-white if badge text is included in activeBadges array', () => {
+  it('Badge should have classes bg-pink-600 text-white if badge text is included in activeBadges array', () => {
     const { container } = render(
       <ProjectCard badges={['badge1']} activeBadges={['badge1']} />
     );
     expect(
-      container.querySelector('.bg-custom-pink.text-white')
+      container.querySelector('.bg-pink-600.text-white')
     ).toBeInTheDocument();
   });
 });

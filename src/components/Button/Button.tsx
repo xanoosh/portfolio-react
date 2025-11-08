@@ -16,8 +16,8 @@ export default function Button({
           : 'bg-sky-700 ring-sky-700 hover:bg-pink-600 hover:ring-pink-600';
       case 'pink':
         return disabled === true
-          ? 'bg-custom-pink ring-custom-pink'
-          : 'bg-custom-pink hover:bg-opacity-90 ring-custom-pink';
+          ? 'bg-pink-600 ring-pink-600'
+          : 'bg-pink-600 hover:bg-opacity-90 ring-pink-600';
       case 'secondary':
         return disabled === true
           ? 'bg-slate-500 ring-slate-500'
@@ -38,7 +38,7 @@ export default function Button({
       target="_blank"
       rel="noopener noreferrer"
       href={url}
-      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center ${focusClasses} ${variantClasses(
+      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center transition-bg duration-300 ease-in-out ${focusClasses} ${variantClasses(
         variant
       )} ${buttonDisabledClasses}`}
     >

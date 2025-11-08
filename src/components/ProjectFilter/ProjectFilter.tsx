@@ -47,7 +47,7 @@ export default function ProjectFilter({
               <ListboxOption
                 key={i}
                 value={tag}
-                className={`relative cursor-default select-none py-3 pl-10 pr-4 text-slate-300 hover:bg-sky-700 hover:text-white focus:outline-none data-focus:bg-sky-700 data-focus:text-white data-selected:text-custom-pink data-focus:data-selected:text-white hover:data-selected:text-white`}
+                className={`relative cursor-default select-none py-3 pl-10 pr-4 text-slate-300 hover:bg-sky-700 hover:text-white focus:outline-none data-focus:bg-sky-700 data-focus:text-white data-selected:text-pink-600 data-focus:data-selected:text-white hover:data-selected:text-white`}
               >
                 <>
                   <span

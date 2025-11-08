@@ -85,7 +85,7 @@ describe('ProjectFilter:', () => {
   //   );
 
   //   fireEvent.click(
-  //     container.querySelector('div.bg-custom-pink:first-of-type button')!
+  //     container.querySelector('div.bg-pink-600:first-of-type button')!
   //   );
   //   expect(handleBadgeClickMock).toHaveBeenCalledTimes(1);
   // });

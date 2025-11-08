@@ -16,9 +16,9 @@ describe('Badge: ', () => {
     const { container } = render(<Badge text="badge" variant="main" />);
     expect(container.firstChild).toHaveClass('bg-slate-900 text-slate-400');
   });
-  it('Should have classes bg-custom-pink text-white if variant prop is equal to pink', () => {
+  it('Should have classes bg-pink-600 text-white if variant prop is equal to pink', () => {
     const { container } = render(<Badge text="badge" variant="pink" />);
-    expect(container.firstChild).toHaveClass('bg-custom-pink text-white');
+    expect(container.firstChild).toHaveClass('bg-pink-600 text-white');
   });
 
   it('Should have classes text-xs font-medium px-2.5 py-1 if size prop was not passed', () => {

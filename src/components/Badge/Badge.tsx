@@ -33,7 +33,7 @@ export default function Badge({
       case 'main':
         return 'focus:outline-none focus:ring-1 ring-offset-2 ring-offset-slate-800 ring-slate-900';
       case 'pink':
-        return 'focus:outline-none focus:ring-1 ring-offset-2 ring-offset-slate-800 ring-custom-pink';
+        return 'focus:outline-none focus:ring-1 ring-offset-2 ring-offset-slate-800 ring-pink-600';
     }
   };
 
