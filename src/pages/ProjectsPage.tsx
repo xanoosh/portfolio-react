@@ -10,6 +10,11 @@ export default function ProjectsPage() {
 
   return projectsArray.length ? (
     <div className="flex flex-col gap-6 py-6 px-6 sm:px-12">
+      <title>Portfolio | Projects</title>
+      <meta
+        name="description"
+        content="Explore my projects and experience in the field of frontend development. Technologies: React, TypeScript, Tailwind CSS, Vite, Framer Motion, GraphQL, Redux, and more."
+      />
       <div className="">
         <ProjectFilter
           activeBadges={activeBadges}

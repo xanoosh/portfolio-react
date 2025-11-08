@@ -15,6 +15,12 @@ export default function AboutPage() {
       transition={{ duration: 0.2 }}
       className="flex flex-col gap-6 py-6 px-6 sm:px-12"
     >
+      <title>Portfolio | About me</title>
+      <meta
+        name="description"
+        content="Learn about my frontend development experience and skills with modern web development technologies."
+      />
+
       <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
         <section className="w-full backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50 md:col-span-4">
           <ExperienceSection
