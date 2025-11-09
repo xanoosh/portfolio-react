@@ -19,6 +19,13 @@ describe('Button: ', () => {
     expect(container.firstChild).toHaveClass('bg-sky-700 ring-sky-700');
   });
 
+  it('Should have class bg-slate-500 ring-slate-500 if variant prop is equal to secondary', () => {
+    const { container } = render(
+      <Button url="" text="button" variant="secondary" />
+    );
+    expect(container.firstChild).toHaveClass('bg-slate-500 ring-slate-500');
+  });
+
   it('Should not display svg is icon prop is undefined', () => {
     const { container } = render(
       <Button url="" text="button" variant="primary" />

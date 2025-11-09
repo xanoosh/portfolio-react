@@ -6,25 +6,12 @@ export default function DownloadFileButton({
   text,
   fileName,
   filePath,
-  variant = 'primary',
   disabled = false,
 }: DownloadFileButtonProps) {
-  const variantClasses = (variant: string) => {
-    switch (variant) {
-      case 'primary':
-        return disabled === true
-          ? 'bg-sky-700 ring-sky-700'
-          : 'bg-sky-700 ring-sky-700 hover:bg-pink-600 hover:ring-pink-600';
-      case 'pink':
-        return disabled === true
-          ? 'bg-pink-600 ring-pink-600'
-          : 'bg-pink-600 hover:bg-opacity-90 ring-pink-600';
-      case 'secondary':
-        return disabled === true
-          ? 'bg-slate-500 ring-slate-500'
-          : 'bg-slate-500 hover:bg-opacity-90 ring-slate-500';
-    }
-  };
+  const backgroundClasses =
+    disabled === true
+      ? 'bg-sky-700 ring-sky-700'
+      : 'bg-sky-700 ring-sky-700 hover:bg-pink-600 hover:ring-pink-600';
 
   const disabledClasses = disabled
     ? 'cursor-not-allowed opacity-70'
@@ -36,9 +23,7 @@ export default function DownloadFileButton({
   return text.length === 0 ? null : (
     <button
       onClick={() => downloadPDF(fileName, filePath)}
-      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center transition-bg duration-300 ease-in-out ${focusClasses} ${variantClasses(
-        variant
-      )} ${disabledClasses}`}
+      className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center transition-bg duration-300 ease-in-out ${focusClasses} ${backgroundClasses} ${disabledClasses}`}
       disabled={disabled}
     >
       <ArrowDownTrayIcon className="w-4 h-4" />

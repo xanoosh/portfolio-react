@@ -13,24 +13,12 @@ describe('DownloadFileButton: ', () => {
     expect(screen.getByText('DownloadFileButton')).toBeInTheDocument();
   });
 
-  it('Should have classes bg-sky-700 ring-sky-700 if variant prop was not passed', () => {
+  it('Should have classes bg-sky-700 ring-sky-700', () => {
     const { container } = render(
       <DownloadFileButton
         fileName="file"
         filePath="path"
         text="DownloadFileButton"
-      />
-    );
-    expect(container.firstChild).toHaveClass('bg-sky-700 ring-sky-700');
-  });
-
-  it('Should have class bg-sky-700 ring-sky-700 if variant prop is equal to primary', () => {
-    const { container } = render(
-      <DownloadFileButton
-        fileName="file"
-        filePath="path"
-        text="DownloadFileButton"
-        variant="primary"
       />
     );
     expect(container.firstChild).toHaveClass('bg-sky-700 ring-sky-700');
@@ -42,7 +30,6 @@ describe('DownloadFileButton: ', () => {
         fileName="file"
         filePath="path"
         text="DownloadFileButton"
-        variant="primary"
       />
     );
     expect(container.querySelector('svg')).toBeInTheDocument();

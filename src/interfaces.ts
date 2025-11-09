@@ -24,7 +24,7 @@ export interface ProjectCardProps {
 export interface ButtonProps {
   text: string;
   url: string;
-  variant?: 'primary' | 'pink' | 'secondary';
+  variant?: 'primary' | 'secondary';
   disabled?: boolean;
   icon?: string;
 }
@@ -32,7 +32,6 @@ export interface DownloadFileButtonProps {
   text: string;
   fileName: string;
   filePath: string;
-  variant?: 'primary' | 'pink' | 'secondary';
   disabled?: boolean;
 }
 

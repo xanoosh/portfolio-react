@@ -21,13 +21,6 @@ export const ButtonPrimary: Story = {
   },
 };
 
-export const ButtonPink: Story = {
-  args: {
-    text: 'example pink button text',
-    url: '#',
-    variant: 'pink',
-  },
-};
 export const ButtonSecondary: Story = {
   args: {
     text: 'example secondary button text',
@@ -35,6 +28,7 @@ export const ButtonSecondary: Story = {
     variant: 'secondary',
   },
 };
+
 export const DisabledButtonPrimary: Story = {
   args: {
     text: 'example disabled primary button text',
@@ -43,14 +37,7 @@ export const DisabledButtonPrimary: Story = {
     disabled: true,
   },
 };
-export const DisabledButtonPink: Story = {
-  args: {
-    text: 'example disabled pink button text',
-    url: '#',
-    variant: 'pink',
-    disabled: true,
-  },
-};
+
 export const DisabledButtonSecondary: Story = {
   args: {
     text: 'example disabled secondary button text',
@@ -75,22 +62,7 @@ export const ButtonPrimaryCodeIcon: Story = {
     icon: 'codeIcon',
   },
 };
-export const ButtonPinkWebIcon: Story = {
-  args: {
-    text: 'example pink button with web icon',
-    url: '#',
-    variant: 'pink',
-    icon: 'webIcon',
-  },
-};
-export const ButtonPinkCodeIcon: Story = {
-  args: {
-    text: 'example pink button with code icon',
-    url: '#',
-    variant: 'pink',
-    icon: 'codeIcon',
-  },
-};
+
 export const ButtonSecondaryWebIcon: Story = {
   args: {
     text: 'example secondary button with web icon',
@@ -99,6 +71,7 @@ export const ButtonSecondaryWebIcon: Story = {
     icon: 'webIcon',
   },
 };
+
 export const ButtonSecondaryCodeIcon: Story = {
   args: {
     text: 'example secondary button with code icon',

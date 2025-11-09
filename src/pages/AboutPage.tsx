@@ -66,13 +66,11 @@ export default function AboutPage() {
               text="Download CV (pl)"
               fileName="CV_Janusz_Bielczynski_Frontend_pl.pdf"
               filePath={cv_pl_path}
-              variant="primary"
             />
             <DownloadFileButton
               text="Download CV (en)"
               fileName="CV_Janusz_Bielczynski_Frontend_en.pdf"
               filePath={cv_en_path}
-              variant="primary"
             />
           </div>
         </section>

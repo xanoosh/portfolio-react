@@ -14,14 +14,10 @@ export default function Button({
         return disabled === true
           ? 'bg-sky-700 ring-sky-700'
           : 'bg-sky-700 ring-sky-700 hover:bg-pink-600 hover:ring-pink-600';
-      case 'pink':
-        return disabled === true
-          ? 'bg-pink-600 ring-pink-600'
-          : 'bg-pink-600 hover:bg-opacity-90 ring-pink-600';
       case 'secondary':
         return disabled === true
           ? 'bg-slate-500 ring-slate-500'
-          : 'bg-slate-500 hover:bg-opacity-90 ring-slate-500';
+          : 'bg-slate-500 ring-slate-500 hover:bg-pink-600 hover:ring-pink-600';
     }
   };
 
