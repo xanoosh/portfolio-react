@@ -1,5 +1,5 @@
 import { BadgeProps, RemoveButtonProps } from '../../interfaces';
-import { XMarkIcon } from '@heroicons/react/20/solid';
+import { XMarkIcon } from '@heroicons/react/16/solid';
 
 export default function Badge({
   text,
@@ -25,24 +25,16 @@ export default function Badge({
         return 'text-sm font-lg px-4 py-1.5';
     }
   };
-
-  const focusClasses = () => {
-    if (noFocus) return '';
-    switch (variant) {
-      case 'main':
-        return 'focus:outline-none focus:ring-1 ring-offset-2 ring-offset-slate-800 ring-slate-900';
-      case 'pink':
-        return 'focus:outline-none focus:ring-1 ring-offset-2 ring-offset-slate-800 ring-pink-600';
-    }
-  };
+  const focusClasses =
+    'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-slate-800 ring-pink-600';
 
   return text.length === 0 ? null : (
     <div
-      className={`${colorClasses()} ${sizeClasses()} ${focusClasses()} rounded-full flex flex-row gap-2 items-center ${
+      tabIndex={noFocus ? -1 : 0}
+      className={`${colorClasses()} ${sizeClasses()} ${focusClasses} rounded-full flex flex-row gap-2 items-center ${
         handleClick ? 'cursor-pointer' : ''
       }`}
       onClick={handleClick ? handleClick : () => null}
-      tabIndex={0}
       onKeyDown={(e) => {
         if (e.code === 'Enter') handleClick ? handleClick() : (() => null)();
       }}
@@ -56,7 +48,7 @@ export default function Badge({
 function RemoveButton({ onClick }: RemoveButtonProps) {
   return onClick ? (
     <button
-      className="h-4 w-4 appearance-none items-center justify-center rounded-full focus:outline-none hover:opacity-50 focus:ring-1 focus:ring-white"
+      className="h-4 w-4 appearance-none items-center justify-center rounded-full focus:outline-none hover:opacity-50 focus:ring-2 focus:ring-white"
       aria-label="Close"
       onClick={onClick}
     >
