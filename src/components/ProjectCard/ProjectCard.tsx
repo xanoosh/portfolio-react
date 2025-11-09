@@ -53,7 +53,13 @@ export default function ProjectCard({
       {buttons ? (
         <div className="flex flex-row sm:flex-nowrap flex-wrap mt-auto gap-4">
           {buttons.map(({ text, url, icon }, i: number) => (
-            <Button key={i} text={text} url={url} icon={icon} />
+            <Button
+              key={i}
+              text={text}
+              url={url}
+              icon={icon}
+              variant={text === 'Code' ? 'secondary' : 'primary'}
+            />
           ))}
         </div>
       ) : null}
