@@ -10,7 +10,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
       <div className="mx-auto px-6 sm:px-12">
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex flex-1 items-stretch justify-start">
-            <div className="flex flex-shrink-0 items-center">
+            <div className="flex shrink-0 items-center">
               <img className="h-8 w-auto" src={logoPath} alt="React Logo" />
             </div>
             <div className="ml-6">

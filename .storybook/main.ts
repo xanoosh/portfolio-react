@@ -10,9 +10,8 @@ export default {
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
-    '@chromatic-com/storybook',
     '@storybook/test-runner',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
   ],
 
   framework: {
@@ -22,23 +21,23 @@ export default {
 
   docs: {},
 
-  async viteFinal(config: UserConfig) {
-    const { mergeConfig } = await import('vite');
-    config.resolve = {
-      ...config.resolve,
-      alias: {
-        ...config.resolve?.alias,
-        path: require.resolve('path-browserify'),
-      },
-    };
-    return mergeConfig(config, {
-      optimizeDeps: {
-        include: ['storybook-dark-mode'],
-      },
-    });
-  },
+  // async viteFinal(config: UserConfig) {
+  //   const { mergeConfig } = await import('vite');
+  //   config.resolve = {
+  //     ...config.resolve,
+  //     alias: {
+  //       ...config.resolve?.alias,
+  //       path: require.resolve('path-browserify'),
+  //     },
+  //   };
+  //   return mergeConfig(config, {
+  //     optimizeDeps: {
+  //       include: ['storybook-dark-mode'],
+  //     },
+  //   });
+  // },
 
-  typescript: {
-    reactDocgen: 'react-docgen-typescript',
-  },
+  // typescript: {
+  //   reactDocgen: 'react-docgen-typescript',
+  // },
 };

@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { expect } from 'storybook/test';
+
 import Badge from './Badge';
 
 const meta = {
@@ -18,6 +20,10 @@ export const SmallPinkBadge: Story = {
     text: 'small pink badge text',
     variant: 'pink',
     size: 'sm',
+  },
+  play: async ({ canvas }) => {
+    const badge = canvas.getByText('small pink badge text');
+    expect(badge).toBeInTheDocument();
   },
 };
 export const LargePinkBadge: Story = {
