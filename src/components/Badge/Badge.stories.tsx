@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, fireEvent, fn } from 'storybook/test';
 import Badge from './Badge';
 import { within } from '@testing-library/react';
+import { BadgeProps } from '../../interfaces';
 
 const meta = {
   title: 'Portfolio/Badge',
@@ -17,28 +18,22 @@ type Story = StoryObj<typeof meta>;
 
 const onClickMockFn = fn();
 
-const badgeTestAssertions = (
-  badge: HTMLElement,
-  text: string,
-  variant: 'main' | 'pink',
-  size: 'sm' | 'lg',
-  hasBtn?: boolean
-) => {
+const badgeTestAssertions = (badge: HTMLElement, args: BadgeProps) => {
   //badge tests
   expect(badge).toBeInTheDocument();
-  expect(badge.textContent).toBe(text);
+  expect(badge.textContent).toBe(args.text);
   expect(badge).toHaveClass(
-    variant === 'main'
-      ? 'bg-slate-900 text-slate-400'
-      : 'bg-pink-600 text-white'
+    args.variant === 'pink'
+      ? 'bg-pink-600 text-white'
+      : 'bg-slate-900 text-slate-400'
   );
   expect(badge).toHaveClass(
-    size === 'sm'
-      ? 'text-xs font-medium px-2.5 py-1'
-      : 'text-sm font-lg px-4 py-1.5'
+    args.size === 'lg'
+      ? 'text-sm font-lg px-4 py-1.5'
+      : 'text-xs font-medium px-2.5 py-1'
   );
   //remove button tests (optional)
-  if (hasBtn) {
+  if (args.handleRemove) {
     const badgeButton = within(badge).getByLabelText('close');
     expect(badgeButton).toBeInTheDocument();
     expect(onClickMockFn).not.toHaveBeenCalled();
@@ -53,9 +48,9 @@ export const SmallPinkBadge: Story = {
     variant: 'pink',
     size: 'sm',
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, args }) => {
     const badge = canvas.getByRole('badge');
-    badgeTestAssertions(badge, 'small pink badge text', 'pink', 'sm');
+    badgeTestAssertions(badge, args);
   },
 };
 export const LargePinkBadge: Story = {
@@ -64,9 +59,9 @@ export const LargePinkBadge: Story = {
     variant: 'pink',
     size: 'lg',
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, args }) => {
     const badge = canvas.getByRole('badge');
-    badgeTestAssertions(badge, 'large pink badge text', 'pink', 'lg');
+    badgeTestAssertions(badge, args);
   },
 };
 export const SmallMainBadge: Story = {
@@ -74,9 +69,9 @@ export const SmallMainBadge: Story = {
     text: 'small main badge text',
     size: 'sm',
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, args }) => {
     const badge = canvas.getByRole('badge');
-    badgeTestAssertions(badge, 'small main badge text', 'main', 'sm');
+    badgeTestAssertions(badge, args);
   },
 };
 export const LargeMainBadge: Story = {
@@ -84,9 +79,9 @@ export const LargeMainBadge: Story = {
     text: 'large main badge text',
     size: 'lg',
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, args }) => {
     const badge = canvas.getByRole('badge');
-    badgeTestAssertions(badge, 'large main badge text', 'main', 'lg');
+    badgeTestAssertions(badge, args);
   },
 };
 export const SmallPinkBadgeWithRemoveButton: Story = {
@@ -96,15 +91,9 @@ export const SmallPinkBadgeWithRemoveButton: Story = {
     size: 'sm',
     handleRemove: onClickMockFn,
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, args }) => {
     const badge = canvas.getByRole('badge');
-    badgeTestAssertions(
-      badge,
-      'small pink badge with remove button text',
-      'pink',
-      'sm',
-      true
-    );
+    badgeTestAssertions(badge, args);
   },
 };
 export const LargePinkBadgeWithRemoveButton: Story = {
@@ -114,15 +103,9 @@ export const LargePinkBadgeWithRemoveButton: Story = {
     size: 'lg',
     handleRemove: onClickMockFn,
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, args }) => {
     const badge = canvas.getByRole('badge');
-    badgeTestAssertions(
-      badge,
-      'large pink badge with remove button text',
-      'pink',
-      'lg',
-      true
-    );
+    badgeTestAssertions(badge, args);
   },
 };
 export const SmallMainBadgeWithRemoveButton: Story = {
@@ -131,15 +114,9 @@ export const SmallMainBadgeWithRemoveButton: Story = {
     size: 'sm',
     handleRemove: onClickMockFn,
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, args }) => {
     const badge = canvas.getByRole('badge');
-    badgeTestAssertions(
-      badge,
-      'small main badge with remove button text',
-      'main',
-      'sm',
-      true
-    );
+    badgeTestAssertions(badge, args);
   },
 };
 export const LargeMainBadgeWithRemoveButton: Story = {
@@ -148,14 +125,8 @@ export const LargeMainBadgeWithRemoveButton: Story = {
     size: 'lg',
     handleRemove: onClickMockFn,
   },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, args }) => {
     const badge = canvas.getByRole('badge');
-    badgeTestAssertions(
-      badge,
-      'large main badge with remove button text',
-      'main',
-      'lg',
-      true
-    );
+    badgeTestAssertions(badge, args);
   },
 };

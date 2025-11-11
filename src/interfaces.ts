@@ -26,7 +26,7 @@ export interface ButtonProps {
   url: string;
   variant?: 'primary' | 'secondary';
   disabled?: boolean;
-  icon?: string;
+  icon?: 'codeIcon' | 'webIcon';
 }
 export interface DownloadFileButtonProps {
   text: string;

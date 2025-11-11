@@ -30,17 +30,29 @@ export default function Button({
 
   const iconClasses = 'w-4.5 h-4.5';
   return text.length === 0 ? null : (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href={url}
+    <button
+      role="button"
+      disabled={disabled}
+      onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
       className={`py-1.5 px-4 rounded-lg text-md flex flex-row gap-1.5 items-center justify-center transition-bg duration-300 ease-in-out ${focusClasses} ${variantClasses(
         variant
       )} ${buttonDisabledClasses}`}
     >
-      {icon === 'codeIcon' ? <CodeBracketIcon className={iconClasses} /> : null}
-      {icon === 'webIcon' ? <GlobeAltIcon className={iconClasses} /> : null}
+      {icon === 'codeIcon' ? (
+        <CodeBracketIcon
+          aria-hidden={true}
+          aria-label="icon"
+          className={iconClasses}
+        />
+      ) : null}
+      {icon === 'webIcon' ? (
+        <GlobeAltIcon
+          aria-hidden={true}
+          aria-label="icon"
+          className={iconClasses}
+        />
+      ) : null}
       <span>{text}</span>
-    </a>
+    </button>
   );
 }
