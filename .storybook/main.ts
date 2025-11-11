@@ -1,24 +1,20 @@
-// This file has been automatically migrated to valid ESM format by Storybook.
-import { createRequire } from 'module';
-import type { UserConfig } from 'vite';
+// import { createRequire } from 'module';
+// import type { UserConfig } from 'vite';
 
-const require = createRequire(import.meta.url);
+// const require = createRequire(import.meta.url);
 
 export default {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
     '@storybook/test-runner',
     '@storybook/addon-docs',
   ],
-
   framework: {
     name: '@storybook/react-vite',
     options: {},
   },
-
   docs: {},
 
   // async viteFinal(config: UserConfig) {
@@ -36,7 +32,6 @@ export default {
   //     },
   //   });
   // },
-
   // typescript: {
   //   reactDocgen: 'react-docgen-typescript',
   // },
