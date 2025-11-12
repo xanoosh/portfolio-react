@@ -7,9 +7,7 @@ import { BadgeProps } from '../../interfaces';
 const meta = {
   title: 'Portfolio/Badge',
   component: Badge,
-  parameters: {
-    layout: 'centered',
-  },
+
   tags: ['autodocs'],
 } satisfies Meta<typeof Badge>;
 

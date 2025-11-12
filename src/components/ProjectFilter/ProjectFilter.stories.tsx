@@ -5,12 +5,6 @@ import { JSX, useState } from 'react';
 const meta = {
   title: 'Portfolio/ProjectFilter',
   component: ProjectFilter,
-  parameters: {
-    layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-    },
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof ProjectFilter>;
 

@@ -6,9 +6,6 @@ import { DownloadFileButtonProps } from '../../interfaces';
 const meta = {
   title: 'Portfolio/DownloadFileButton',
   component: DownloadFileButton,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof DownloadFileButton>;
 

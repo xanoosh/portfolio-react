@@ -16,9 +16,6 @@ const errorTestAssertions = (errorComponent: HTMLElement, args: ErrorProps) => {
 const meta = {
   title: 'Portfolio/Error',
   component: Error,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof Error>;
 

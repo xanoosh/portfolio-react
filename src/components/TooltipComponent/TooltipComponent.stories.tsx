@@ -4,9 +4,6 @@ import TooltipComponent from './TooltipComponent';
 const meta = {
   title: 'Portfolio/TooltipComponent',
   component: TooltipComponent,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof TooltipComponent>;
 

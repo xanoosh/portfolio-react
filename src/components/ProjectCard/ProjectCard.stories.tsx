@@ -4,12 +4,6 @@ import ProjectCard from './ProjectCard';
 const meta = {
   title: 'Portfolio/ProjectCard',
   component: ProjectCard,
-  parameters: {
-    layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-    },
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof ProjectCard>;
 
