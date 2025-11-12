@@ -1,4 +1,6 @@
-export const projectsArray = [
+import { ProjectCardProps } from '../interfaces';
+
+export const projectsArray: ProjectCardProps[] = [
   {
     title: 'React portfolio',
     description:

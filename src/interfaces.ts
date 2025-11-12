@@ -8,7 +8,7 @@ export interface SingleProjectInterface {
   buttons: {
     text: string;
     url: string;
-    icon: string;
+    icon?: 'codeIcon' | 'webIcon';
   }[];
 }
 
