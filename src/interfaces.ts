@@ -48,6 +48,10 @@ export interface BadgeProps {
   noFocus?: boolean;
 }
 
+export interface ErrorProps {
+  text: string;
+}
+
 export interface TooltipComponentProps {
   children: ReactNode;
   text: string;
