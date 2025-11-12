@@ -7,16 +7,27 @@ export default function ExperienceSection({
   list,
 }: ExperienceSectionProps) {
   return (
-    <div className="flex flex-col gap-6 text-white">
+    <div
+      className="flex flex-col gap-6 text-white"
+      aria-label="experience-section"
+    >
       {title && title.length > 0 ? (
-        <h1 className="text-2xl font-semibold">{title}</h1>
+        <h1 className="text-2xl font-semibold" aria-label="experience-title">
+          {title}
+        </h1>
       ) : null}
-      {text && text.length > 0 ? <p>{text}</p> : null}
+      {text && text.length > 0 ? (
+        <p aria-label="experience-description">{text}</p>
+      ) : null}
       <hr className="border-slate-400" />
       {list && list.length > 0 ? (
-        <ol reversed className="list-decimal pl-8">
+        <ol reversed className="list-decimal pl-8" aria-label="experience-list">
           {list.map(({ title, date, responsibilities }, i) => (
-            <li key={i} className="marker:text-2xl marker:font-semibold mb-6">
+            <li
+              key={i}
+              aria-label="experience-list-element"
+              className="marker:text-2xl marker:font-semibold mb-6"
+            >
               <div className="flex flex-col gap-3">
                 <h2 className="text-2xl font-semibold">{title}</h2>
                 <div className="flex gap-2 items-center">
