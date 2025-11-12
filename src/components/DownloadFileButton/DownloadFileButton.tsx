@@ -26,7 +26,11 @@ export default function DownloadFileButton({
       className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center transition-bg duration-300 ease-in-out ${focusClasses} ${backgroundClasses} ${disabledClasses}`}
       disabled={disabled}
     >
-      <ArrowDownTrayIcon className="w-4 h-4" />
+      <ArrowDownTrayIcon
+        aria-label="icon"
+        aria-hidden={true}
+        className="w-4 h-4"
+      />
       <span>{text}</span>
     </button>
   );

@@ -1,5 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import DownloadFileButton from './DownloadFileButton';
+
+import { vi } from 'vitest';
+import { downloadPDF } from '../../utils';
+
+vi.mock('../../utils', () => ({
+  downloadPDF: vi.fn(),
+}));
 
 describe('DownloadFileButton: ', () => {
   it('Should have text equal to the DownloadFileButton text prop', () => {
@@ -33,5 +40,17 @@ describe('DownloadFileButton: ', () => {
       />
     );
     expect(container.querySelector('svg')).toBeInTheDocument();
+  });
+
+  it('Should call downloadPDF function on click', () => {
+    const { container } = render(
+      <DownloadFileButton
+        fileName="file"
+        filePath="path"
+        text="DownloadFileButton"
+      />
+    );
+    fireEvent.click(container.firstChild!);
+    expect(downloadPDF).toHaveBeenCalledWith('file', 'path');
   });
 });
