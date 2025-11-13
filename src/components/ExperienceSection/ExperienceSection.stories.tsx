@@ -54,7 +54,6 @@ export const ExampleExperienceSection: Story = {
         responsibilities: [
           'example responsibility 1',
           'example responsibility 2',
-          'example responsibility 3',
         ],
       },
     ],
