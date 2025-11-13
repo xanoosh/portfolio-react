@@ -14,6 +14,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <motion.div
+      aria-label="project-card"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -21,15 +22,26 @@ export default function ProjectCard({
       className="flex flex-col gap-4 backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50"
     >
       {title ? (
-        <h3 className="text-2xl font-bold tracking-tight text-white">
+        <h3
+          aria-label="project-card-title"
+          className="text-2xl font-bold tracking-tight text-white"
+        >
           {title}
         </h3>
       ) : null}
       {description ? (
-        <p className="font-normal text-slate-300">{description}</p>
+        <p
+          aria-label="project-card-description"
+          className="font-normal text-slate-300"
+        >
+          {description}
+        </p>
       ) : null}
       {badges ? (
-        <div className="flex flex-row gap-2 flex-wrap">
+        <div
+          aria-label="project-card-skills"
+          className="flex flex-row gap-2 flex-wrap"
+        >
           {badges.map((badge, i: number) => (
             <TooltipComponent
               key={i}
