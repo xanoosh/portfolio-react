@@ -44,13 +44,6 @@ const experienceSectionAssertions = (
 };
 
 export const ExampleExperienceSection: Story = {
-  // decorators: [
-  //   (Story) => (
-  //     <div className="bg-slate-800 absolute inset-0 bg-pattern bg-no-repeat bg-center bg-cover bg-fixed w-full flex justify-center items-center">
-  //       <Story />
-  //     </div>
-  //   ),
-  // ],
   args: {
     title: 'example title',
     text: 'example ExperienceSection text',
@@ -66,6 +59,14 @@ export const ExampleExperienceSection: Story = {
       },
     ],
   },
+  render: (args) => (
+    <div
+      className=" backdrop-blur-sm py-6 px-8 rounded-lg shadow bg-slate-800/50"
+      aria-label="experience-section-wrapper"
+    >
+      <ExperienceSection {...args} />
+    </div>
+  ),
   play: async ({ canvas, args }) => {
     const experienceSection = await canvas.findByLabelText(
       'experience-section'
