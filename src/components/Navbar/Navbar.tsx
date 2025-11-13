@@ -6,7 +6,7 @@ import logoPath from '../../img/react-logo.svg';
 export default function Navbar({ navigation, storybookLink }: NavbarProps) {
   if (!navigation) return null;
   return (
-    <nav className="bg-slate-800">
+    <nav className="bg-slate-800" aria-label="main-navigation">
       <div className="mx-auto px-6 sm:px-12">
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex flex-1 items-stretch justify-start">
@@ -37,6 +37,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
           {storybookLink ? (
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <a
+                aria-label="storybook-link"
                 href={storybookLink}
                 target="_blank"
                 className="relative rounded-full bg-gray-800 p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-slate-800 focus:ring-offset-4"

@@ -67,7 +67,7 @@ export interface ProjectFilterProps {
 
 export interface NavbarProps {
   navigation: { name: string; link: string }[] | undefined;
-  storybookLink: string;
+  storybookLink?: string;
 }
 
 interface ExperienceListElement {
