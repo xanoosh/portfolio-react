@@ -4,7 +4,7 @@ import Loader from './Loader';
 describe('Loader: ', () => {
   it('Should be in the document', () => {
     render(<Loader />);
-    expect(screen.getByTestId('oval-loading')).toBeInTheDocument();
+    expect(screen.getByLabelText('oval-loading')).toBeInTheDocument();
   });
   it('Should display svg', () => {
     const { container } = render(<Loader />);
