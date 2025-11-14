@@ -60,6 +60,7 @@ export interface TooltipComponentProps {
 }
 
 export interface ProjectFilterProps {
+  badges: string[];
   activeBadges: string[];
   setActiveBadges: (value: string[]) => void;
   handleBadgeClick: (badgeName: string) => void;

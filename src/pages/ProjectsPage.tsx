@@ -3,6 +3,7 @@ import ProjectFilter from '../components/ProjectFilter/ProjectFilter';
 import { projectsArray } from '../globals/globals';
 import { AnimatePresence } from 'framer-motion';
 import { useActiveBadgesStore } from '../store/store';
+import { badgesArray } from '../globals/globals';
 
 export default function ProjectsPage() {
   const { activeBadges, activeProjects, setActiveBadges, handleBadgeClick } =
@@ -17,6 +18,7 @@ export default function ProjectsPage() {
       />
       <div className="">
         <ProjectFilter
+          badges={badgesArray}
           activeBadges={activeBadges}
           setActiveBadges={setActiveBadges}
           handleBadgeClick={handleBadgeClick}

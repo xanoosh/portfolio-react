@@ -7,10 +7,10 @@ import {
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import Badge from '../Badge/Badge';
 import { ProjectFilterProps } from '../../interfaces';
-import { badgesArray } from '../../globals/globals';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function ProjectFilter({
+  badges,
   activeBadges,
   setActiveBadges,
   handleBadgeClick,
@@ -20,6 +20,7 @@ export default function ProjectFilter({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2 }}
+      aria-label="project-filter-component"
       className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 md:gap-8 p-6 rounded-lg shadow bg-slate-800"
     >
       {/* Select */}
@@ -43,7 +44,7 @@ export default function ProjectFilter({
             modal={false}
             className="absolute z-10 mt-2 max-h-60 top-11 left-0 right-0 overflow-auto rounded-md bg-slate-900 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm"
           >
-            {badgesArray.map((tag, i) => (
+            {badges.map((tag, i) => (
               <ListboxOption
                 key={i}
                 value={tag}
