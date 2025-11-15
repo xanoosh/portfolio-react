@@ -19,7 +19,7 @@ export default function TooltipComponent({
             sideOffset={6}
           >
             {title ? (
-              <div className="flex gap-3 items-center">
+              <div className="flex gap-2 items-center">
                 <InformationCircleIcon className="w-7 h-7" />{' '}
                 <h2 className="text-lg font-bold">{title}</h2>
               </div>

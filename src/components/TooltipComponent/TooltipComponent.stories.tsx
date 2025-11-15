@@ -21,6 +21,9 @@ const tooltipTestAssertions = async (
   await userEvent.unhover(tooltipTrigger);
   await new Promise((resolve) => setTimeout(resolve, args.delayDuration));
   expect(tooltipTrigger).toHaveAttribute('data-state', 'closed');
+  if (args?.defaultOpen) {
+    await userEvent.hover(tooltipTrigger);
+  }
 };
 
 const meta = {
@@ -34,13 +37,14 @@ type Story = StoryObj<typeof meta>;
 
 export const BasicTooltipComponent: Story = {
   args: {
-    text: 'tooltip text',
+    title: 'Title',
+    content: <span>Example tooltip text</span>,
     defaultOpen: false,
     delayDuration: 300,
     children: (
       <p
         data-testid="tooltip-trigger"
-        className="text-white underline cursor-pointer"
+        className="text-white underline cursor-pointer hover:text-pink-600"
       >
         hover to see tooltip text
       </p>
@@ -54,7 +58,8 @@ export const BasicTooltipComponent: Story = {
 
 export const InstantOpenTooltipComponent: Story = {
   args: {
-    text: 'tooltip text',
+    title: 'Title',
+    content: <span>Example tooltip text</span>,
     defaultOpen: false,
     delayDuration: 0,
     children: (
@@ -73,7 +78,8 @@ export const InstantOpenTooltipComponent: Story = {
 };
 export const DefaultOpenTooltipComponent: Story = {
   args: {
-    text: 'tooltip text',
+    title: 'Title',
+    content: <span>Example tooltip text</span>,
     defaultOpen: true,
     delayDuration: 300,
     children: (
