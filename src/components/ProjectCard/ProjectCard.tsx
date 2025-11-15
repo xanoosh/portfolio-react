@@ -2,7 +2,6 @@ import Badge from '../Badge/Badge';
 import Button from '../Button/Button';
 import { ProjectCardProps } from '../../interfaces';
 import { motion } from 'framer-motion';
-import TooltipComponent from '../TooltipComponent/TooltipComponent';
 
 export default function ProjectCard({
   title,
@@ -43,22 +42,13 @@ export default function ProjectCard({
           className="flex flex-row gap-2 flex-wrap"
         >
           {badges.map((badge, i: number) => (
-            <TooltipComponent
-              key={i}
-              text={
-                activeBadges?.includes(badge)
-                  ? 'Click or press Enter key to remove this item from taglist'
-                  : 'Click or press Enter to add this item to taglist'
+            <Badge
+              text={badge}
+              variant={activeBadges?.includes(badge) ? 'pink' : 'main'}
+              handleClick={
+                handleBadgeClick ? () => handleBadgeClick(badge) : () => null
               }
-            >
-              <Badge
-                text={badge}
-                variant={activeBadges?.includes(badge) ? 'pink' : 'main'}
-                handleClick={
-                  handleBadgeClick ? () => handleBadgeClick(badge) : () => null
-                }
-              />
-            </TooltipComponent>
+            />
           ))}
         </div>
       ) : null}

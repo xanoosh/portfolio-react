@@ -46,6 +46,7 @@ export interface BadgeProps {
   handleRemove?: undefined | (() => void);
   handleClick?: undefined | (() => void);
   noFocus?: boolean;
+  additionalClasses?: string;
 }
 
 export interface ErrorProps {
@@ -54,7 +55,8 @@ export interface ErrorProps {
 
 export interface TooltipComponentProps {
   children: ReactNode;
-  text: string;
+  title?: string;
+  content: ReactNode;
   defaultOpen?: boolean;
   delayDuration?: number;
 }

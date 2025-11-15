@@ -1,4 +1,4 @@
-import { render,waitFor } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import TooltipComponent from './TooltipComponent';
 
@@ -6,7 +6,7 @@ describe('TooltipComponent: ', () => {
   it('Child element should have attribute data-state="closed" at the start', () => {
     const { container } = render(
       <section>
-        <TooltipComponent text="tooltip text">
+        <TooltipComponent content="tooltip text">
           <button>button</button>
         </TooltipComponent>
       </section>
@@ -19,7 +19,7 @@ describe('TooltipComponent: ', () => {
   it('Child element should have attribute data-state="instant-open" if defaultOpen was passed', () => {
     const { container } = render(
       <section>
-        <TooltipComponent text="tooltip text" defaultOpen>
+        <TooltipComponent content="tooltip text" defaultOpen>
           <button>button</button>
         </TooltipComponent>
       </section>
@@ -33,7 +33,7 @@ describe('TooltipComponent: ', () => {
   it('Child element should have attribute data-state="delayed-open" on hover', async () => {
     const { container } = render(
       <section>
-        <TooltipComponent text="tooltip text">
+        <TooltipComponent content="tooltip text">
           <button>button</button>
         </TooltipComponent>
       </section>

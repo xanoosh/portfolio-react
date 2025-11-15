@@ -8,6 +8,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import Badge from '../Badge/Badge';
 import { ProjectFilterProps } from '../../interfaces';
 import { AnimatePresence, motion } from 'framer-motion';
+import TooltipComponent from '../TooltipComponent/TooltipComponent';
 
 export default function ProjectFilter({
   badges,
@@ -26,20 +27,49 @@ export default function ProjectFilter({
       {/* Select */}
       <Listbox value={activeBadges} onChange={setActiveBadges} multiple>
         <div className="md:col-span-2 relative">
-          <ListboxButton
-            id="listbox-button"
-            className="transition-bg duration-300 ease-in-out relative w-full cursor-default rounded-lg bg-slate-900 py-3 px-4 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-4 focus:ring-offset-slate-800 sm:text-sm"
+          <TooltipComponent
+            title="Filter projects by:"
+            content={
+              <ul className="list-square pl-5.5 space-y-2.5">
+                <li>
+                  <strong>Selecting tags</strong> from this list
+                </li>
+                <li>
+                  Clicking
+                  <Badge
+                    text="inactive badge"
+                    variant="main"
+                    additionalClasses="inline-block transform scale-90 mx-0.5 w-26 text-center border border-slate-700"
+                  />
+                  - <strong>adds tag</strong> to the tag list
+                </li>
+                <li>
+                  Clicking
+                  <Badge
+                    text="active badge"
+                    variant="pink"
+                    additionalClasses="inline-block transform scale-90 mx-0.5 opacity-80 sm:w-auto !w-26 text-center"
+                  />
+                  - <strong>removes tag</strong> from the list
+                </li>
+              </ul>
+            }
           >
-            <span className="block truncate text-white">
-              Filter projects by tag
-            </span>
-            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-              <ChevronUpDownIcon
-                className="h-5 w-5 text-white"
-                aria-hidden="true"
-              />
-            </span>
-          </ListboxButton>
+            <ListboxButton
+              id="listbox-button"
+              className="transition-bg duration-300 ease-in-out relative w-full cursor-default rounded-lg bg-slate-900 py-3 px-4 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-4 focus:ring-offset-slate-800 sm:text-sm"
+            >
+              <span className="block truncate text-slate-400">
+                Filter projects by tag
+              </span>
+              <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                <ChevronUpDownIcon
+                  className="h-5 w-5 text-white"
+                  aria-hidden="true"
+                />
+              </span>
+            </ListboxButton>
+          </TooltipComponent>
           <ListboxOptions
             modal={false}
             className="absolute z-10 mt-2 max-h-60 top-11 left-0 right-0 overflow-auto rounded-md bg-slate-900 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm"

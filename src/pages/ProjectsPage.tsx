@@ -16,14 +16,12 @@ export default function ProjectsPage() {
         name="description"
         content="Explore my projects and experience in the field of frontend development. Technologies: React, TypeScript, Tailwind CSS, Vite, Framer Motion, GraphQL, Redux, and more."
       />
-      <div className="">
-        <ProjectFilter
-          badges={badgesArray}
-          activeBadges={activeBadges}
-          setActiveBadges={setActiveBadges}
-          handleBadgeClick={handleBadgeClick}
-        />
-      </div>
+      <ProjectFilter
+        badges={badgesArray}
+        activeBadges={activeBadges}
+        setActiveBadges={setActiveBadges}
+        handleBadgeClick={handleBadgeClick}
+      />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         <AnimatePresence>
           {activeProjects.map(({ title, description, badges, buttons }, i) => (

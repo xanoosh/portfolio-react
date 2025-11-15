@@ -8,6 +8,7 @@ export default function Badge({
   handleRemove,
   handleClick,
   noFocus = false,
+  additionalClasses,
 }: BadgeProps) {
   const colorClasses = () => {
     switch (variant) {
@@ -34,7 +35,7 @@ export default function Badge({
       tabIndex={noFocus ? -1 : 0}
       className={`transition-bg duration-300 ease-in-out ${colorClasses()} ${sizeClasses()} ${focusClasses} rounded-full flex flex-row gap-2 items-center ${
         handleClick ? 'cursor-pointer' : ''
-      }`}
+      } ${additionalClasses ? additionalClasses : ''}`}
       onClick={handleClick ? handleClick : () => null}
       onKeyDown={(e) => {
         if (e.code === 'Enter') handleClick ? handleClick() : (() => null)();
