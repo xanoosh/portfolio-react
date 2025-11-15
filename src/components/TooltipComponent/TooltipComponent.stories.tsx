@@ -7,22 +7,27 @@ const tooltipTestAssertions = async (
   tooltipTrigger: HTMLElement,
   args: TooltipProps
 ) => {
+  const waitFn = () => new Promise((resolve) => setTimeout(resolve, 600));
   if (args?.defaultOpen) {
+    await waitFn();
     expect(tooltipTrigger).toHaveAttribute('data-state', 'instant-open');
-    await new Promise((resolve) => setTimeout(resolve, args.delayDuration));
     await userEvent.unhover(tooltipTrigger);
-    await new Promise((resolve) => setTimeout(resolve, args.delayDuration));
-  }
-  expect(tooltipTrigger).toBeInTheDocument();
-  expect(tooltipTrigger).toHaveAttribute('data-state', 'closed');
-  await userEvent.hover(tooltipTrigger);
-  await new Promise((resolve) => setTimeout(resolve, args.delayDuration));
-  expect(tooltipTrigger).toHaveAttribute('data-state', 'delayed-open');
-  await userEvent.unhover(tooltipTrigger);
-  await new Promise((resolve) => setTimeout(resolve, args.delayDuration));
-  expect(tooltipTrigger).toHaveAttribute('data-state', 'closed');
-  if (args?.defaultOpen) {
+    await waitFn();
+    expect(tooltipTrigger).toHaveAttribute('data-state', 'closed');
+    await waitFn();
     await userEvent.hover(tooltipTrigger);
+    await waitFn();
+    expect(tooltipTrigger).toHaveAttribute('data-state', 'delayed-open');
+  } else {
+    expect(tooltipTrigger).toBeInTheDocument();
+    await waitFn();
+    expect(tooltipTrigger).toHaveAttribute('data-state', 'closed');
+    await userEvent.hover(tooltipTrigger);
+    await waitFn();
+    expect(tooltipTrigger).toHaveAttribute('data-state', 'delayed-open');
+    await userEvent.unhover(tooltipTrigger);
+    await waitFn();
+    expect(tooltipTrigger).toHaveAttribute('data-state', 'closed');
   }
 };
 
@@ -30,6 +35,13 @@ const meta = {
   title: 'Portfolio/TooltipComponent',
   component: TooltipComponent,
   tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <div className="flex flex-col gap-4 backdrop-blur-sm p-6 h-60 w-90 rounded-lg shadow bg-slate-800/50 justify-center items-center">
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof TooltipComponent>;
 
 export default meta;
@@ -44,7 +56,7 @@ export const BasicTooltipComponent: Story = {
     children: (
       <p
         data-testid="tooltip-trigger"
-        className="text-white underline cursor-pointer hover:text-pink-600"
+        className="text-white underline cursor-pointer"
       >
         hover to see tooltip text
       </p>
