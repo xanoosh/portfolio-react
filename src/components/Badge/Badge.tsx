@@ -32,7 +32,7 @@ export default function Badge({
     <div
       role="badge"
       tabIndex={noFocus ? -1 : 0}
-      className={`${colorClasses()} ${sizeClasses()} ${focusClasses} rounded-full flex flex-row gap-2 items-center ${
+      className={`transition-bg duration-300 ease-in-out ${colorClasses()} ${sizeClasses()} ${focusClasses} rounded-full flex flex-row gap-2 items-center ${
         handleClick ? 'cursor-pointer' : ''
       }`}
       onClick={handleClick ? handleClick : () => null}
@@ -49,7 +49,7 @@ export default function Badge({
 function RemoveButton({ onClick }: RemoveButtonProps) {
   return onClick ? (
     <button
-      className="h-4 w-4 appearance-none items-center justify-center rounded-full focus:outline-none hover:opacity-50 focus:ring-2 focus:ring-white"
+      className="transition-bg duration-300 ease-in-out h-4 w-4 appearance-none items-center justify-center rounded-full focus:outline-none hover:opacity-50 focus:ring-2 focus:ring-white"
       aria-label="close"
       onClick={onClick}
     >

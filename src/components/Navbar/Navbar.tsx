@@ -21,7 +21,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
                     to={link}
                     end
                     className={({ isActive }) => {
-                      return `rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-slate-800 focus:ring-offset-4 ${
+                      return `transition-bg duration-300 ease-in-out rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-slate-800 focus:ring-offset-4 ${
                         isActive
                           ? 'bg-gray-900 text-white'
                           : 'text-gray-300 hover:bg-gray-700 hover:text-white'
@@ -40,7 +40,7 @@ export default function Navbar({ navigation, storybookLink }: NavbarProps) {
                 aria-label="storybook-link"
                 href={storybookLink}
                 target="_blank"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-slate-800 focus:ring-offset-4"
+                className="transition-bg duration-300 ease-in-out relative rounded-full bg-gray-800 p-1 text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-offset-slate-800 focus:ring-offset-4"
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">Storybook</span>
