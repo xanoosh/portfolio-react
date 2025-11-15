@@ -43,6 +43,7 @@ export default function ProjectCard({
         >
           {badges.map((badge, i: number) => (
             <Badge
+              key={i}
               text={badge}
               variant={activeBadges?.includes(badge) ? 'pink' : 'main'}
               handleClick={
