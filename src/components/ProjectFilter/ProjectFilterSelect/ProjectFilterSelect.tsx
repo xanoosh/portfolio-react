@@ -1,5 +1,4 @@
 import { useActiveBadgesStore } from '../../../store/store';
-import Badge from '../../Badge/Badge';
 import {
   Listbox,
   ListboxButton,
