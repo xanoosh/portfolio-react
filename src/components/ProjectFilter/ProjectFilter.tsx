@@ -17,9 +17,7 @@ export default function ProjectFilter() {
         <ProjectFilterTooltip />
       </div>
       {/* tagList: */}
-      <div className="flex gap-4 items-center flex-wrap">
-        <ProjectFilterBadges />
-      </div>
+      <ProjectFilterBadges />
     </motion.div>
   );
 }

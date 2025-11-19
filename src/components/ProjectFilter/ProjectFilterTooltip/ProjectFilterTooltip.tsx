@@ -32,7 +32,7 @@ export default function ProjectFilterTooltip() {
         </ul>
       }
     >
-      <div>
+      <div aria-label="project-filter-tooltip">
         <InformationCircleIcon
           tabIndex={0}
           className="transition-bg duration-300 ease-in-out w-5 h-5 rounded-full text-slate-400 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-slate-800 focus:ring-offset-2 focus:ring-slate-300 focus:text-slate-300"

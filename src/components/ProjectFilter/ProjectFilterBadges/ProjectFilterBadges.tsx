@@ -5,7 +5,10 @@ import Badge from '../../Badge/Badge';
 export default function ProjectFilterBadges() {
   const { activeBadges, handleBadgeClick } = useActiveBadgesStore();
   return (
-    <>
+    <div
+      aria-label="project-filter-badges"
+      className="flex gap-4 items-center flex-wrap"
+    >
       {activeBadges.length === 0 ? (
         <p className="text-slate-400 text-sm pl-1">No active tag selected.</p>
       ) : null}
@@ -37,6 +40,6 @@ export default function ProjectFilterBadges() {
           )}
         </AnimatePresence>
       ) : null}
-    </>
+    </div>
   );
 }

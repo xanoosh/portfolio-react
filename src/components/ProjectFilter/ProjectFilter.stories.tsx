@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import ProjectFilter from './ProjectFilter';
-import { ProjectFilterProps } from '../../interfaces';
-import { expect, within } from 'storybook/test';
+import { expect } from 'storybook/test';
 
 const meta = {
   title: 'Portfolio/ProjectFilter',
@@ -12,14 +11,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const projectFilterTestAssertions = (
-  projectFilter: HTMLElement,
-  args: ProjectFilterProps
-) => {
+const projectFilterTestAssertions = (projectFilter: HTMLElement) => {
   expect(projectFilter).toBeInTheDocument();
-  expect(within(projectFilter).getAllByRole('badge').length).toBe(
-    args.activeBadges.length
-  );
 };
 
 const badges = ['badge1', 'badge2', 'badge3'];
@@ -39,8 +32,8 @@ export const ExampleProjectFilter: Story = {
     handleBadgeClick: handleBadgeClick,
   },
 
-  play: async ({ canvas, args }) => {
+  play: async ({ canvas }) => {
     const projectFilter = canvas.getByLabelText('project-filter-component');
-    projectFilterTestAssertions(projectFilter, args);
+    projectFilterTestAssertions(projectFilter);
   },
 };

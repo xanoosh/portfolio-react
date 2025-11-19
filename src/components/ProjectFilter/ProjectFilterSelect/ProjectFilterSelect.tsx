@@ -14,6 +14,7 @@ export default function ProjectFilterSelect() {
     <Listbox value={activeBadges} onChange={setActiveBadges} multiple>
       <div className="min-w-50 relative">
         <ListboxButton
+          aria-label="project-filter-select"
           id="listbox-button"
           className="w-full transition-bg duration-300 ease-in-out cursor-default rounded-lg bg-slate-900 py-3 px-4 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-4 focus:ring-offset-slate-800 text-sm"
         >
