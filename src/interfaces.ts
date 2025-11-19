@@ -61,12 +61,12 @@ export interface TooltipComponentProps {
   delayDuration?: number;
 }
 
-export interface ProjectFilterProps {
-  badges: string[];
-  activeBadges: string[];
-  setActiveBadges: (value: string[]) => void;
-  handleBadgeClick: (badgeName: string) => void;
-}
+// export interface ProjectFilterProps {
+//   badges: string[];
+//   activeBadges: string[];
+//   setActiveBadges: (value: string[]) => void;
+//   handleBadgeClick: (badgeName: string) => void;
+// }
 
 export interface NavbarProps {
   navigation: { name: string; link: string }[] | undefined;
