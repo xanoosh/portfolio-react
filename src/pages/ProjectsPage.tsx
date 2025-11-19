@@ -3,10 +3,9 @@ import ProjectFilter from '../components/ProjectFilter/ProjectFilter';
 import { projectsArray } from '../globals/globals';
 import { AnimatePresence } from 'framer-motion';
 import { useActiveBadgesStore } from '../store/store';
-import { badgesArray } from '../globals/globals';
 
 export default function ProjectsPage() {
-  const { activeBadges, activeProjects, setActiveBadges, handleBadgeClick } =
+  const { activeBadges, activeProjects, handleBadgeClick } =
     useActiveBadgesStore();
 
   return projectsArray.length ? (
@@ -16,12 +15,7 @@ export default function ProjectsPage() {
         name="description"
         content="Explore my projects and experience in the field of frontend development. Technologies: React, TypeScript, Tailwind CSS, Vite, Framer Motion, GraphQL, Redux, and more."
       />
-      <ProjectFilter
-        badges={badgesArray}
-        activeBadges={activeBadges}
-        setActiveBadges={setActiveBadges}
-        handleBadgeClick={handleBadgeClick}
-      />
+      <ProjectFilter />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         <AnimatePresence>
           {activeProjects.map(({ title, description, badges, buttons }, i) => (
