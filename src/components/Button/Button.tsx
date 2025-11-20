@@ -29,7 +29,7 @@ export default function Button({
     'focus:outline-none focus:ring-2 ring-offset-4 ring-offset-slate-800';
 
   const iconClasses = 'w-4.5 h-4.5';
-  return text.length === 0 ? null : (
+  return text?.length === 0 ? null : (
     <button
       role="button"
       disabled={disabled}
