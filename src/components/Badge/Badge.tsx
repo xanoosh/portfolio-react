@@ -29,7 +29,7 @@ export default function Badge({
   const focusClasses =
     'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-slate-800 ring-pink-600';
 
-  return text.length === 0 ? null : (
+  return text?.length === 0 ? null : (
     <div
       role="badge"
       tabIndex={noFocus ? -1 : 0}
