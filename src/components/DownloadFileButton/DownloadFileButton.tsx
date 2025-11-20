@@ -20,8 +20,9 @@ export default function DownloadFileButton({
   const focusClasses =
     'focus:outline-none focus:ring-2 ring-offset-4 ring-offset-slate-800';
 
-  return text.length === 0 ? null : (
+  return text?.length === 0 ? null : (
     <button
+      role="button"
       onClick={() => downloadPDF(fileName, filePath)}
       className={`text-white py-1.5 px-4 rounded-lg text-md flex flex-row gap-2 items-center transition-bg duration-300 ease-in-out ${focusClasses} ${backgroundClasses} ${disabledClasses}`}
       disabled={disabled}
