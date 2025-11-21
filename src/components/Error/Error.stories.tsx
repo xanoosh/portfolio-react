@@ -1,16 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import Error from './Error';
-import { expect } from 'storybook/test';
+import { expect, within } from 'storybook/test';
 import { ErrorProps } from '../../interfaces';
 
 const errorTestAssertions = (errorComponent: HTMLElement, args: ErrorProps) => {
   expect(errorComponent).toBeInTheDocument();
-  expect(errorComponent).toHaveClass('text-rose-600');
-  if (args.text.length > 0) {
-    expect(errorComponent.textContent).toBe(`Error: ${args.text}`);
-  } else {
-    expect(errorComponent).not.toHaveTextContent(`Error: ${args.text}`);
-  }
+  expect(errorComponent).toHaveClass(
+    'flex justify-center items-center backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50'
+  );
+  const paragraph = within(errorComponent).getByLabelText('error-text');
+  expect(paragraph).toBeInTheDocument();
+  expect(paragraph).toHaveClass('text-rose-600 font-semibold');
+  expect(paragraph).toHaveTextContent(`Error: ${args.text}`);
 };
 
 const meta = {
@@ -27,7 +28,7 @@ export const ExampleError: Story = {
     text: 'example Error text',
   },
   play: async ({ canvas, args }) => {
-    const errorComponent = await canvas.findByRole('alert');
+    const errorComponent = canvas.getByLabelText('error-container');
     errorTestAssertions(errorComponent, args);
   },
 };
