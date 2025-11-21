@@ -6,16 +6,16 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App';
 import Loader from './components/Loader/Loader';
-import Error from './components/Error/Error';
 
 const ProjectsPage = React.lazy(() => import('./pages/ProjectsPage'));
 const AboutPage = React.lazy(() => import('./pages/AboutPage'));
+const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <Error text="error" />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             <ProjectsPage />
           </React.Suspense>
         ),
-        errorElement: <Error text="error" />,
+        errorElement: <ErrorPage />,
       },
       {
         path: 'about',
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             <AboutPage />
           </React.Suspense>
         ),
-        errorElement: <Error text="error" />,
+        errorElement: <ErrorPage />,
       },
     ],
   },
