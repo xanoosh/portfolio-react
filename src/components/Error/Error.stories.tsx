@@ -1,23 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import Error from './Error';
-import { expect, within } from 'storybook/test';
+import { expect } from 'storybook/test';
 import { ErrorProps } from '../../interfaces';
 
 const errorTestAssertions = (errorComponent: HTMLElement, args: ErrorProps) => {
   expect(errorComponent).toBeInTheDocument();
-  expect(errorComponent).toHaveClass(
-    'flex justify-center items-center backdrop-blur-sm p-6 rounded-lg shadow bg-slate-800/50'
-  );
-  const paragraph = within(errorComponent).getByLabelText('error-text');
-  expect(paragraph).toBeInTheDocument();
-  expect(paragraph).toHaveClass('text-rose-600 font-semibold');
-  expect(paragraph).toHaveTextContent(`Error: ${args.text}`);
+  expect(errorComponent).toHaveClass('text-rose-600 font-semibold');
+  expect(errorComponent).toHaveTextContent(`Error: ${args.text}`);
 };
 
 const meta = {
   title: 'Portfolio/Error',
   component: Error,
   tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <div className="flex flex-col gap-4 backdrop-blur-sm px-12 py-6 rounded-lg shadow bg-slate-800/50 justify-center items-center">
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Error>;
 
 export default meta;
@@ -28,7 +30,7 @@ export const ExampleError: Story = {
     text: 'example Error text',
   },
   play: async ({ canvas, args }) => {
-    const errorComponent = canvas.getByLabelText('error-container');
+    const errorComponent = canvas.getByRole('alert');
     errorTestAssertions(errorComponent, args);
   },
 };
