@@ -16,7 +16,7 @@ export default function ProjectFilterSelect() {
         <ListboxButton
           aria-label="project-filter-select"
           id="listbox-button"
-          className="w-full transition-bg duration-300 ease-in-out cursor-default rounded-lg bg-slate-900 py-3 px-4 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-4 focus:ring-offset-slate-800 text-sm"
+          className="cursor-pointer w-full transition-bg duration-300 ease-in-out rounded-lg bg-slate-900 py-3 px-4 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-4 focus:ring-offset-slate-800 text-sm"
         >
           <span className="block truncate text-slate-400">
             Filter projects by tag
@@ -36,7 +36,7 @@ export default function ProjectFilterSelect() {
             <ListboxOption
               key={i}
               value={tag}
-              className={`relative cursor-default select-none py-3 pl-10 pr-4 text-slate-300 hover:bg-sky-700 hover:text-white focus:outline-none data-focus:bg-sky-700 data-focus:text-white data-selected:text-pink-600 data-focus:data-selected:text-white hover:data-selected:text-white`}
+              className={`cursor-pointer relative select-none py-3 pl-10 pr-4 text-slate-300 hover:bg-sky-700 hover:text-white focus:outline-none data-focus:bg-sky-700 data-focus:text-white data-selected:text-pink-600 data-focus:data-selected:text-white hover:data-selected:text-white`}
             >
               <>
                 <span
