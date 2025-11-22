@@ -2,29 +2,52 @@ import { render, screen } from '@testing-library/react';
 import ExperienceSection from './ExperienceSection';
 
 describe('ExperienceSection: ', () => {
+  it('Should render component', () => {
+    render(<ExperienceSection />);
+    expect(screen.getByLabelText('experience-section')).toBeInTheDocument();
+  });
+
+  it('Should render title if title prop is passed', () => {
+    render(<ExperienceSection title="title" />);
+    expect(screen.getByLabelText('experience-title')).toBeInTheDocument();
+  });
+
+  it('Should not render title if title prop is not passed', () => {
+    render(<ExperienceSection />);
+    expect(() => screen.getByLabelText('experience-title')).toThrow();
+  });
+
   it('Should have title equal to the title prop', () => {
     render(<ExperienceSection title="title" />);
-    expect(screen.getByText('title')).toBeInTheDocument();
+    expect(screen.getByLabelText('experience-title')).toHaveTextContent(
+      'title'
+    );
   });
-  it('Should have text equal to the text prop', () => {
+  it('Should render description if text prop is passed', () => {
     render(<ExperienceSection text="text" />);
-    expect(screen.getByText('text')).toBeInTheDocument();
+    expect(screen.getByLabelText('experience-description')).toBeInTheDocument();
   });
-  it('Should display ol if list prop length > 0', () => {
-    const { container } = render(
+  it('Should not render description if text prop is not passed', () => {
+    render(<ExperienceSection />);
+    expect(() => screen.getByLabelText('experience-description')).toThrow();
+  });
+  it('Description should have text equal to the text prop', () => {
+    render(<ExperienceSection text="text" />);
+    expect(screen.getByLabelText('experience-description')).toHaveTextContent(
+      'text'
+    );
+  });
+  it('Should display list if list prop is passed', () => {
+    render(
       <ExperienceSection
         list={[{ title: 'title', date: 'date', responsibilities: [] }]}
       />
     );
-    expect(container.querySelector('ol')).toBeInTheDocument();
+    expect(screen.getByLabelText('experience-list')).toBeInTheDocument();
   });
-  it('Should display ul if list prop has responsibilities array with strings', () => {
-    const { container } = render(
-      <ExperienceSection
-        list={[{ title: 'title', date: 'date', responsibilities: ['string'] }]}
-      />
-    );
-    expect(container.querySelector('ol')).toBeInTheDocument();
+  it('Should not display list if list prop is not passed', () => {
+    render(<ExperienceSection />);
+    expect(() => screen.getByLabelText('experience-list')).toThrow();
   });
   it('Should display title string from list prop', () => {
     render(
