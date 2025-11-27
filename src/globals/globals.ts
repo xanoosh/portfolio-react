@@ -120,6 +120,34 @@ export const projectsArray: ProjectCardProps[] = [
     ],
   },
   {
+    title: 'QR Code Generator',
+    description:
+      'Simple QR code generator app, which generates QR code based on user input. Deployed on Vercel',
+    badges: [
+      'Vite',
+      'React',
+      'Shadcn UI',
+      'Zustand',
+      'Tailwind',
+      'Headless Components',
+      'React Hook Form',
+      'Zod',
+      'Typescript',
+    ],
+    buttons: [
+      {
+        text: 'App',
+        url: 'https://qr-code-generator-alpha-eight.vercel.app/',
+        icon: 'webIcon',
+      },
+      {
+        text: 'Code',
+        url: 'https://github.com/xanoosh/qr-code-generator',
+        icon: 'codeIcon',
+      },
+    ],
+  },
+  {
     title: 'Stat calculator',
     description:
       'React app for fuzzy searching pokemon (Fuse.js integration) and calculating their stats based on formula and received data. Deployed on Vercel. ',
@@ -206,34 +234,6 @@ export const projectsArray: ProjectCardProps[] = [
       {
         text: 'Code',
         url: 'https://github.com/xanoosh/virtualised-list',
-        icon: 'codeIcon',
-      },
-    ],
-  },
-  {
-    title: 'ETF Charts',
-    description:
-      'WORK IN PROGRESS - still looking for a decent API. App utilizes API to get ETF stock data. Data is presented using charts from nivo. Deployed on Vercel',
-    badges: [
-      'Vite',
-      'React',
-      'Nivo Charts',
-      'React-Use',
-      'React Router',
-      'Lazy',
-      'REST API',
-      'ES6',
-      'Tailwind',
-    ],
-    buttons: [
-      {
-        text: 'App',
-        url: 'https://etf-charts.vercel.app',
-        icon: 'webIcon',
-      },
-      {
-        text: 'Code',
-        url: 'https://github.com/xanoosh/etf-charts',
         icon: 'codeIcon',
       },
     ],
@@ -352,7 +352,10 @@ export const badgesArray = [
   'Vite',
   'React',
   'TanStack Query',
+  'Shadcn UI',
+  'Headless Components',
   'React Hook Form',
+  'Zod',
   'React Router',
   'Zustand',
   'Redux',
@@ -366,7 +369,6 @@ export const badgesArray = [
   'Lazy',
   'REST API',
   'Fuse.js',
-  'Headless Components',
   'Local Storage',
   'Async Storage',
   'Typescript',
@@ -391,6 +393,7 @@ export const techStack = [
       'React',
       'React Hooks',
       'Vite',
+      'Shadcn UI',
       'Headless Components',
       'Radix-UI',
       'TanStack Query',
